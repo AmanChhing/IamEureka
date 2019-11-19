@@ -1,0 +1,1203 @@
+#openMenu
+{
+	position:absolute;
+	left: 95%;
+	font-size: 35px;
+}
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity/see-through */
+   
+}
+#amanchhing
+{
+	position: absolute;
+	left: 500%;
+	font-size: 20px;
+	font-family:-webkit-pictograph;
+	top: 179%;
+	color: skyblue;
+}
+#Eureka { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 135px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 0px; text-align: center; text-shadow: 0 1px 1px #fff; }
+
+/* Modal Content */
+.modal-content {
+  background-color: skyblue;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.Footimg1
+{
+	top: 83vh;
+	position: absolute;
+}
+Foot
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+input[type="submit"] {
+    float:right;
+    width: 20%;
+    
+    right: 20%;
+    height: 30px;
+    color: black;
+    background-color: #82e2ee;
+    font-size:larger;
+    font: xx-large;
+   }
+
+button {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 13%;
+  height: 101%;
+  border: 0;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #39C2C9 0%, #3FC8C9 80%, #3FC8C9 100%);
+  box-shadow: 2px 5px 30px rgba(63, 200, 201, .4);
+  position: absolute;
+  left: 70.5%;
+  top: 2%;
+  will-change: transform, filter;
+  transition: all 0.3s ease-out;
+}
+button .fa {
+  font-size: 430%;
+  line-height: 170%;
+  margin: 0;
+  text-shadow: 1px 2px 2px #2a8b90;
+}
+button:hover {
+  transform: scale(.92);
+}
+button:active {
+  filter: brightness(.8);
+}
+button:focus {
+  outline: 0;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-github::before {
+    content: "\f09b";
+}
+
+
+#inner-wrap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: table;
+	width: 3vw;
+	height: 14%;
+	overflow: visible;
+	bottom: 96%;
+}
+
+
+
+.waves {
+	position: absolute;
+	top: 0;
+	left: 3%;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 1vw;
+	height: 20%;
+	margin-bottom: 0px;
+}
+
+
+img, svg {
+	display: block;
+	overflow: visible;
+	pointer-events: none;
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+#Eureka
+{
+	position: absolute;
+	left: 30%;
+	font-size: 110px;
+	font-family:-webkit-pictograph;
+	top: 55%;
+}
+
+#block 
+{ 
+	position: absolute; 
+    padding-bottom: 43.65vw;
+	width: 58vw;
+	top: 26%;
+	left: 25%;  
+}
+#YouSaid
+{
+position: absolute;
+bottom: 5%;
+left: 3%;
+height: 70%;
+width: 20%;  
+}
+#EurekaReplied
+{
+position: absolute;
+bottom: 20%;
+right: 3%;
+height: 55%;
+width: 24%;
+overflow-y: scroll; 
+}
+#You
+{
+font-size: 32px;
+color: blueviolet
+}
+#Bot
+{
+font-size: 32px;
+color: blueviolet
+}
+.output-you
+{
+	font-size: 21px;
+	color: blue;
+}
+.output-bot
+{
+	font-size: 21px;
+	color: blue;
+	overflow-y: scroll;
+}
+#InputText
+{
+	height: 30px;
+	width: 80%;
+	position: absolute;
+	box-sizing: border-box;
+	font-size: 21px;
+	color: blue;
+	font-family:-webkit-pictograph;
+	font-style:italic;
+}
+@media screen and (max-width: 1024px) {
+	#EurekaReplied
+	{
+	position: absolute;
+	bottom: 20%;
+	right: -32%;
+	height: 55%;
+	width: 48%;
+	overflow-y: scroll; 
+	}
+	#inner-wrap {
+	bottom: 90%;
+	}
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	top: 69%;
+
+	}
+	#inner-wrap {
+	margin-bottom: -20px;
+	}
+	.Footimg1
+	{
+	top: 116vh;
+	}
+	#Eureka
+	{
+	font-size: 110px;
+	font-family:-webkit-pictograph;
+	top: 25%;
+	}
+	@media screen and (max-height: 1500px) {
+	.Footimg1
+	{
+	top: 116vh;
+	}
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	padding-top: 99%;
+	}
+	}
+	@media screen and (max-height: 1000px) {
+	.Footimg1
+	{
+	top: 111vh;
+	}
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	top: 84%;
+	}
+	}
+	@media screen and (max-height: 800px) {
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	top: 93%;
+	}
+	}
+	@media screen and (max-height: 700px) {
+	.Footimg1
+	{
+	top: 109vh;
+	position: absolute;
+	}
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	padding-top: 260%;
+	}
+	#YouSaid
+	{
+	position: absolute;
+	top: 45%;
+	width: 21%;
+	}
+	#EurekaReplied
+	{
+	bottom: 0%;
+	right: -38%;
+	height: 55%;
+	width: 38%;
+	overflow-y: scroll; 
+	}
+	#inner-wrap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: table;
+	width: 3vw;
+	height: 14%;
+	overflow: visible;
+	bottom: 108%;
+	}
+	#Eureka
+	{
+	top: 98%;
+	}
+	#amanchhing
+	{
+	left: 400%;
+	font-size: 30px;
+	top: 119%;
+	}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	Foot
+	{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+	#amanchhing
+	{
+	left: 300%;
+	font-size: 30px;
+	top: 74%;
+	}
+  .mainfoot {
+    max-width: 100vw;
+	max-height: 90px;	/* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .Footimg1
+	{
+	top: 82vh;
+	position: absolute;
+	right: 10%;
+	}
+	.waves {
+	max-width: 100vw;
+	max-height: 30%;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 40px;
+	}
+	#block
+	{
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 85%;
+		margin-left: -10%;
+		height: 41%;
+	}
+	button
+	{
+		position: absolute;
+		margin-left: -135px;
+		padding-right: 1vw;
+		max-height: 100%
+	}
+	#YouSaid
+	{
+	position: absolute;
+	top: 14%;
+	left: 12%;
+	height: 10%;
+	width: 68%;  
+	}
+	#EurekaReplied
+	{
+	position: absolute;
+	bottom: 17%;
+	left: 12%;
+	height: 30%;
+	width: 68%;
+	overflow-y: scroll;
+	}
+	#You
+	{
+	font-size: 22px;
+	color: blueviolet
+	}
+	#Bot
+	{
+	font-size: 22px;
+	color: blueviolet
+	}
+	#Eureka
+	{
+	font-size: 90px;
+	font-family:-webkit-pictograph;
+	top: 40%;
+	}
+	@media screen and (max-height: 1400px) {
+	#amanchhing
+	{
+	left: 390%;
+	font-size: 27px;
+	top: 84%;
+	}
+	.Footimg1
+	{
+	top: 80vh;
+	position: absolute;
+	right: 10%;
+	}
+	}
+	@media screen and (max-height: 1100px) {
+	#amanchhing
+	{
+	left: 390%;
+	font-size: 27px;
+	top: 93%;
+	}
+	.Footimg1
+	{
+	top: 78vh;
+	position: absolute;
+	right: 10%;
+	}
+	}
+	@media screen and (max-height: 800px) {
+	.Footimg1
+	{
+	top: 114vh;
+	position: absolute;
+	right: 10%;
+	}
+	#YouSaid
+	{
+	position: absolute;
+	top: 15%;
+	width: 60%;
+	}
+	#EurekaReplied
+	{
+	bottom: -30%;
+	right: -38%;
+	height: 55%;
+	width: 68%;
+	overflow-y: scroll; 
+	}
+	#block
+	{
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 85%;
+		padding-bottom: -30%;
+		height: 41%;
+	}
+	#Eureka
+	{
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 70%;
+	}
+	#amanchhing
+	{
+	left: 80%;
+	font-size: 24px;
+	top: 128%;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 80px;
+	}
+	}
+	@media screen and (max-height: 700px) {
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: -30px;
+	}
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 90%;
+	}
+	#amanchhing
+	{
+	left: 50%;
+	font-size: 24px;
+	top: 120%;
+	}
+	}
+
+}
+@media screen and (max-width: 680px) {
+	button
+	{
+		position: absolute;
+		margin-left: -126px;
+		padding-right: 1vw;
+		max-height: 100%
+	}
+	#amanchhing
+	{
+	left: 290%;
+	font-size: 24px;
+	top: 85%;
+	}
+	#YouSaid
+	{
+	position: absolute;
+	left: 17%;  
+	}
+	#EurekaReplied
+	{
+	position: absolute;
+	left: 17%; 
+	}
+	#Eureka
+	{
+	font-size: 80px;
+	font-family:-webkit-pictograph;
+	top: 39%;
+	}
+	@media screen and (max-height: 1000px) {
+	#amanchhing
+	{
+	left: 290%;
+	font-size: 24px;
+	top: 95%;
+	}
+	}
+	@media screen and (max-height: 800px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 60%;
+	}
+	#amanchhing
+	{
+	left: 50%;
+	font-size: 24px;
+	top: 120%;
+	}
+	}
+	@media screen and (max-height: 700px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 80%;
+	}
+	}
+	@media screen and (max-height: 500px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 115%;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 3%;
+	}
+	#amanchhing
+	{
+	left: 50%;
+	font-size: 24px;
+	top: 170%;
+	}
+	}
+	@media screen and (max-height: 360px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 95%;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	padding-top: 99px;
+	}
+	#amanchhing
+	{
+	left: 50%;
+	font-size: 14px;
+	top: 135%;
+	}
+	}
+}
+@media screen and (max-width: 600px) {
+	button
+	{
+		position: absolute;
+		margin-left: -116px;
+		padding-right: 1vw;
+		max-height: 100%
+	}
+	#YouSaid
+	{
+	position: absolute;
+	left: 16%;
+	top: 14%
+	}
+	@media screen and (max-height: 800px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 60%;
+	}
+	#amanchhing
+	{
+	left: 50%;
+	font-size: 24px;
+	top: 120%;
+	}
+	}
+	@media screen and (max-height: 700px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 73%;
+	}
+	}
+}
+@media screen and (max-width: 550px) {
+	button
+	{
+		position: absolute;
+		margin-left: -106px;
+		padding-right: 1vw;
+		max-height: 100%
+	}
+	
+	#YouSaid
+	{
+	position: absolute;
+	left: 13%;
+	top: 14%
+	}
+}
+@media screen and (max-width: 500px) {
+	button
+	{
+		position: absolute;
+		margin-left: -108px;
+		padding-right: 12.3vw;
+		padding-left: 4vw;
+		max-height: 100%
+	}
+}
+@media screen and (max-width: 450px) {
+	button
+	{
+		position: absolute;
+		margin-left: -92px;
+		padding-right: 14vw;
+		padding-left: 4vw;
+		max-height: 100%
+	}
+	.Footimg1
+	{
+	top: 80vh;
+	position: absolute;
+	right: 10%;
+	}
+	#YouSaid
+	{
+	position: absolute;
+	left: 13%;
+	top: 14%
+	}
+	@media screen and (max-height: 1100px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 80px;
+	font-family:-webkit-pictograph;
+	top: 62px;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 70px;
+	}
+	#amanchhing
+	{
+	left: 590%;
+	top: 125%;
+	}
+	}
+	@media screen and (max-height: 800px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 80px;
+	font-family:-webkit-pictograph;
+	top: 78px;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 90px;
+	}
+	#amanchhing
+	{
+	left: 590%;
+	top: 150%;
+	}
+	}
+	@media screen and (max-height: 760px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 80px;
+	font-family:-webkit-pictograph;
+	top: 78px;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 90px;
+	}
+	#amanchhing
+	{
+	left: 590%;
+	top: 158%;
+	}
+	}
+	@media screen and (max-height: 650px) {
+	.Footimg1
+	{
+	top: 77vh;
+	position: absolute;
+	right: 10%;
+	}
+	#You
+	{
+	font-size: 20px;
+	color: blueviolet
+	}
+	#Bot
+	{
+	font-size: 20px;
+	color: blueviolet
+	}
+	.output-you
+	{
+	font-size: 18px;
+	color: blue
+	}
+	.output-bot
+	{
+	font-size: 18px;
+	color: blue
+	}
+	#YouSaid
+	{
+	position: absolute;
+	left: 13%;
+	top: 13%
+	}
+	#Eureka
+	{
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 75%;
+	}
+	#amanchhing
+	{
+	left: 90%;
+	top: 132%;
+	font-size: 23px;
+	}
+	}
+	@media screen and (max-height: 600px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 83px;
+	}
+	#inner-wrap {
+	margin-bottom: 0px;
+	}
+	#amanchhing
+	{
+	left: 290%;
+	top: 165%;
+	font-size: 20px;
+	}
+	}
+	#block
+	{
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 85%;
+		margin-left: -13%;
+		height: 41%;
+	}
+	
+	#EurekaReplied
+	{
+	position: absolute;
+	left: 13%;
+	height: 30%;
+	width: 70%;
+	bottom: 20%
+	}
+
+	
+}
+@media screen and (max-width: 400px) {
+	button
+	{
+		position: absolute;
+		margin-left: -85px;
+		padding-right: 15vw;
+		padding-left: 4vw;
+		max-height: 100%
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	}
+
+	.Footimg1
+	{
+	top: 81.5vh;
+	position: absolute;
+	right: 10%;
+	}
+	@media screen and (max-height: 700px) {
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: -30px;
+	}
+	}
+	@media screen and (max-height: 500px) {
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 40px;
+	}
+	#Eureka
+	{
+	font-size: 50px;
+	font-family:-webkit-pictograph;
+	top: 135%;
+	}
+	}
+	
+}
+@media screen and (max-width: 360px) {
+	button
+	{
+		position: absolute;
+		margin-left: -85px;
+		padding-right: 18vw;
+		padding-left: 6vw;
+		max-height: 100%
+	}
+	@media screen and (max-height: 650px) {
+	#amanchhing
+	{
+	left: 290%;
+	top: 145%;
+	font-size: 20px;
+	}
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: -18px;
+	}
+	}
+	
+	@media screen and (max-height: 600px) {
+	#Eureka
+	{
+	position:absolute;
+	font-size: 60px;
+	font-family:-webkit-pictograph;
+	top: 81px;
+	}
+	#inner-wrap {
+	margin-bottom: 0px;
+	}
+	#amanchhing
+	{
+	left: 290%;
+	top: 165%;
+	font-size: 20px;
+	}
+	}
+	@media screen and (max-height: 580px) {
+	.Footimg1
+	{
+	top: 73vh;
+	position: absolute;
+	right: 10%;
+	}
+	#Eureka
+	{
+	top: 70px;
+	}
+	#amanchhing
+	{
+	left: 390%;
+	top: 172%;
+	}
+	#block
+	{
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 75%;
+		margin-left: -10%;
+		height: 31%;
+		top: 33%;
+	}
+
+	#YouSaid
+	{
+	position: absolute;
+	left: 15%;
+	top: 14%
+	}
+	#EurekaReplied
+	{
+	position: absolute;
+	bottom: 21%;
+	left: 15%;
+	height: 30%;
+	width: 65%;  
+	overflow-y: scroll; 
+	}
+	#You
+	{
+	font-size: 24px;
+	color: blueviolet
+	}
+	#Bot
+	{
+	font-size: 24px;
+	color: blueviolet
+	}
+	.output-you
+	{
+	font-size: 17px;
+	color: blue
+	}
+	.output-bot
+	{
+	font-size: 17px;
+	color: blue
+	}
+	
+	}
+	@media screen and (max-height: 520px) {
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 40px;
+	}
+	#Eureka
+	{
+	font-size: 50px;
+	font-family:-webkit-pictograph;
+	top: 135%;
+	}
+	#amanchhing
+	{
+	left: 90%;
+	top: 215%;
+	}
+	}
+	@media screen and (max-height: 400px) {
+	#inner-wrap {
+	position: absolute;
+	max-width: 100vw;
+	max-height: 30%;
+	margin-bottom: 60px;
+	}
+	#Eureka
+	{
+	font-size: 50px;
+	font-family:-webkit-pictograph;
+	top: 155%;
+	}
+	#amanchhing
+	{
+	left: 90%;
+	top: 260%;
+	}
+	}
+}
+@media screen and (max-width: 320px) {
+	button
+	{
+		position: absolute;
+		margin-left: -85px;
+		padding-right: 19vw;
+		padding-left: 6vw;
+		max-height: 100%
+	}
+	#EurekaReplied
+	{
+	position: absolute;
+	bottom: 21%;
+	left: 15%;
+	height: 30%;
+	width: 68%;  
+	}
+	@media screen and (max-height: 800px)
+	{
+	#YouSaid
+	{
+	position: absolute;
+	top: 16%; 
+	height: 10%; 
+	}	
+	}
+	@media screen and (max-height: 700px)
+	{
+	#YouSaid
+	{
+	position: absolute;
+	top: 15%; 
+	height: 10%; 
+	}	
+	}
+	@media screen and (max-height: 600px)
+	{
+	#YouSaid
+	{
+	position: absolute;
+	top: 14%; 
+	height: 10%; 
+	}	
+	}
+	@media screen and (max-height: 500px)
+	{
+	#YouSaid
+	{
+	position: absolute;
+	top: 13%; 
+	height: 10%; 
+	}	
+	}
+	
+}
+@media screen and (max-width: 260px) {
+	button
+	{
+		position: absolute;
+		margin-left: -65px;
+		padding-right: 22vw;
+		padding-left: 6vw;
+		max-height: 100%
+	}
+
+}
+#EurekaReplied
+{
+overflow-y: scroll; 
+}
+#block
+{
+overflow-y: scroll;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+   padding-left: 23px;
+  text-align: left;
+ padding-top: 5%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:hover {background-color: #f5f5f5;}
