@@ -182,7 +182,7 @@ input[type="submit"] {
     font: xx-large;
    }
 
-button.Mic {
+button {
   display: block;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -200,19 +200,19 @@ button.Mic {
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
-button.Mic .fa {
+button .fa {
   font-size: 430%;
   line-height: 170%;
   margin: 0;
   text-shadow: 1px 2px 2px #2a8b90;
 }
-button.Mic:hover {
+button:hover {
   transform: scale(.92);
 }
-button.Mic:active {
+button:active {
   filter: brightness(.8);
 }
-button.Mic:focus {
+button:focus {
   outline: 0;
 }
 
@@ -360,7 +360,7 @@ color: blueviolet
 	margin-left: -10%;
 	height: 41%;
 	}
-	button.Mic
+	button
 	{
 	position: absolute;
 	margin-left: -135px;
@@ -433,7 +433,7 @@ color: blueviolet
 
 }
 @media screen and (max-width: 680px) {
-	button.Mic
+	button
 	{
 	position: absolute;
 	margin-left: -126px;
@@ -452,7 +452,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 600px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -116px;
@@ -467,7 +467,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 550px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -106px;
@@ -482,7 +482,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 500px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -108px;
@@ -492,7 +492,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 450px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -92px;
@@ -563,7 +563,7 @@ color: blueviolet
 	
 }
 @media screen and (max-width: 400px) {
-	button.Mic
+	button
 	{
 	position: absolute;
 	margin-left: -85px;
@@ -580,7 +580,7 @@ color: blueviolet
 	
 }
 @media screen and (max-width: 360px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -85px;
@@ -643,7 +643,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 320px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -85px;
@@ -698,7 +698,7 @@ color: blueviolet
 	
 }
 @media screen and (max-width: 260px) {
-	button.Mic
+	button
 	{
 		position: absolute;
 		margin-left: -65px;
@@ -712,10 +712,10 @@ color: blueviolet
 {
 overflow-y: scroll; 
 }
-#block
+/*#block
 {
 overflow-y: scroll;
-}
+}*/
 table {
   border-collapse: collapse;
 }
