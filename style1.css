@@ -41,17 +41,6 @@ body {
   float: right;
 }
 
-@media screen and (max-width: 300px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .header-right {
-    float: none;
-  }
-}
 
 #EurekaLogo
 {
@@ -195,7 +184,7 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 12vw;
-  height: 23vh;
+  height: 20vh;
   border: 0;
   border-radius: 50%;
   text-align: center;
@@ -209,9 +198,9 @@ button {
   transition: all 0.3s ease-out;
 }
 button .fa {
-    font-size: 8vw;
+    font-size: 10vw;
     line-height: 4vh;
-    left: 3.5vw;
+    left: 2.9vw;
     margin: 0;
     position:absolute;
     text-shadow: 1px 2px 2px #2a8b90;
@@ -338,12 +327,13 @@ overflow-y: scroll;
 	top: 23.5vh;
 	}
 	button {
-     width: 13vw;
-     height: 10vh;
+     width: 14vw;
+     height: 14vh;
 	}
 	button .fa {
-    font-size: 10vw;
+    font-size: 13vw;
     line-height: 2vh;
+    left: 3vw;
 	}
 	#YouSaid
 	{
@@ -372,7 +362,8 @@ overflow-y: scroll;
 	input[type="submit"]
 	{
 		width: 7.4vw;
-		height: 2.5vw;
+		height: 2.8vw;
+		font-size: 1.9vw;
 	}
 	#You,#Bot
 	{
@@ -397,7 +388,18 @@ overflow-y: scroll;
 	
 }
 @media screen and (max-width: 600px) {
-
+	input[type="submit"]
+	{
+		width: 7.4vw;
+		height: 3.5vw;
+		font-size: 2vw;
+	}
+	@media screen and (max-height: 760px) {
+		.Footimg1
+		{
+		top: 85vh;
+		}
+	}
 }
 @media screen and (max-width: 550px) {
 
@@ -410,134 +412,32 @@ overflow-y: scroll;
 }
 @media screen and (max-width: 400px) {
 	
-	
+	.header {
+		height: 20vw;
+	}
 }
 @media screen and (max-width: 360px) {
-	button
+	input[type="submit"]
 	{
-		position: absolute;
-		margin-left: -85px;
-		padding-right: 18vw;
-		padding-left: 6vw;
-		max-height: 100%
+		width: 7.4vw;
+		height: 5vw;
+		font-size: 2.6vw;
 	}
+	
 	@media screen and (max-height: 580px) {
-	.Footimg1
-	{
-	top: 73vh;
-	position: absolute;
-	right: 10%;
-	}
-	#block
-	{
-	position: absolute;
-	box-sizing: border-box;
-	padding-right: 75%;
-	margin-left: -10%;
-	height: 31%;
-	top: 33%;
-	}
-
-	#YouSaid
-	{
-	position: absolute;
-	left: 15%;
-	top: 14%
-	}
-	#EurekaReplied
-	{
-	position: absolute;
-	bottom: 21%;
-	left: 15%;
-	height: 30%;
-	width: 65%;  
-	overflow-y: scroll; 
-	}
-	#You
-	{
-	font-size: 24px;
-	color: blueviolet
-	}
-	#Bot
-	{
-	font-size: 24px;
-	color: blueviolet
-	}
-	.output-you
-	{
-	font-size: 17px;
-	color: blue
-	}
-	.output-bot
-	{
-	font-size: 17px;
-	color: blue
-	}	
+		.Footimg1
+		{
+		top: 83vh;
+		}
 	}
 }
 @media screen and (max-width: 320px) {
-	button
-	{
-		position: absolute;
-		margin-left: -85px;
-		padding-right: 19vw;
-		padding-left: 6vw;
-		max-height: 100%
-	}
-	#EurekaReplied
-	{
-	position: absolute;
-	bottom: 21%;
-	left: 15%;
-	height: 30%;
-	width: 68%;  
-	}
-	@media screen and (max-height: 800px)
-	{
-	#YouSaid
-	{
-	position: absolute;
-	top: 16%; 
-	height: 10%; 
-	}	
-	}
-	@media screen and (max-height: 700px)
-	{
-	#YouSaid
-	{
-	position: absolute;
-	top: 15%; 
-	height: 10%; 
-	}	
-	}
-	@media screen and (max-height: 600px)
-	{
-	#YouSaid
-	{
-	position: absolute;
-	top: 14%; 
-	height: 10%; 
-	}	
-	}
-	@media screen and (max-height: 500px)
-	{
-	#YouSaid
-	{
-	position: absolute;
-	top: 13%; 
-	height: 10%; 
-	}	
-	}
+	
 	
 }
 @media screen and (max-width: 260px) {
-	button
-	{
-		position: absolute;
-		margin-left: -65px;
-		padding-right: 22vw;
-		padding-left: 6vw;
-		max-height: 100%
+	.header {
+		height: 25vw;
 	}
 
 }
