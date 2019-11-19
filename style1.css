@@ -55,8 +55,7 @@ body {
 
 #EurekaLogo
 {
-	width: 70%;
-	height: 30%;
+	width: 30%;
 	float: left;
 }
 
@@ -263,12 +262,7 @@ height: 55%;
 width: 24%;
 overflow-y: scroll; 
 }
-#You
-{
-font-size: 30px;
-color: blueviolet
-}
-#Bot
+#You,Bot
 {
 font-size: 30px;
 color: blueviolet
@@ -296,14 +290,34 @@ color: blueviolet
 	font-style:italic;
 }
 @media screen and (max-width: 3840px) {
-	.header 
-	{
- 	height: 320px;
-	}
 	.header a {
-  	font-size: 85px;
+  	font-size: 105px;
   	font-weight: bold;
-  	top: 10%;
+  	position:absolute;
+  	right: 0.5%;
+  	top:10%;
+	}
+	#YouSaid
+	{
+	width: 15%;
+	}
+	#You,#Bot
+	{
+	font-size: 70px;
+	color: blueviolet
+	}
+	#InputText,input[type="submit"]
+	{
+	height: 60px;
+	font-size: 43px;
+	}
+	#block 
+	{ 
+	left: 19%;  
+	}
+	#EurekaReplied
+	{
+		left: 75%;
 	}
 }
 @media screen and (max-width: 1024px) {
