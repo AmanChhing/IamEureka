@@ -54,12 +54,6 @@ body {
 }
 
 
-#openMenu
-{
-	position:absolute;
-	left: 95%;
-	font-size: 35px;
-}
 .overlay {
   /* Height & width depends on how you want to reveal the overlay (see JS below) */   
   height: 100%;
@@ -139,17 +133,9 @@ body {
   background-color: rgba(0,0,0, 0.9); /* Black w/opacity/see-through */
    
 }
-#amanchhing
-{
-	position: absolute;
-	left: 500%;
-	font-size: 20px;
-	font-family:-webkit-pictograph;
-	top: 179%;
-	color: skyblue;
-}
-#Eureka { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 135px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 0px; text-align: center; text-shadow: 0 1px 1px #fff; }
 
+/*#Eureka { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 135px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 0px; text-align: center; text-shadow: 0 1px 1px #fff; }
+*/
 /* Modal Content */
 .modal-content {
   background-color: skyblue;
@@ -196,7 +182,7 @@ input[type="submit"] {
     font: xx-large;
    }
 
-button {
+button.Mic {
   display: block;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -214,19 +200,19 @@ button {
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
-button .fa {
+button.Mic .fa {
   font-size: 430%;
   line-height: 170%;
   margin: 0;
   text-shadow: 1px 2px 2px #2a8b90;
 }
-button:hover {
+button.Mic:hover {
   transform: scale(.92);
 }
-button:active {
+button.Mic:active {
   filter: brightness(.8);
 }
-button:focus {
+button.Mic:focus {
   outline: 0;
 }
 
@@ -239,58 +225,6 @@ button:focus {
 }
 .fa-github::before {
     content: "\f09b";
-}
-
-
-#inner-wrap {
-	position: absolute;
-	left: 0;
-	right: 0;
-	display: table;
-	width: 3vw;
-	height: 14%;
-	overflow: visible;
-	bottom: 96%;
-}
-
-
-
-.waves {
-	position: absolute;
-	top: 0;
-	left: 3%;
-	right: 0;
-	bottom: 0;
-	display: block;
-	width: 1vw;
-	height: 20%;
-	margin-bottom: 0px;
-}
-
-
-img, svg {
-	display: block;
-	overflow: visible;
-	pointer-events: none;
-}
-
-.group:before,
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.group {
-  zoom: 1;
-}
-
-#Eureka
-{
-	position: absolute;
-	left: 30%;
-	font-size: 110px;
-	font-family:-webkit-pictograph;
-	top: 55%;
 }
 
 #block 
@@ -320,22 +254,22 @@ overflow-y: scroll;
 }
 #You
 {
-font-size: 32px;
+font-size: 30px;
 color: blueviolet
 }
 #Bot
 {
-font-size: 32px;
+font-size: 30px;
 color: blueviolet
 }
 .output-you
 {
-	font-size: 21px;
+	font-size: 19px;
 	color: blue;
 }
 .output-bot
 {
-	font-size: 21px;
+	font-size: 19px;
 	color: blue;
 	overflow-y: scroll;
 }
@@ -345,7 +279,7 @@ color: blueviolet
 	width: 80%;
 	position: absolute;
 	box-sizing: border-box;
-	font-size: 21px;
+	font-size: 20px;
 	color: blue;
 	font-family:-webkit-pictograph;
 	font-style:italic;
@@ -360,39 +294,14 @@ color: blueviolet
 	width: 48%;
 	overflow-y: scroll; 
 	}
-	#inner-wrap {
-	bottom: 90%;
-	}
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	top: 69%;
-
-	}
-	#inner-wrap {
-	margin-bottom: -20px;
-	}
 	.Footimg1
 	{
 	top: 116vh;
-	}
-	#Eureka
-	{
-	font-size: 110px;
-	font-family:-webkit-pictograph;
-	top: 25%;
 	}
 	@media screen and (max-height: 1500px) {
 	.Footimg1
 	{
 	top: 116vh;
-	}
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	padding-top: 99%;
 	}
 	}
 	@media screen and (max-height: 1000px) {
@@ -400,32 +309,14 @@ color: blueviolet
 	{
 	top: 111vh;
 	}
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	top: 84%;
-	}
 	}
 	@media screen and (max-height: 800px) {
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	top: 93%;
-	}
 	}
 	@media screen and (max-height: 700px) {
 	.Footimg1
 	{
 	top: 109vh;
 	position: absolute;
-	}
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	padding-top: 260%;
 	}
 	#YouSaid
 	{
@@ -441,26 +332,6 @@ color: blueviolet
 	width: 38%;
 	overflow-y: scroll; 
 	}
-	#inner-wrap {
-	position: absolute;
-	left: 0;
-	right: 0;
-	display: table;
-	width: 3vw;
-	height: 14%;
-	overflow: visible;
-	bottom: 108%;
-	}
-	#Eureka
-	{
-	top: 98%;
-	}
-	#amanchhing
-	{
-	left: 400%;
-	font-size: 30px;
-	top: 119%;
-	}
 	}
 }
 
@@ -471,46 +342,30 @@ color: blueviolet
 	height: 100%;
 	position: relative;
 	}
-	#amanchhing
-	{
-	left: 300%;
-	font-size: 30px;
-	top: 74%;
-	}
-  .mainfoot {
-    max-width: 100vw;
+      .mainfoot {
+       max-width: 100vw;
 	max-height: 90px;	/* The width is 100%, when the viewport is 800px or smaller */
-  }
-  .Footimg1
+       }
+      .Footimg1
 	{
 	top: 82vh;
 	position: absolute;
 	right: 10%;
 	}
-	.waves {
-	max-width: 100vw;
-	max-height: 30%;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 40px;
-	}
 	#block
 	{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 85%;
-		margin-left: -10%;
-		height: 41%;
+	position: absolute;
+	box-sizing: border-box;
+	padding-right: 85%;
+	margin-left: -10%;
+	height: 41%;
 	}
-	button
+	button.Mic
 	{
-		position: absolute;
-		margin-left: -135px;
-		padding-right: 1vw;
-		max-height: 100%
+	position: absolute;
+	margin-left: -135px;
+	padding-right: 1vw;
+	max-height: 100%
 	}
 	#YouSaid
 	{
@@ -529,29 +384,7 @@ color: blueviolet
 	width: 68%;
 	overflow-y: scroll;
 	}
-	#You
-	{
-	font-size: 22px;
-	color: blueviolet
-	}
-	#Bot
-	{
-	font-size: 22px;
-	color: blueviolet
-	}
-	#Eureka
-	{
-	font-size: 90px;
-	font-family:-webkit-pictograph;
-	top: 40%;
-	}
 	@media screen and (max-height: 1400px) {
-	#amanchhing
-	{
-	left: 390%;
-	font-size: 27px;
-	top: 84%;
-	}
 	.Footimg1
 	{
 	top: 80vh;
@@ -560,12 +393,6 @@ color: blueviolet
 	}
 	}
 	@media screen and (max-height: 1100px) {
-	#amanchhing
-	{
-	left: 390%;
-	font-size: 27px;
-	top: 93%;
-	}
 	.Footimg1
 	{
 	top: 78vh;
@@ -596,67 +423,22 @@ color: blueviolet
 	}
 	#block
 	{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 85%;
-		padding-bottom: -30%;
-		height: 41%;
-	}
-	#Eureka
-	{
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 70%;
-	}
-	#amanchhing
-	{
-	left: 80%;
-	font-size: 24px;
-	top: 128%;
-	}
-	#inner-wrap {
 	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 80px;
-	}
-	}
-	@media screen and (max-height: 700px) {
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: -30px;
-	}
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 90%;
-	}
-	#amanchhing
-	{
-	left: 50%;
-	font-size: 24px;
-	top: 120%;
+	box-sizing: border-box;
+	padding-right: 85%;
+	padding-bottom: -30%;
+	height: 41%;
 	}
 	}
 
 }
 @media screen and (max-width: 680px) {
-	button
+	button.Mic
 	{
-		position: absolute;
-		margin-left: -126px;
-		padding-right: 1vw;
-		max-height: 100%
-	}
-	#amanchhing
-	{
-	left: 290%;
-	font-size: 24px;
-	top: 85%;
+	position: absolute;
+	margin-left: -126px;
+	padding-right: 1vw;
+	max-height: 100%
 	}
 	#YouSaid
 	{
@@ -668,89 +450,9 @@ color: blueviolet
 	position: absolute;
 	left: 17%; 
 	}
-	#Eureka
-	{
-	font-size: 80px;
-	font-family:-webkit-pictograph;
-	top: 39%;
-	}
-	@media screen and (max-height: 1000px) {
-	#amanchhing
-	{
-	left: 290%;
-	font-size: 24px;
-	top: 95%;
-	}
-	}
-	@media screen and (max-height: 800px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 60%;
-	}
-	#amanchhing
-	{
-	left: 50%;
-	font-size: 24px;
-	top: 120%;
-	}
-	}
-	@media screen and (max-height: 700px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 80%;
-	}
-	}
-	@media screen and (max-height: 500px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 115%;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 3%;
-	}
-	#amanchhing
-	{
-	left: 50%;
-	font-size: 24px;
-	top: 170%;
-	}
-	}
-	@media screen and (max-height: 360px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 95%;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	padding-top: 99px;
-	}
-	#amanchhing
-	{
-	left: 50%;
-	font-size: 14px;
-	top: 135%;
-	}
-	}
 }
 @media screen and (max-width: 600px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -116px;
@@ -763,40 +465,15 @@ color: blueviolet
 	left: 16%;
 	top: 14%
 	}
-	@media screen and (max-height: 800px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 60%;
-	}
-	#amanchhing
-	{
-	left: 50%;
-	font-size: 24px;
-	top: 120%;
-	}
-	}
-	@media screen and (max-height: 700px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 73%;
-	}
-	}
 }
 @media screen and (max-width: 550px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -106px;
 		padding-right: 1vw;
 		max-height: 100%
 	}
-	
 	#YouSaid
 	{
 	position: absolute;
@@ -805,7 +482,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 500px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -108px;
@@ -815,7 +492,7 @@ color: blueviolet
 	}
 }
 @media screen and (max-width: 450px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -92px;
@@ -835,82 +512,12 @@ color: blueviolet
 	left: 13%;
 	top: 14%
 	}
-	@media screen and (max-height: 1100px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 80px;
-	font-family:-webkit-pictograph;
-	top: 62px;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 70px;
-	}
-	#amanchhing
-	{
-	left: 590%;
-	top: 125%;
-	}
-	}
-	@media screen and (max-height: 800px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 80px;
-	font-family:-webkit-pictograph;
-	top: 78px;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 90px;
-	}
-	#amanchhing
-	{
-	left: 590%;
-	top: 150%;
-	}
-	}
-	@media screen and (max-height: 760px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 80px;
-	font-family:-webkit-pictograph;
-	top: 78px;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 90px;
-	}
-	#amanchhing
-	{
-	left: 590%;
-	top: 158%;
-	}
-	}
 	@media screen and (max-height: 650px) {
 	.Footimg1
 	{
 	top: 77vh;
 	position: absolute;
 	right: 10%;
-	}
-	#You
-	{
-	font-size: 20px;
-	color: blueviolet
-	}
-	#Bot
-	{
-	font-size: 20px;
-	color: blueviolet
 	}
 	.output-you
 	{
@@ -934,38 +541,14 @@ color: blueviolet
 	font-family:-webkit-pictograph;
 	top: 75%;
 	}
-	#amanchhing
-	{
-	left: 90%;
-	top: 132%;
-	font-size: 23px;
-	}
-	}
-	@media screen and (max-height: 600px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 83px;
-	}
-	#inner-wrap {
-	margin-bottom: 0px;
-	}
-	#amanchhing
-	{
-	left: 290%;
-	top: 165%;
-	font-size: 20px;
-	}
 	}
 	#block
 	{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 85%;
-		margin-left: -13%;
-		height: 41%;
+	position: absolute;
+	box-sizing: border-box;
+	padding-right: 85%;
+	margin-left: -13%;
+	height: 41%;
 	}
 	
 	#EurekaReplied
@@ -980,91 +563,30 @@ color: blueviolet
 	
 }
 @media screen and (max-width: 400px) {
-	button
+	button.Mic
 	{
-		position: absolute;
-		margin-left: -85px;
-		padding-right: 15vw;
-		padding-left: 4vw;
-		max-height: 100%
-	}
-	#inner-wrap {
 	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
+	margin-left: -85px;
+	padding-right: 15vw;
+	padding-left: 4vw;
+	max-height: 100%
 	}
-
 	.Footimg1
 	{
 	top: 81.5vh;
 	position: absolute;
 	right: 10%;
 	}
-	@media screen and (max-height: 700px) {
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: -30px;
-	}
-	}
-	@media screen and (max-height: 500px) {
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 40px;
-	}
-	#Eureka
-	{
-	font-size: 50px;
-	font-family:-webkit-pictograph;
-	top: 135%;
-	}
-	}
 	
 }
 @media screen and (max-width: 360px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -85px;
 		padding-right: 18vw;
 		padding-left: 6vw;
 		max-height: 100%
-	}
-	@media screen and (max-height: 650px) {
-	#amanchhing
-	{
-	left: 290%;
-	top: 145%;
-	font-size: 20px;
-	}
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: -18px;
-	}
-	}
-	
-	@media screen and (max-height: 600px) {
-	#Eureka
-	{
-	position:absolute;
-	font-size: 60px;
-	font-family:-webkit-pictograph;
-	top: 81px;
-	}
-	#inner-wrap {
-	margin-bottom: 0px;
-	}
-	#amanchhing
-	{
-	left: 290%;
-	top: 165%;
-	font-size: 20px;
-	}
 	}
 	@media screen and (max-height: 580px) {
 	.Footimg1
@@ -1073,23 +595,14 @@ color: blueviolet
 	position: absolute;
 	right: 10%;
 	}
-	#Eureka
-	{
-	top: 70px;
-	}
-	#amanchhing
-	{
-	left: 390%;
-	top: 172%;
-	}
 	#block
 	{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 75%;
-		margin-left: -10%;
-		height: 31%;
-		top: 33%;
+	position: absolute;
+	box-sizing: border-box;
+	padding-right: 75%;
+	margin-left: -10%;
+	height: 31%;
+	top: 33%;
 	}
 
 	#YouSaid
@@ -1126,50 +639,11 @@ color: blueviolet
 	{
 	font-size: 17px;
 	color: blue
-	}
-	
-	}
-	@media screen and (max-height: 520px) {
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 40px;
-	}
-	#Eureka
-	{
-	font-size: 50px;
-	font-family:-webkit-pictograph;
-	top: 135%;
-	}
-	#amanchhing
-	{
-	left: 90%;
-	top: 215%;
-	}
-	}
-	@media screen and (max-height: 400px) {
-	#inner-wrap {
-	position: absolute;
-	max-width: 100vw;
-	max-height: 30%;
-	margin-bottom: 60px;
-	}
-	#Eureka
-	{
-	font-size: 50px;
-	font-family:-webkit-pictograph;
-	top: 155%;
-	}
-	#amanchhing
-	{
-	left: 90%;
-	top: 260%;
-	}
+	}	
 	}
 }
 @media screen and (max-width: 320px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -85px;
@@ -1224,7 +698,7 @@ color: blueviolet
 	
 }
 @media screen and (max-width: 260px) {
-	button
+	button.Mic
 	{
 		position: absolute;
 		margin-left: -65px;
