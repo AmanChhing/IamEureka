@@ -53,6 +53,12 @@ body {
   }
 }
 
+#EurekaLogo
+{
+	width: 70%;
+	height: 30%;
+	float: left;
+}
 
 .overlay {
   /* Height & width depends on how you want to reveal the overlay (see JS below) */   
