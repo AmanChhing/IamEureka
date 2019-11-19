@@ -182,10 +182,8 @@ Foot
 }
 input[type="submit"] {
     float:right;
-    width: 20%;
-    
-    right: 20%;
-    height: 30px;
+    width: 3vw;
+    height: 3vh;
     color: black;
     background-color: #82e2ee;
     font-size:larger;
@@ -196,8 +194,8 @@ button {
   display: block;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 12%;
-  height: 111%;
+  width: 12vw;
+  height: 23vh;
   border: 0;
   border-radius: 50%;
   text-align: center;
@@ -205,15 +203,17 @@ button {
   background: linear-gradient(180deg, #39C2C9 0%, #3FC8C9 80%, #3FC8C9 100%);
   box-shadow: 2px 5px 30px rgba(63, 200, 201, .4);
   position: absolute;
-  left: 44%;
-  bottom: 0.5%;
+  left: 44vw;
+  bottom: 0.2vw;
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
 button .fa {
-    font-size: 290px;
-    line-height: 540px;
+    font-size: 8vw;
+    line-height: 4vh;
+    left: 3.5vw;
     margin: 0;
+    position:absolute;
     text-shadow: 1px 2px 2px #2a8b90;
 	}
 button:hover {
@@ -248,35 +248,19 @@ button:focus {
 #YouSaid
 {
 position: absolute;
-bottom: 5%;
-left: 3%;
-height: 70%;
-width: 20%;  
+bottom: 5vh;
+left: 3vw;
+height: 70vh;
+width: 20vw;  
 }
 #EurekaReplied
 {
 position: absolute;
-bottom: 20%;
-right: 3%;
-height: 55%;
-width: 24%;
+bottom: 20vh;
+right: 3vw;
+height: 55vh;
+width: 24vw;
 overflow-y: scroll; 
-}
-#You,Bot
-{
-font-size: 30px;
-color: blueviolet
-}
-.output-you
-{
-	font-size: 19px;
-	color: blue;
-}
-.output-bot
-{
-	font-size: 19px;
-	color: blue;
-	overflow-y: scroll;
 }
 #InputText
 {
@@ -291,33 +275,36 @@ color: blueviolet
 }
 @media screen and (max-width: 3840px) {
 	.header a {
-  	font-size: 105px;
+  	font-size: 3vw;
   	font-weight: bold;
   	position:absolute;
-  	right: 0.5%;
-  	top:10%;
+  	right: 0.5vw;
+  	top: 4vw;
 	}
 	#YouSaid
 	{
-	width: 15%;
+	width: 15vw;
 	}
 	#You,#Bot
 	{
-	font-size: 70px;
+	font-size: 2.5vw;
 	color: blueviolet
 	}
 	#InputText,input[type="submit"]
 	{
-	height: 60px;
-	font-size: 43px;
+	height: 1.8vw;
+	font-size: 1.2vw;
 	}
 	#block 
 	{ 
-	left: 19%;  
+	left: 18.2vw;  
 	}
 	#EurekaReplied
 	{
-		left: 75%;
+		left: 76.3vw;
+	}
+	.header {
+		height: 11.5vw;
 	}
 }
 @media screen and (max-width: 1024px) {
