@@ -321,7 +321,6 @@ input[type="submit"]
 	{
 	position:absolute;
 	margin-top: 7.5vh;
-	
 	}
     .mainfoot
     {
@@ -337,8 +336,8 @@ input[type="submit"]
 	{
 	position: absolute;
 	box-sizing: border-box;
-	padding-right: 85vw;
-	margin-left: -10vw;
+	padding-right: 99vw;
+	margin-left: -18vw;
 	height: 41vh;
 	top: 23.5vh;
 	}
@@ -515,6 +514,11 @@ input[type="submit"]
 		height: 23vw;
 	}
 	@media screen and (max-height: 580px) {
+		iframe
+		{
+		position:absolute;
+		margin-top: 4.5vh;
+		}
 		.Footimg1
 		{
 		top: 83vh;
