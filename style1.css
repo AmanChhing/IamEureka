@@ -278,7 +278,11 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
-	
+	iframe
+	{
+	position:absolute;
+	margin-left: 10%;
+	}
 	.header a {
   	font-size: 3vw;
   	font-weight: bold;
@@ -313,6 +317,12 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	iframe
+	{
+	position:absolute;
+	margin-top: 7.5vh;
+	
+	}
     .mainfoot
     {
        max-width: 100vw;
