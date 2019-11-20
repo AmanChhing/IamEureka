@@ -33,7 +33,7 @@ body {
 }
 
 .header a.active {
-  background-color: dodgerblue;
+  background-color: #2196f3;
   color: white;
 }
 
@@ -198,9 +198,9 @@ button {
   transition: all 0.3s ease-out;
 }
 button .fa {
-    font-size: 10vw;
+    font-size: 8.5vw;
     line-height: 4vh;
-    left: 2.9vw;
+    left: 3.3vw;
     margin: 0;
     position:absolute;
     text-shadow: 1px 2px 2px #2a8b90;
@@ -257,18 +257,19 @@ overflow-y: scroll;
 	width: 80%;
 	position: absolute;
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 25px;
 	color: blue;
 	font-family:-webkit-pictograph;
 	font-style:italic;
 }
 @media screen and (max-width: 3840px) {
+	
 	.header a {
   	font-size: 3vw;
   	font-weight: bold;
   	position:absolute;
   	right: 0.5vw;
-  	top: 4vw;
+  	top: 4.3vw;
 	}
 	#YouSaid
 	{
