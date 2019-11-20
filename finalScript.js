@@ -6,6 +6,19 @@ var topscoringintent = ""
 var songpicked = ""
 var youtubeoplist = ""
 var inputarray = [];
+
+var rltdvidModal = document.getElementById("rltdvidModal");
+var rltdquesModal = document.getElementById("rltdquesModal");
+// Get the button that opens the modal
+var rltdvidbtn = document.getElementById("rltdvid");
+var rltdquesbtn = document.getElementById("rltdques");
+// Get the <span> element that closes the modal
+var rltdvidspan = document.getElementsByClassName("close")[0];
+var rltdquesspan = document.getElementsByClassName("close")[1];
+
+
+
+
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
@@ -149,8 +162,10 @@ function playsong()
 function removeIFrame() {
 	window.songpicked = "";
 	outputBot.textContent = "...";
-        //var frame = document.getElementById("block");
 	document.getElementById("block").innerHTML ="";
+	document.getElementById("EurekaOutput").innerHTML ="";
+	rltdquesModal.innerHTML ="";
+	rltdvidModal.innerHTML ="";
         //frame.parentNode.removeChild(div);
 	//document.getElementById("block").removeChild(target);
 	//frame.innerHTML = "";
@@ -486,19 +501,27 @@ function organic_Result(data)
 	alert("Answer = "+data.related_searches[1].link)
 	related_Questions(data)
 	}
-}
+}*/
 function related_Questions(data)
 {
 	if(data.related_questions)
 	{
-	alert("Related Questions 1")
-	alert("question = "+data.related_questions[0].question)
-	alert("Answer = "+data.related_questions[0].answer)
-	alert("Related Questions 2")
-	alert("question = "+data.related_questions[1].question)
-	alert("Answer = "+data.related_questions[1].answer)
+	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Ques." onclick="openrelatedQues();">';
+	
+	rltdquesModal.innerHTML = "<h4 Related Questions 1: /><br>";
+	//alert("Related Questions 1")
+	rltdquesModal.innerHTML += "<b>question: "+data.related_questions[0].question+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	rltdquesModal.innerHTML += "<p>Answer: "+data.related_questions[0].answer+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
+	rltdquesModal.innerHTML += "<h4 Related Questions 2: /><br>";
+	//alert("Related Questions 1")
+	rltdquesModal.innerHTML += "<b>question: "+data.related_questions[1].question+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	rltdquesModal.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
 	}
-}*/
+}
 
 }
 catch(e){
@@ -514,26 +537,30 @@ function createFrame(src){
           "</div>";
 }
 
-var rltdvidModal = document.getElementById("rltdvidModal");
-var rltdquesModal = document.getElementById("rltdquesModal");
-// Get the button that opens the modal
-var rltdvidbtn = document.getElementById("rltdvid");
-var rltdquesbtn = document.getElementById("rltdques");
-// Get the <span> element that closes the modal
-var rltdvidspan = document.getElementsByClassName("close")[0];
-var rltdquesspan = document.getElementsByClassName("close")[1];
-// When the user clicks the button, open the modal 
 
-function openrelatedVid()
-{
-  rltdvidModal.style.display = "block";
+// When the user clicks the button, open the modal 
+var btn = document.getElementById("rltdbtn");
+
+// Get the <span> element that closes the modal
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  rltdquesModal.style.display = "block";
   var element = document.getElementById("Foot");
    element.classList.add("blur");
 }
 
-function openrelatedQues() 
+// When the user clicks on <span> (x), close the modal
+rltdquesspan.onclick = function() {
+rltdquesModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur"); 
+}
+
+
+function openrelatedVid()
 {
-  rltdquesModal.style.display = "block";
+  rltdvidModal.style.display = "block";
   var element = document.getElementById("Foot");
    element.classList.add("blur");
 }
@@ -545,11 +572,6 @@ var element = document.getElementById("Foot");
 element.classList.remove("blur");         
 }
 
-function CloserelatedQues() {
-rltdquesModal.style.display = "none";
-var element = document.getElementById("Foot");
-element.classList.remove("blur"); 
-}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
