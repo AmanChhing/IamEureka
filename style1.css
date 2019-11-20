@@ -44,7 +44,7 @@ body {
 
 #EurekaLogo
 {
-	width: 30%;
+	width: 31%;
 	float: left;
 }
 
@@ -262,6 +262,21 @@ overflow-y: scroll;
 	font-family:-webkit-pictograph;
 	font-style:italic;
 }
+#InputText
+{
+	height: 2.5vw;
+	font-size: 2.5vw;
+}
+input[type="submit"]
+{
+		height: 2.8vw;
+		font-size: 1.6vw;
+}
+#You,#Bot
+	{
+	font-size: 2.5vw;
+	color: blueviolet
+	}
 @media screen and (max-width: 3840px) {
 	
 	.header a {
@@ -274,16 +289,6 @@ overflow-y: scroll;
 	#YouSaid
 	{
 	width: 15vw;
-	}
-	#You,#Bot
-	{
-	font-size: 2.5vw;
-	color: blueviolet
-	}
-	#InputText,input[type="submit"]
-	{
-	height: 1.8vw;
-	font-size: 1.2vw;
 	}
 	#block 
 	{ 
@@ -301,9 +306,8 @@ overflow-y: scroll;
 	.header {
 		height: 13vw;
 	}
-	#InputText,input[type="submit"]
+	input[type="submit"]
 	{
-	height: 2.8vw;
 	font-size: 1.4vw;
 	}
 }
@@ -329,7 +333,7 @@ overflow-y: scroll;
 	}
 	button {
      width: 14vw;
-     height: 14vh;
+     height: 17vw;
 	}
 	button .fa {
     font-size: 13vw;
@@ -356,21 +360,20 @@ overflow-y: scroll;
 	.header {
 		height: 17vw;
 	}
-	#InputText
-	{
-	height: 2.5vw;
-	}
-	input[type="submit"]
-	{
-		width: 7.4vw;
-		height: 2.8vw;
-		font-size: 1.9vw;
-	}
+	
 	#You,#Bot
 	{
 	font-size: 3.5vw;
 	color: blueviolet
 	}
+	input[type="submit"]
+	{
+	font-size: 1.9vw;
+	width: 5vw;
+	position:absolute;
+	left: 30vw;
+	}
+
 	@media screen and (max-height: 1100px) {
 	.Footimg1
 	{
@@ -386,14 +389,22 @@ overflow-y: scroll;
 
 }
 @media screen and (max-width: 680px) {
-	
-}
-@media screen and (max-width: 600px) {
 	input[type="submit"]
 	{
 		width: 7.4vw;
-		height: 3.5vw;
+		height: 3.3vw;
 		font-size: 2vw;
+	}
+}
+@media screen and (max-width: 600px) {
+	
+	#You,#Bot
+	{
+	font-size: 4.5vw;
+	color: blueviolet
+	}
+	.header {
+		height: 19vw;
 	}
 	@media screen and (max-height: 760px) {
 		.Footimg1
@@ -403,44 +414,121 @@ overflow-y: scroll;
 	}
 }
 @media screen and (max-width: 550px) {
+	#InputText
+	{
+	height: 2.5vw;
+	font-size: 3.5vw;
+	}
+	input[type="submit"]
+	{
+		width: 7.4vw;
+		height: 3.9vw;
+		font-size: 2.5vw;
+	}
+	#YouSaid
+	{
+	position: absolute;
+	top: 13vh; 
+	}
+	#block
+	{
+	top: 23vh;
+	}
+	#EurekaReplied
+	{
+	bottom: 8vh;
+	}
 
 }
 @media screen and (max-width: 500px) {
+	button {
+     width: 14vw;
+     height: 19vw;
+	}
+	button .fa {
+    font-size: 13vw;
+    line-height: 2vh;
+    left: 3vw;
+	}
 	
+	#You,#Bot
+	{
+	font-size: 5.5vw;
+	color: blueviolet
+	}
 }
 @media screen and (max-width: 450px) {
-	
-}
-@media screen and (max-width: 400px) {
-	
 	.header {
 		height: 20vw;
 	}
+	#InputText
+	{
+	height: 5vw;
+	font-size: 4.2vw;
+	}
+	input[type="submit"]
+	{
+		width: 7.4vw;
+		height: 4.9vw;
+		font-size: 3vw;
+	}
+}
+@media screen and (max-width: 400px) {
+	
+
 }
 @media screen and (max-width: 360px) {
+	button {
+     width: 14vw;
+     height: 21vw;
+     bottom: 1vh;
+	}
 	input[type="submit"]
 	{
 		width: 7.4vw;
 		height: 5vw;
 		font-size: 2.6vw;
 	}
-	
+	#block
+	{
+		top: 23vh;
+	}
+	.header {
+		height: 23vw;
+	}
 	@media screen and (max-height: 580px) {
 		.Footimg1
 		{
 		top: 83vh;
 		}
+		#block
+		{
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 65vw;
+		margin-left: 2vw;
+		height: 31vh;
+		top: 27.5vh;
+		}
+		#EurekaReplied
+		{
+		position: absolute;
+		bottom: 14vh;
+		}
 	}
 }
 @media screen and (max-width: 320px) {
+	input[type="submit"]
+	{
+		width: 9vw;
+		height: 6vw;
+		font-size: 3.5vw;
+	}
 	
 	
 }
 @media screen and (max-width: 260px) {
-	.header {
-		height: 25vw;
-	}
-
+	
 }
 #EurekaReplied
 {
