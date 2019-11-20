@@ -114,7 +114,7 @@ body {
 .output-bot
 {
 	color:blue;
-	font-size: 2vw;
+	font-size: 1.9vw;
 }
 
 .modal {
@@ -308,6 +308,19 @@ input[type="submit"]
 	}
 	.header {
 		height: 11.5vw;
+	}
+	@media screen and (max-height: 700px) {
+	button {
+     width: 6vw;
+     height: 8vw;
+     left: 47vw;
+     bottom: 1vh;
+	}
+	button .fa {
+    font-size: 5vw;
+    line-height: 3vh;
+    left: 1.5vw;
+	}
 	}
 }
 @media screen and (max-width: 1024px) {
