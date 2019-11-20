@@ -313,11 +313,12 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
-      .mainfoot {
+    .mainfoot
+    {
        max-width: 100vw;
 	   max-height: 90px;	/* The width is 100%, when the viewport is 800px or smaller */
-       }
-     .Footimg1
+    }
+    .Footimg1
 	{
 	top: 93vh;
 	position: absolute;
@@ -352,7 +353,7 @@ input[type="submit"]
 	{
 	position: absolute;
 	bottom: 7vh;
-	left: 22vw;
+	left: 12vw;
 	height: 30vh;
 	width: 68vw;
 	overflow-y: scroll;
@@ -373,7 +374,14 @@ input[type="submit"]
 	position:absolute;
 	left: 30vw;
 	}
-
+	#EurekaLogo
+	{
+	width: 41%;
+	float: left;
+	}
+	.header a {
+  	font-size: 5vw;
+	}
 	@media screen and (max-height: 1100px) {
 	.Footimg1
 	{
@@ -468,9 +476,9 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-		width: 7.4vw;
-		height: 4.9vw;
-		font-size: 3vw;
+		width: 9.4vw;
+		height: 5.5vw;
+		font-size: 3.5vw;
 	}
 }
 @media screen and (max-width: 400px) {
@@ -485,9 +493,9 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-		width: 7.4vw;
-		height: 5vw;
-		font-size: 2.6vw;
+		width: 10.4vw;
+		height: 6vw;
+		font-size: 3.6vw;
 	}
 	#block
 	{
