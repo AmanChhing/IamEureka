@@ -547,5 +547,5 @@ function closeNav() {
 }
 
 $(document).ready(function(){
-    document.getElementById('footer').scrollIntoView()
+    document.getElementById('footer').scrollIntoView(false);
 });
