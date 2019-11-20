@@ -538,10 +538,14 @@ function openrelatedQues()
 
 /* For SideBar Panel i.e. Menu */
 function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+  document.getElementById("myNav").style.width = "100%";
 }
 
 /* Close */
 function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+  document.getElementById("myNav").style.width = "0%";
 }
+
+$(document).ready(function(){
+    document.getElementById('footer').scrollIntoView()
+});
