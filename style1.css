@@ -111,7 +111,11 @@ body {
 
 
 
-
+.output-bot
+{
+	color:blue;
+	font-size: 2vw;
+}
 
 .modal {
   display: none; /* Hidden by default */
@@ -317,6 +321,11 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	.output-bot
+	{
+	color:blue;
+	font-size: 3vw;
+	}
 	iframe
 	{
 	position:absolute;
@@ -420,7 +429,11 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 600px) {
-	
+	.output-bot
+	{
+	color:blue;
+	font-size: 3.5vw;
+	}
 	#You,#Bot
 	{
 	font-size: 4.5vw;
@@ -458,6 +471,11 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 500px) {
+	.output-bot
+	{
+	color:blue;
+	font-size: 4.3vw;
+	}
 	input[type="submit"]
 	{
 		height: 4.9vw;
@@ -500,7 +518,11 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 400px) {
-	
+	.output-bot
+	{
+	color:blue;
+	font-size: 4.5vw;
+	}
 
 }
 @media screen and (max-width: 360px) {
