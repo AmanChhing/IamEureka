@@ -218,12 +218,15 @@ function StartTheSearch(MyQuery,MyLocation)
 {
 //alert(MyQuery)
 //alert(MyLocation)
+	var Eurekaoutput = document.getElementById("EurekaOutput");
+	var EurekaText = ""
 try{
 $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B4DFB32E&q="+MyQuery+"&location="+MyLocation+"&hl=en", function(data)
 {
 	if((data.search_parameters.q.toString()).toLowerCase().includes("synonym") || (data.search_parameters.q.toString()).toLowerCase().includes("antonym"))
 	{
-		outputBot.textContent = "i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information";
+		EurekaText = "i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information";
+		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 		say("i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information");
 		related_Questions(data);
 	}
@@ -233,8 +236,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		{
 			if(data.answer_box.answers[0].conversion_type)
 			{
-				outputBot.textContent = ""+data.answer_box.answers[0].original.value +" "+data.answer_box.answers[0].original.unit +"is equal to "+data.answer_box.answers[0].converted.value+" "+data.answer_box.answers[0].converted.unit+".";
-				say(outputBot.textContent);
+				EurekaText = ""+data.answer_box.answers[0].original.value +" "+data.answer_box.answers[0].original.unit +"is equal to "+data.answer_box.answers[0].converted.value+" "+data.answer_box.answers[0].converted.unit+".";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.value + "</h2>";
 				//have to show the data.answer_box.answers[0].converted.value to div
 			}
@@ -242,36 +246,39 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			{
 				if(data.answer_box.answers[0].type == "calculator")
 				{
-				outputBot.textContent = ""+data.answer_box.answers[0].formula +"  "+data.answer_box.answers[0].answer+".";
+				EurekaText = ""+data.answer_box.answers[0].formula +"  "+data.answer_box.answers[0].answer+".";
 				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
-				say(outputBot.textContent);
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				}
 				if(data.answer_box.answers[0].type == "translation")
 				{
-				outputBot.textContent = ""+data.answer_box.answers[0].original.text +" is written in "+data.answer_box.answers[0].converted.language +" as "+data.answer_box.answers[0].converted.text+".";
+				EurekaText = ""+data.answer_box.answers[0].original.text +" is written in "+data.answer_box.answers[0].converted.language +" as "+data.answer_box.answers[0].converted.text+".";
 				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.text + "</h2>";
-				say(outputBot.textContent);
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				//have to show the data.answer_box.answers[0].converted.text to div
 				}
 				if(data.answer_box.answers[0].type == "list")
 				{
 					if(data.answer_box.answers[0].rows)
 					{
-						outputBot.textContent = "Here's the List i found: ";
-						var listtoadd = '<list>'
+						EurekaText = "Here's the List i found: ";
+						var listtoadd = "<list>"
 						for(var x in (data.answer_box.answers[0].rows))
   						{
   							var listitem = data.answer_box.answers[0].rows[x];
 							//var iDiv = document.getElementById('block');
-							listtoadd += '<li>' + listitem + '</li>';
-							outputBot.textContent += (x+1)+":- "+listitem;
+							listtoadd += "<li>" + listitem + "</li>";
+							EurekaText += ", "+listitem;
   						}
+						say(EurekaText);
 						document.getElementById("block").innerHTML = listtoadd +'</list>';
-						say(outputBot.textContent);
+						Eurekaoutput.innerHTML = "<b> Here's the List i found: />"+"<br>"+listtoadd +"</list>";
 						if(data.answer_box.answers[0].source)
 						{
-							outputBot.textContent += "Source: "+data.answer_box.answers[0].source.title;
-							outputBot.textContent += ", link: "+data.answer_box.answers[0].source.link;
+							Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
+							Eurekaoutput.innerHTML += "link: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
 						}
 						//alert(data.answer_box.answers[0].rows)//have to show it to div
 					}
@@ -282,43 +289,46 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			
 					var stable = '<table>';
   					var values = ""
-					outputBot.textContent = "Here's the table i found: ";
+					EurekaText = "Here's something i found: ";
   					for(var x in (data.answer_box.answers[0].rows))
   					{
 					var trvalue = '<tr>';
-					outputBot.textContent = (x+1)+":- ";
+					//outputBot.textContent = (x+1)+":- ";
 					for(var y in data.answer_box.answers[0].rows[x])
 					{
 						trvalue = trvalue + '<td>'+(data.answer_box.answers[0].rows[x][y])+'</td>';
-						outputBot.textContent += data.answer_box.answers[0].rows[x][y] +", ";
+						//outputBot.textContent += data.answer_box.answers[0].rows[x][y] +", ";
 					}
 					trvalue = trvalue+'</tr>'
 					values += trvalue;
   					}
   					stable = stable+values+'</table>'
 					document.getElementById("block").innerHTML = stable;
-  					//alert(stable)
-					say(outputBot.textContent);
+					Eurekaoutput.innerHTML = "<b>"+EurekaText+"</b>"+stable;
+					say(EurekaText);
 					if(data.answer_box.answers[0].source)
 					{
-						//alert("Came here")
-						outputBot.textContent += "Source: "+data.answer_box.answers[0].source.title;
-						outputBot.textContent += ", link: "+data.answer_box.answers[0].source.link;
+						Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
+						Eurekaoutput.innerHTML += "link: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
 					}
 					//alert("Came here")
 					//alert(data.answer_box.answers[0].rows) //have to show it to div.
 				}
 				if(data.answer_box.answers[0].type == "route")
 				{
-					outputBot.textContent = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
+					EurekaText = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
+					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 					document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].routes[0].distance + "</h2>";
-					say(outputBot.textContent);
+					say(EurekaText);
 				}
 			}
 			else if(data.answer_box.answers[0].answer == "Lyrics")
 			{
-				outputBot.textContent = "Title: "+data.organic_results[0].title;
-				outputBot.textContent += ", Link: "+data.organic_results[0].link;
+				Eurekaoutput.innerHTML = "<br> Title: "+data.organic_results[0].title+"<br>";
+				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				//outputBot.textContent = "Title: "+data.organic_results[0].title;
+				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
 				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
 				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
 			}
@@ -326,8 +336,11 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			{
 				if((data.answer_box.answers[0].classification.toString()).includes("title") || (data.answer_box.answers[0].classification.toString()).includes("recording_cluster"))
 				{
-				outputBot.textContent = "Title: "+data.organic_results[0].title;
-				outputBot.textContent += ", Link: "+data.organic_results[0].link;
+				Eurekaoutput.innerHTML = "<br Title: "+data.organic_results[0].title+"<br>";
+				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				//outputBot.textContent = "Title: "+data.organic_results[0].title;
+				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
 				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
 				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
 				}					
@@ -335,10 +348,11 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				{
 					if(data.answer_box.answers[0].category)
 					{
-					outputBot.textContent = data.answer_box.answers[0].category + " is ";
+					EurekaText = data.answer_box.answers[0].category + " is ";
 					}
-					outputBot.textContent += " "+data.answer_box.answers[0].answer;
-					say(outputBot.textContent);
+					EurekaText += " "+data.answer_box.answers[0].answer;
+					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+					say(EurekaText);
 					if(data.answer_box.answers[0].images)
 					{
 					//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
@@ -352,8 +366,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			}
 			else
 			{
-				outputBot.textContent = ""+data.answer_box.answers[0].answer+".";
-				say(outputBot.textContent);
+				EurekaText = ""+data.answer_box.answers[0].answer+".";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				if(data.answer_box.answers[0].images)
 				{
 				//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
@@ -365,7 +380,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				}
 				if(data.answer_box.answers[0].source)
 				{
-					outputBot.textContent += ", Source: "+data.answer_box.answers[0].source.link;
+					Eurekaoutput.innerHTML += "<br> Source: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+
+					//outputBot.textContent += ", Source: "+data.answer_box.answers[0].source.link;
 				}
 			}
 		}
@@ -373,7 +390,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 	}
 	else if(data.weather_box)
 	{
-		outputBot.textContent = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
+		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
 		if(data.weather_box.current)
 		{
 			if(data.weather_box.current.image)
@@ -385,23 +402,29 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			{
 				document.getElementById("block").innerHTML = "<h2>" + data.weather_box.current.temperature[1].value + "</h2>";
 			}
-			outputBot.textContent += ", there is a "+data.weather_box.current.precipitation.value +" Percent Chance of Rain today";
-			outputBot.textContent += ", humidity is "+data.weather_box.current.humidity.value +" Percent";
-			outputBot.textContent += " and the temperature is "+data.weather_box.current.temperature[1].value +" degree "+data.weather_box.current.temperature[1].unit +" Right now";
+			EurekaText += ", there is a "+data.weather_box.current.precipitation.value +" Percent Chance of Rain today";
+			EurekaText += ", humidity is "+data.weather_box.current.humidity.value +" Percent";
+			EurekaText += " and the temperature is "+data.weather_box.current.temperature[1].value +" degree "+data.weather_box.current.temperature[1].unit +" Right now";
 		}
-		say(outputBot.textContent);
+		say(EurekaText);
+		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>"
 	}
 	else if(data.local_map)
 	{
-		outputBot.textContent = ", Link: "+data.local_map.link;
+		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
+		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
+		//outputBot.textContent = ", Link: "+data.local_map.link;
+		
 		say("Here's Something i found, Opening it now.");
+		window.open(data.local_map.link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
 	}
 	else if(data.knowledge_graph)
 	{
 		if(data.knowledge_graph.description)
 		{
-			outputBot.textContent = ""+data.knowledge_graph.description+".";
-			say(outputBot.textContent);
+			EurekaText = ""+data.knowledge_graph.description+".";
+			say(EurekaText);
+			Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 		}
 		if(data.knowledge_graph.images)
 		{
@@ -410,12 +433,16 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		}
 		if(data.knowledge_graph.source)
 		{
-			outputBot.textContent += "Source: "+data.knowledge_graph.source.name;
-			outputBot.textContent += ", link: "+data.knowledge_graph.source.link;
+			//outputBot.textContent += "Source: "+data.knowledge_graph.source.name;
+			//outputBot.textContent += ", link: "+data.knowledge_graph.source.link;
+			
+			Eurekaoutput.innerHTML += "<br Source: "+data.knowledge_graph.source.name+"<br>";
+			Eurekaoutput.innerHTML += "link: <a href="+data.knowledge_graph.source.link+" target= '_blank'>"+data.knowledge_graph.source.link+"</a>";
+				
 		}
 		if(data.knowledge_graph.known_attributes)
 		{
-			outputBot.textContent += data.knowledge_graph.known_attributes[0].name + " = "+data.knowledge_graph.known_attributes[0].value;
+			Eurekaoutput.innerHTML += "<br>"+data.knowledge_graph.known_attributes[0].name + " = "+data.knowledge_graph.known_attributes[0].value;
 		}
 		say("Please refer to Related Questions for more information.");
 		related_Questions(data);
@@ -429,18 +456,21 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 });
 function organic_Result(data)
 {
-	outputBot.textContent = ""+data.organic_results[0].snippet+".";
-	say(outputBot.textContent);
-	outputBot.textContent += ", Link: " +data.organic_results[0].link;
+	EurekaText = ""+data.organic_results[0].snippet+".";
+	say(EurekaText);
+	Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+	//outputBot.textContent += ", Link: " +data.organic_results[0].link;
+	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+
 	if(data.organic_results[0].rich_snippet)
 	{
-		outputBot.textContent += " "+data.organic_results[0].rich_snippet.top.extensions;
+		Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
 		document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
 		//say(data.organic_results[0].rich_snippet.top.extensions);
 	}
-	outputBot.textContent += "Alternate Result: "
-	outputBot.textContent += data.organic_results[1].snippet;
-	outputBot.textContent += "Link = " +data.organic_results[1].link;
+	Eurekaoutput.innerHTML +=  "<br> <b>Alternate Result: </b>"
+	Eurekaoutput.innerHTML += "<br>"+data.organic_results[1].snippet;
+	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[1].link+" target= '_blank'>"+data.organic_results[1].link+"</a>";
 	say("Please refer to Alternate Result and Related Questions if you are not satisfied with my answer.");
 	related_Questions(data);
 }
@@ -509,31 +539,31 @@ function openrelatedQues()
 }
 
 // When the user clicks on <span> (x), close the modal
-//rltdvidspan.onclick = function() {
-  //rltdvidModal.style.display = "none";
-//var element = document.getElementById("Foot");
-//element.classList.remove("blur");         
-//}
+function CloserelatedVid() {
+ rltdvidModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur");         
+}
 
-//rltdquesspan.onclick = function() {
-  //rltdquesModal.style.display = "none";
-//var element = document.getElementById("Foot");
-//element.classList.remove("blur"); 
-//}
+function CloserelatedQues() {
+rltdquesModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur"); 
+}
 
 // When the user clicks anywhere outside of the modal, close it
-//window.onclick = function(event) {
-  //if (event.target == rltdvidModal) {
-    //rltdvidModal.style.display = "none";
-//var element = document.getElementById("Foot");
-//element.classList.remove("blur");
-  //}
-  //if (event.target == rltdquesModal) {
-    //rltdquesModal.style.display = "none";
-//var element = document.getElementById("Foot");
-//element.classList.remove("blur");
-  //}
-//}
+window.onclick = function(event) {
+  if (event.target == rltdvidModal) {
+    rltdvidModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur");
+  }
+  if (event.target == rltdquesModal) {
+    rltdquesModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur");
+  }
+}
 
 
 /* For SideBar Panel i.e. Menu */
