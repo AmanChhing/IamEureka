@@ -509,7 +509,7 @@ input[type="submit"]
 	font-size: 5.5vw;
 	color: blueviolet
 	}
-	@media screen and (max-height: 700px) {
+	@media screen and (max-height: 800px) {
 		button {
      left: 43vw;
 	}
