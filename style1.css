@@ -354,7 +354,7 @@ input[type="submit"]
 	{
 	position: absolute;
 	top: 15vh;
-	left: 22vw;
+	left: 12vw;
 	height: 7.5vh;
 	width: 38vw;  
 	}
@@ -371,17 +371,23 @@ input[type="submit"]
 		height: 17vw;
 	}
 	
-	#You,#Bot
+	#You, #Bot
 	{
 	font-size: 3.5vw;
 	color: blueviolet
+	}
+	#InputText
+	{
+	width: 45vw;
+	height: 2.5vh;
+	font-size: 3.1vw;
 	}
 	input[type="submit"]
 	{
 	font-size: 1.9vw;
 	width: 5vw;
 	position:absolute;
-	left: 30vw;
+	left: 45vw;
 	}
 	#EurekaLogo
 	{
@@ -409,7 +415,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		width: 7.4vw;
-		height: 3.3vw;
+		height: 4vw;
 		font-size: 2vw;
 	}
 }
@@ -431,16 +437,10 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 550px) {
-	#InputText
-	{
-	height: 2.5vw;
-	font-size: 3.5vw;
-	}
+
 	input[type="submit"]
 	{
-		width: 7.4vw;
-		height: 3.9vw;
-		font-size: 2.5vw;
+		font-size: 2.7vw;
 	}
 	#YouSaid
 	{
@@ -458,6 +458,11 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 500px) {
+	input[type="submit"]
+	{
+		height: 4.9vw;
+		font-size: 3vw;
+	}
 	button {
      width: 14vw;
      height: 19vw;
@@ -476,11 +481,11 @@ input[type="submit"]
 }
 @media screen and (max-width: 450px) {
 	.header {
-		height: 20vw;
+		height: 23vw;
 	}
 	#InputText
 	{
-	height: 5vw;
+	height: 5.5vw;
 	font-size: 4.2vw;
 	}
 	input[type="submit"]
@@ -488,6 +493,10 @@ input[type="submit"]
 		width: 9.4vw;
 		height: 5.5vw;
 		font-size: 3.5vw;
+	}
+	#block
+	{
+	top: 22.5vh;
 	}
 }
 @media screen and (max-width: 400px) {
@@ -500,18 +509,23 @@ input[type="submit"]
      height: 21vw;
      bottom: 1vh;
 	}
+	#InputText
+	{
+	height: 6.5vw;
+	font-size: 5.2vw;
+	}
 	input[type="submit"]
 	{
 		width: 10.4vw;
-		height: 6vw;
-		font-size: 3.6vw;
+		height: 6.5vw;
+		font-size: 3.9vw;
 	}
 	#block
 	{
 		top: 23vh;
 	}
 	.header {
-		height: 23vw;
+		height: 24vw;
 	}
 	@media screen and (max-height: 580px) {
 		iframe
@@ -527,10 +541,10 @@ input[type="submit"]
 		{
 		position: absolute;
 		box-sizing: border-box;
-		padding-right: 65vw;
-		margin-left: 2vw;
-		height: 31vh;
-		top: 27.5vh;
+		padding-right: 75vw;
+		margin-left: -12vw;
+		height: 35vh;
+		top: 25vh;
 		}
 		#EurekaReplied
 		{
@@ -550,16 +564,14 @@ input[type="submit"]
 	
 }
 @media screen and (max-width: 260px) {
-	
+	.header {
+		height: 28vw;
+	}
 }
 #EurekaReplied
 {
 overflow-y: scroll; 
 }
-/*#block
-{
-overflow-y: scroll;
-}*/
 table {
   border-collapse: collapse;
 }
