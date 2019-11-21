@@ -322,6 +322,20 @@ input[type="submit"]
 	.header {
 		height: 11.5vw;
 	}
+	#Blockimage
+	{
+	width: 70%;
+	height: 60%;
+	position:absolute;
+	left: 15%;
+	top: 1%;
+	}
+	#rltdbtn
+	{
+	width: 60%;
+	height: 15%;
+	font-size: 60px;
+	}
 	
 	@media screen and (max-height: 700px) {
 	button {
@@ -335,6 +349,7 @@ input[type="submit"]
     line-height: 3vh;
     left: 1.5vw;
 	}
+
 	}
 }
 
