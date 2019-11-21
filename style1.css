@@ -8,6 +8,12 @@
 	font-size: 25px;
 }
 
+#RltdQuesdiv
+{
+	font-size: 20px;
+	margin: -60px 20px 20px 20px;
+	width: 90%;
+}
 
 
 * {box-sizing: border-box;}
@@ -149,19 +155,18 @@ body {
 */
 /* Modal Content */
 .modal-content {
-  background-color: skyblue;
-  margin: auto;
-  padding: 20px;
   border: 1px solid #888;
-  width: 60%;
+  margin: -60px 20px 50px 20px;
+  width: 90%;
 }
 
 /* The Close Button */
 .close {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 48px;
   font-weight: bold;
+  margin-right: 4%;
 }
 
 .close:hover,
@@ -768,8 +773,4 @@ th, td {
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color: #f5f5f5;}
 
-#RltdQuesdiv
-{
-	font-size: 20px;
-	margin: -60px 20px 20px 20px;
-}
+
