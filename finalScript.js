@@ -9,6 +9,7 @@ var inputarray = [];
 
 var rltdvidModal = document.getElementById("rltdvidModal");
 var rltdquesModal = document.getElementById("rltdquesModal");
+var addrltdques = document.getElementById("RltdQuesdiv");
 // Get the button that opens the modal
 var rltdvidbtn = document.getElementById("rltdvid");
 var rltdquesbtn = document.getElementById("rltdques");
@@ -177,7 +178,7 @@ function say(m) {
   //msg.voice = voices[10];
   msg.voiceURI = "native";
   msg.volume = 1;
-  msg.rate = 1;
+  msg.rate = 0.95;
   msg.pitch = 1;
   msg.text = m;
   msg.lang = 'hi-EN';
@@ -240,7 +241,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 {
 	if((data.search_parameters.q.toString()).toLowerCase().includes("synonym") || (data.search_parameters.q.toString()).toLowerCase().includes("antonym"))
 	{
-		EurekaText = "i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information";
+		EurekaText = "i'm sorry, i couldn't find the exact answers";
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 		say("i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information");
 		document.getElementById("block").innerHTML = createFrame("Dictionary.jpg");
@@ -510,17 +511,17 @@ function related_Questions(data)
 	say("Please refer to  Related Questions if you are not satisfied with my answer.");
 	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Ques." onclick="openrelatedQues();">';
 	
-	rltdquesModal.innerHTML = "<h4 Related Questions 1: /><br>";
+	addrltdques.innerHTML = "<h4 Related Questions 1: /><br>";
 	//alert("Related Questions 1")
-	rltdquesModal.innerHTML += "<b>question: "+data.related_questions[0].question+"</b>";
+	addrltdques.innerHTML += "<b>question: "+data.related_questions[0].question+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	rltdquesModal.innerHTML += "<p>Answer: "+data.related_questions[0].answer+"</p>";
+	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[0].answer+"</p>";
 	//alert("Answer = "+data.related_questions[0].answer)
-	rltdquesModal.innerHTML += "<h4 Related Questions 2: /><br>";
+	addrltdques.innerHTML += "<h4 Related Questions 2: /><br>";
 	//alert("Related Questions 1")
-	rltdquesModal.innerHTML += "<b>question: "+data.related_questions[1].question+"</b>";
+	addrltdques.innerHTML += "<b>question: "+data.related_questions[1].question+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	rltdquesModal.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
+	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
@@ -540,10 +541,6 @@ function createFrame(src){
 }
 
 
-// When the user clicks the button, open the modal 
-var btn = document.getElementById("rltdbtn");
-
-// Get the <span> element that closes the modal
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
@@ -562,7 +559,7 @@ element.classList.remove("blur");
 }
 
 
-function openrelatedVid()
+/*function openrelatedVid()
 {
   rltdvidModal.style.display = "block";
   var element = document.getElementById("Foot");
@@ -574,20 +571,23 @@ function CloserelatedVid() {
  rltdvidModal.style.display = "none";
 var element = document.getElementById("Foot");
 element.classList.remove("blur");         
-}
+}*/
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == rltdvidModal) {
-    rltdvidModal.style.display = "none";
-var element = document.getElementById("Foot");
-element.classList.remove("blur");
+window.onclick = function(event)
+{
+  if (event.target == rltdvidModal) 
+  {
+    	rltdvidModal.style.display = "none";
+	var element = document.getElementById("Foot");
+	element.classList.remove("blur");
   }
-  if (event.target == rltdquesModal) {
-    rltdquesModal.style.display = "none";
-var element = document.getElementById("Foot");
-element.classList.remove("blur");
+  if (event.target == rltdquesModal)
+  {
+    	rltdquesModal.style.display = "none";
+	var element = document.getElementById("Foot");
+	element.classList.remove("blur");
   }
 }
 
