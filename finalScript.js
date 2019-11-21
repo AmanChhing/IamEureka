@@ -26,7 +26,7 @@ var recognition = new SpeechRecognition();
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
-say("Hi there, i am Jarvis music. tell me to play anything and i will do so.")
+//say("Hi there, i am Jarvis music. tell me to play anything and i will do so.")
 
 document.querySelector('button').addEventListener('click', () => {
   recognition.start();
@@ -241,9 +241,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 {
 	if((data.search_parameters.q.toString()).toLowerCase().includes("synonym") || (data.search_parameters.q.toString()).toLowerCase().includes("antonym"))
 	{
-		EurekaText = "i'm sorry, i couldn't find the exact answers";
+		EurekaText = "i'm sorry, i couldn't find the exact answers, Please refer to the Related Questions for more information";
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-		say("i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information");
+		say("i'm sorry, i couldn't find exact answers");
 		document.getElementById("block").innerHTML = createFrame("Dictionary.jpg");
 		related_Questions(data);
 	}
@@ -461,7 +461,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		{
 			Eurekaoutput.innerHTML += "<br>"+data.knowledge_graph.known_attributes[0].name + " = "+data.knowledge_graph.known_attributes[0].value;
 		}
-		say("Please refer to Related Questions for more information.");
+		//say("Please refer to Related Questions for more information.");
 		related_Questions(data);
 		
 	}
@@ -508,7 +508,7 @@ function related_Questions(data)
 {
 	if(data.related_questions)
 	{
-	say("Please refer to  Related Questions if you are not satisfied with my answer.");
+	say("Please refer to Related Questions for more information.");
 	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Ques." onclick="openrelatedQues();">';
 	
 	addrltdques.innerHTML = "<h4 Related Questions 1: /><br>";
