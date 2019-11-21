@@ -1,776 +1,605 @@
-#rltdbtn
+var outputYou = document.querySelector('.output-you');
+var outputBot = document.querySelector('.output-bot');
+//const songpickedhtml = document.querySelector('.song-picked');
+var url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4cd5f898-0879-4a56-bf96-4220a1c0654e?verbose=true&timezoneOffset=0&subscription-key=51f106d2672240958a1f931a8d02eae3&q="
+var topscoringintent = ""
+var songpicked = ""
+var youtubeoplist = ""
+var inputarray = [];
+
+var rltdvidModal = document.getElementById("rltdvidModal");
+var rltdquesModal = document.getElementById("rltdquesModal");
+var addrltdques = document.getElementById("RltdQuesdiv");
+// Get the button that opens the modal
+var rltdvidbtn = document.getElementById("rltdvid");
+var rltdquesbtn = document.getElementById("rltdques");
+// Get the <span> element that closes the modal
+var rltdvidspan = document.getElementsByClassName("close")[0];
+var rltdquesspan = document.getElementsByClassName("close")[1];
+
+
+
+
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = new SpeechRecognition();
+
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+//say("Hi there, i am Jarvis music. tell me to play anything and i will do so.")
+
+document.querySelector('button').addEventListener('click', () => {
+  recognition.start();
+});
+
+recognition.addEventListener('speechstart', () => {
+  console.log('Speech has been detected.');
+});
+
+recognition.addEventListener('result', (e) => {
+  console.log('Result has been detected.');
+
+  let last = e.results.length - 1;
+  let text = e.results[last][0].transcript;
+  
+
+  document.getElementById("InputText").value = text;
+  getjsonfile();
+  console.log('Confidence: ' + e.results[0][0].confidence);
+});
+
+recognition.addEventListener('speechend', () => {
+  recognition.stop();
+});
+
+recognition.addEventListener('error', (e) => {
+  outputBot.textContent = 'Error: ' + e.error;
+});
+
+function synthVoice(text) {
+  var synth = window.speechSynthesis;
+  var utterance = new SpeechSynthesisUtterance();
+  utterance.text = text;
+  synth.speak(utterance);
+}
+
+function getjsonfile() 
 {
-	width: 50%;
-	height: 20%;
-	position:absolute;
-	left: 1%;
-	padding-top: 1%;
-	font-size: 25px;
+	removeIFrame();
+	if(document.getElementById("InputText").value === "")
+	{
+		alert("Oophs! seems your input value is empty, Please enter something or use the mic to say something!");
+	}
+	else
+	{
+		AddToInputList(document.getElementById("InputText").value);
+		$.getJSON(url+document.getElementById("InputText").value, function(data) {
+    		window.topscoringintent = data.topScoringIntent.intent.toString();
+		playsongornot(data)
+		});
+	}
 }
 
-#RltdQuesdiv
+function playsongornot(data)
 {
-	font-size: 20px;
-	margin: -60px 20px 20px 20px;
-	width: 90%;
+	
+	if(window.topscoringintent.toLowerCase() === "play")
+	{
+
+		for(var i = 0; i < data.entities.length ; i++)
+		{
+			window.songpicked += data["entities"][i].entity.toString() + " "
+		}
+		if(window.songpicked != "")
+		{
+			outputBot.textContent = "Sure, Playing : " + window.songpicked;
+			say("Sure, Playing : " + window.songpicked);
+			gapi.load('client', playsong)
+			
+		}
+		else
+		{
+		outputBot.textContent = "I'm sorry, i couldn't hear what you want me to play, please repeat again using keywords like play."
+		say("I'm sorry, i couldn't hear what you want me to play, please repeat again using keywords like play, music,start song etc..")
+		}
+		
+	}
+	else if(window.topscoringintent.toLowerCase() === "googlesearch")
+	{
+		StartSearch(data.query)
+	}
+	else
+	{
+	outputBot.textContent = "I'm sorry, i don't have it's answer right now."
+	say("I'm sorry, i don't have it's answer right now.")
+		
+	}
+	
 }
 
 
-* {box-sizing: border-box;}
 
-body { 
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-  overflow: hidden;
-  background-color: #2196f3;
-  padding: 20px 10px;
-}
-
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.header a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.header a.active {
-  background-color: #2196f3;
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
-
-#EurekaLogo
+function playsong()
 {
-	width: 31%;
-	float: left;
+	//gapi.load('466240921973-3ig72n53f5p11fluka1ev4f5el3qm4ca.apps.googleusercontent.com', search)
+	var searchTerm = window.songpicked
+ 	var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
+  	gapi.client.init
+	({
+    		'apiKey': apiKey, 
+    		'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+  	}).then(function()
+	{
+    		return gapi.client.youtube.search.list
+		({
+      			q: searchTerm,
+      			part: 'snippet'
+    		});
+  	}).then(function(response) 
+		{
+		
+		var searchResult = response.result;
+    		var firstVideo = searchResult.items[0]
+		var url = "https://www.youtube.com/embed/"+(firstVideo.id.videoId).toString()+"?autoplay=1&enablejsapi=1&list=RD"+(firstVideo.id.videoId).toString()+"&start_radio=1"	
+		var iDiv = document.getElementById('block')
+		var ifrm = document.createElement("iframe")
+        ifrm.setAttribute("src", url)
+		ifrm.setAttribute("id", "target")
+		ifrm.className = 'iframeclass';
+		ifrm.setAttribute("allow","autoplay")
+		ifrm.setAttribute("frameborder","0")
+		ifrm.setAttribute('allowFullScreen', '')
+		ifrm.setAttribute('picture-in-picture', '')
+		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 80%; height: 60%; }").appendTo("head");
+		iDiv.appendChild(ifrm);
+		//sheet.insertRule("@media only screen and (max-width : 768px) { #target { position: absolute; width: 90%; height: 60%; } }");
+		var divFirst = document.getElementById("target")
+		divFirst.scrollIntoView(false)
+		
+  		});
+
 }
 
-.overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-  height: 100%;
-  width: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+function removeIFrame() {
+	window.songpicked = "";
+	outputBot.textContent = "...";
+	document.getElementById("block").innerHTML ="";
+	document.getElementById("EurekaOutput").innerHTML ="";
+	addrltdques.innerHTML ="";
+        //frame.parentNode.removeChild(div);
+	//document.getElementById("block").removeChild(target);
+	//frame.innerHTML = "";
+    }
+
+function say(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  //msg.voice = voices[10];
+  msg.voiceURI = "native";
+  msg.volume = 1;
+  msg.rate = 0.95;
+  msg.pitch = 1;
+  msg.text = m;
+  msg.lang = 'hi-EN';
+  speechSynthesis.speak(msg);
 }
 
-/* Position the content inside the overlay */
-.overlay-content {
-  position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+function AddToInputList(text)
+{
+	//alert(text);
+	if(window.inputarray.length < 10)
+	{
+		//alert(text);
+		if(!window.inputarray.includes(text))
+		{
+		window.inputarray.push(text);
+		}
+	}
+	var mycars = new Array();
+//Create and append the options
+	for (var i = 0; i < window.inputarray.length; i++) {
+    	mycars[i]= window.inputarray[i];
+	}
+
+  	var options = '';
+  	for(var i = 0; i < mycars.length; i++)
+    	options += '<option value="'+mycars[i]+'" />';
+
+  	document.getElementById('cars').innerHTML = options;
+}
+var input = document.getElementById("InputText");
+input.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        getjsonfile();
+
+    }
+});
+
+
+
+
+function StartSearch(querytosearch)
+{
+	var MyQuery = querytosearch.toString();
+	var mylocation = "";
+	$.get("https://ipinfo.io?token=d5ab99a99519fb", function(response) {
+  	mylocation = response.city+","+response.region+",India";
+  	StartTheSearch(MyQuery,mylocation);
+	});
+	
 }
 
-/* The navigation links inside the overlay */
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
+function StartTheSearch(MyQuery,MyLocation)
+{
+//alert(MyQuery)
+//alert(MyLocation)
+	var Eurekaoutput = document.getElementById("EurekaOutput");
+	var EurekaText = ""
+try{
+$.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B4DFB32E&q="+MyQuery+"&location="+MyLocation+"&hl=en", function(data)
+{
+	if((data.search_parameters.q.toString()).toLowerCase().includes("synonym") || (data.search_parameters.q.toString()).toLowerCase().includes("antonym"))
+	{
+		EurekaText = "i'm sorry, i couldn't find the exact answers, Please refer to the Related Questions for more information";
+		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+		say("i'm sorry, i couldn't find exact answers");
+		document.getElementById("block").innerHTML = createFrame("Dictionary.jpg");
+		related_Questions(data);
+	}
+	else if(data.answer_box)
+	{
+		if(data.answer_box.answers)
+		{
+			if(data.answer_box.answers[0].conversion_type)
+			{
+				EurekaText = ""+data.answer_box.answers[0].original.value +" "+data.answer_box.answers[0].original.unit +"is equal to "+data.answer_box.answers[0].converted.value+" "+data.answer_box.answers[0].converted.unit+".";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.value + "</h2>";
+				//have to show the data.answer_box.answers[0].converted.value to div
+			}
+			else if(data.answer_box.answers[0].type)
+			{
+				if(data.answer_box.answers[0].type == "calculator")
+				{
+				EurekaText = ""+data.answer_box.answers[0].formula +"  "+data.answer_box.answers[0].answer+".";
+				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+				}
+				if(data.answer_box.answers[0].type == "translation")
+				{
+				EurekaText = ""+data.answer_box.answers[0].original.text +" is written in "+data.answer_box.answers[0].converted.language +" as "+data.answer_box.answers[0].converted.text+".";
+				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.text + "</h2>";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+				//have to show the data.answer_box.answers[0].converted.text to div
+				}
+				if(data.answer_box.answers[0].type == "list")
+				{
+					if(data.answer_box.answers[0].rows)
+					{
+						EurekaText = "Here's the List i found: ";
+						var listtoadd = "<list>"
+						for(var x in (data.answer_box.answers[0].rows))
+  						{
+  							var listitem = data.answer_box.answers[0].rows[x];
+							//var iDiv = document.getElementById('block');
+							listtoadd += "<li>" + listitem + "</li>";
+							EurekaText += ", "+listitem;
+  						}
+						say(EurekaText);
+						document.getElementById("block").innerHTML = listtoadd +'</list>';
+						Eurekaoutput.innerHTML = "<b> Here's the List i found: />"+"<br>"+listtoadd +"</list>";
+						if(data.answer_box.answers[0].source)
+						{
+							Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
+							Eurekaoutput.innerHTML += "link: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+						}
+						//alert(data.answer_box.answers[0].rows)//have to show it to div
+					}
+					
+				}
+				if(data.answer_box.answers[0].type == "table")
+				{
+			
+					var stable = '<table>';
+  					var values = ""
+					EurekaText = "Here's something i found: ";
+  					for(var x in (data.answer_box.answers[0].rows))
+  					{
+					var trvalue = '<tr>';
+					//outputBot.textContent = (x+1)+":- ";
+					for(var y in data.answer_box.answers[0].rows[x])
+					{
+						trvalue = trvalue + '<td>'+(data.answer_box.answers[0].rows[x][y])+'</td>';
+						//outputBot.textContent += data.answer_box.answers[0].rows[x][y] +", ";
+					}
+					trvalue = trvalue+'</tr>'
+					values += trvalue;
+  					}
+  					stable = stable+values+'</table>'
+					document.getElementById("block").innerHTML = stable;
+					Eurekaoutput.innerHTML = "<b>"+EurekaText+"</b>"+stable;
+					say(EurekaText);
+					if(data.answer_box.answers[0].source)
+					{
+						Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
+						Eurekaoutput.innerHTML += "link: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+					}
+					//alert("Came here")
+					//alert(data.answer_box.answers[0].rows) //have to show it to div.
+				}
+				if(data.answer_box.answers[0].type == "route")
+				{
+					EurekaText = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
+					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+					document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].routes[0].distance + "</h2>";
+					say(EurekaText);
+				}
+			}
+			else if(data.answer_box.answers[0].answer == "Lyrics")
+			{
+				Eurekaoutput.innerHTML = "<br> Title: "+data.organic_results[0].title+"<br>";
+				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				//outputBot.textContent = "Title: "+data.organic_results[0].title;
+				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
+				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
+				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
+			}
+			else if (data.answer_box.answers[0].classification)
+			{
+				if((data.answer_box.answers[0].classification.toString()).includes("title") || (data.answer_box.answers[0].classification.toString()).includes("recording_cluster"))
+				{
+				Eurekaoutput.innerHTML = "<br Title: "+data.organic_results[0].title+"<br>";
+				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				//outputBot.textContent = "Title: "+data.organic_results[0].title;
+				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
+				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
+				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
+				}					
+				else
+				{
+					if(data.answer_box.answers[0].category)
+					{
+					EurekaText = data.answer_box.answers[0].category + " is ";
+					}
+					EurekaText += " "+data.answer_box.answers[0].answer;
+					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+					say(EurekaText);
+					if(data.answer_box.answers[0].images)
+					{
+					//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
+					document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+					}
+					else
+					{
+					document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+					}
+				}
+			}
+			else
+			{
+				EurekaText = ""+data.answer_box.answers[0].answer+".";
+				say(EurekaText);
+				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+				if(data.answer_box.answers[0].images)
+				{
+				//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
+				document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+				}
+				else
+				{
+				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+				}
+				if(data.answer_box.answers[0].source)
+				{
+					Eurekaoutput.innerHTML += "<br> Source: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+
+					//outputBot.textContent += ", Source: "+data.answer_box.answers[0].source.link;
+				}
+			}
+		}
+		
+	}
+	else if(data.weather_box)
+	{
+		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
+		if(data.weather_box.current)
+		{
+			if(data.weather_box.current.image)
+			{
+			//alert("Image ="+data.weather_box.current.image) //have to show it to div
+				document.getElementById("block").innerHTML = createFrame(data.weather_box.current.image);
+			}
+			else
+			{
+				document.getElementById("block").innerHTML = "<h2>" + data.weather_box.current.temperature[1].value + "</h2>";
+			}
+			EurekaText += ", there is a "+data.weather_box.current.precipitation.value +" Percent Chance of Rain today";
+			EurekaText += ", humidity is "+data.weather_box.current.humidity.value +" Percent";
+			EurekaText += " and the temperature is "+data.weather_box.current.temperature[1].value +" degree "+data.weather_box.current.temperature[1].unit +" Right now";
+		}
+		say(EurekaText);
+		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>"
+	}
+	else if(data.local_map)
+	{
+		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
+		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
+		//outputBot.textContent = ", Link: "+data.local_map.link;
+		
+		say("Here's Something i found, Opening it now.");
+		window.open(data.local_map.link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+	}
+	else if(data.knowledge_graph)
+	{
+		if(data.knowledge_graph.description)
+		{
+			EurekaText = ""+data.knowledge_graph.description+".";
+			say(EurekaText);
+			Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+		}
+		if(data.knowledge_graph.images)
+		{
+			//alert("Image = "+data.knowledge_graph.images[0]) //need to show it to div
+			document.getElementById("block").innerHTML = createFrame(data.knowledge_graph.images[0]);
+		}
+		if(data.knowledge_graph.source)
+		{
+			//outputBot.textContent += "Source: "+data.knowledge_graph.source.name;
+			//outputBot.textContent += ", link: "+data.knowledge_graph.source.link;
+			
+			Eurekaoutput.innerHTML += "<br Source: "+data.knowledge_graph.source.name+"<br>";
+			Eurekaoutput.innerHTML += "link: <a href="+data.knowledge_graph.source.link+" target= '_blank'>"+data.knowledge_graph.source.link+"</a>";
+				
+		}
+		if(data.knowledge_graph.known_attributes)
+		{
+			Eurekaoutput.innerHTML += "<br>"+data.knowledge_graph.known_attributes[0].name + " = "+data.knowledge_graph.known_attributes[0].value;
+		}
+		//say("Please refer to Related Questions for more information.");
+		related_Questions(data);
+		
+	}
+	else
+	{
+		organic_Result(data);
+	}
+
+});
+function organic_Result(data)
+{
+	EurekaText = ""+data.organic_results[0].snippet+".";
+	say(EurekaText);
+	Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+	//outputBot.textContent += ", Link: " +data.organic_results[0].link;
+	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+
+	if(data.organic_results[0].rich_snippet)
+	{
+		Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
+		document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
+		//say(data.organic_results[0].rich_snippet.top.extensions);
+	}
+	Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
+	Eurekaoutput.innerHTML += "<br>"+data.organic_results[1].snippet;
+	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[1].link+" target= '_blank'>"+data.organic_results[1].link+"</a>";
+	
+	related_Questions(data);
+}
+/*function related_Searches(data)
+{
+	if(data.related_searches)
+	{
+	alert("Related Searches 1")
+	alert("Query = "+data.related_searches[0].query)
+	alert("Answer = "+data.related_searches[0].link)
+	alert("Related Searches 2")
+	alert("Query = "+data.related_searches[1].query)
+	alert("Answer = "+data.related_searches[1].link)
+	related_Questions(data)
+	}
+}*/
+function related_Questions(data)
+{
+	if(data.related_questions)
+	{
+	say("Please refer to Related Questions for more information.");
+	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Ques." onclick="openrelatedQues();">';
+	
+	addrltdques.innerHTML = "<h4 Related Questions 1: /><br>";
+	//alert("Related Questions 1")
+	addrltdques.innerHTML += "<b>question: "+data.related_questions[0].question+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[0].answer+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
+	addrltdques.innerHTML += "<h4 Related Questions 2: /><br>";
+	//alert("Related Questions 1")
+	addrltdques.innerHTML += "<b>question: "+data.related_questions[1].question+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
+	}
 }
 
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+}
+catch(e){
+
+}
 }
 
-/* Position the close button (top right corner) */
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+function createFrame(src){
+  return "<div>"+
+            //"<a href='"+src+"' target='_blank'>"+
+              "<img id='Blockimage' src='"+src+"' alt='Eureka Couldn't Find the image.'/>"+
+            //"</a>"+
+          "</div>";
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+
+
+// When the user clicks on the button, open the modal
+function openrelatedQues() {
+  rltdquesModal.style.display = "block";
+  var element = document.getElementById("Foot");
+   element.classList.add("blur");
+}
+
+
+
+// When the user clicks on <span> (x), close the modal
+rltdquesspan.onclick = function() {
+rltdquesModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur"); 
+}
+
+
+/*function openrelatedVid()
+{
+  rltdvidModal.style.display = "block";
+  var element = document.getElementById("Foot");
+   element.classList.add("blur");
+}
+// When the user clicks on <span> (x), close the modal
+function CloserelatedVid() {
+ rltdvidModal.style.display = "none";
+var element = document.getElementById("Foot");
+element.classList.remove("blur");         
+}*/
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event)
+{
+  if (event.target == rltdvidModal) 
+  {
+    	rltdvidModal.style.display = "none";
+	var element = document.getElementById("Foot");
+	element.classList.remove("blur");
+  }
+  if (event.target == rltdquesModal)
+  {
+    	rltdquesModal.style.display = "none";
+	var element = document.getElementById("Foot");
+	element.classList.remove("blur");
   }
 }
 
 
-
-
-
-
-
-
-.output-bot
-{
-	color:blue;
-	font-size: 1.9vw;
+/* For SideBar Panel i.e. Menu */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
-  color: white;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.9); /* Black w/opacity/see-through */
-   
+/* Close */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
 }
 
-/*#Eureka { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 135px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 0px; text-align: center; text-shadow: 0 1px 1px #fff; }
-*/
-/* Modal Content */
-.modal-content {
-  border: 1px solid #888;
-  margin: -60px 20px 50px 20px;
-  width: 90%;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 48px;
-  font-weight: bold;
-  margin-right: 4%;
-}
-
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-.Footimg1
-{
-	top: 80vh;
-	position: absolute;
-}
-.mainfoot
-{
-	width: 100vw;
-	height: 20vh;
-}
-Foot
-{
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-input[type="submit"] {
-    float:right;
-    width: 3vw;
-    height: 3vh;
-    color: black;
-    background-color: #82e2ee;
-    font-size:larger;
-    font: xx-large;
-   }
-
-button {
-  display: block;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 12vw;
-  height: 20vh;
-  border: 0;
-  border-radius: 50%;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(180deg, #39C2C9 0%, #3FC8C9 80%, #3FC8C9 100%);
-  box-shadow: 2px 5px 30px rgba(63, 200, 201, .4);
-  position: absolute;
-  left: 44vw;
-  bottom: 0.2vw;
-  will-change: transform, filter;
-  transition: all 0.3s ease-out;
-}
-button .fa {
-    font-size: 8.5vw;
-    line-height: 4vh;
-    left: 3.3vw;
-    margin: 0;
-    position:absolute;
-    text-shadow: 1px 2px 2px #2a8b90;
-	}
-button:hover {
-  transform: scale(.92);
-}
-button:active {
-  filter: brightness(.8);
-}
-button:focus {
-  outline: 0;
-}
-
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.fa-github::before {
-    content: "\f09b";
-}
-
-#block 
-{ 
-	position: absolute; 
-    padding-bottom: 43.65vw;
-	width: 58vw;
-	top: 26%;
-	left: 25%;  
-}
-#YouSaid
-{
-position: absolute;
-bottom: 5vh;
-left: 3vw;
-height: 70vh;
-width: 20vw;  
-}
-#EurekaReplied
-{
-position: absolute;
-bottom: 20vh;
-right: 3vw;
-height: 55vh;
-width: 24vw;
-overflow-y: scroll; 
-}
-#InputText
-{
-	height: 30px;
-	width: 80%;
-	position: absolute;
-	box-sizing: border-box;
-	font-size: 25px;
-	color: blue;
-	font-family:-webkit-pictograph;
-	font-style:italic;
-}
-#InputText
-{
-	height: 2.5vw;
-	font-size: 2.5vw;
-}
-input[type="submit"]
-{
-		height: 2.8vw;
-		font-size: 1.6vw;
-}
-#You,#Bot
-	{
-	font-size: 2.5vw;
-	color: blueviolet
-	}
-@media screen and (max-width: 3840px) {
-	iframe
-	{
-	position:absolute;
-	margin-left: 10%;
-	}
-	.header a {
-  	font-size: 3vw;
-  	font-weight: bold;
-  	position:absolute;
-  	right: 0.5vw;
-  	top: 4.3vw;
-	}
-	#YouSaid
-	{
-	width: 15vw;
-	}
-	#block 
-	{ 
-	left: 18.2vw;  
-	}
-	#EurekaReplied
-	{
-		left: 76.3vw;
-	}
-	.header {
-		height: 11.5vw;
-	}
-	#Blockimage
-	{
-	width: 70%;
-	height: 60%;
-	position:absolute;
-	left: 15%;
-	top: 1%;
-	}
-	#rltdbtn
-	{
-	width: 60%;
-	height: 15%;
-	font-size: 60px;
-	}
-	
-	@media screen and (max-height: 700px) {
-	button {
-     width: 6vw;
-     height: 8vw;
-     left: 47vw;
-     bottom: 1vh;
-	}
-	button .fa {
-    font-size: 5vw;
-    line-height: 3vh;
-    left: 1.5vw;
-	}
-
-	}
-}
-
-@media screen and (max-width: 1366px) {
-	#rltdbtn
-	{
-	width: 65%;
-	height: 15%;
-	font-size: 25px;
-	}
-	#Blockimage
-	{
-	width: 70%;
-	height: 60%;
-	position:absolute;
-	left: 15%;
-	top: 1%;
-	}
-
-}
-
-@media screen and (max-width: 1024px) {
-	.header {
-		height: 17vw;
-	}
-	input[type="submit"]
-	{
-	font-size: 1.4vw;
-	}
-	#YouSaid
-	{
-	position: absolute;
-	top: 15vh;
-	left: 17vw;
-	height: 7.5vh;
-	width: 38vw;  
-	}
-	#EurekaReplied
-	{
-	position: absolute;
-	bottom: 17.5vh;
-	left: 17vw;
-	height: 20vh;
-	width: 69vw;
-	overflow-y: scroll;
-	}
-	#InputText
-	{
-	width: 45vw;
-	height: 3.5vw;
-	font-size: 3.1vw;
-	}
-	input[type="submit"]
-	{
-	font-size: 2.3vw;
-	width: 8vw;
-	height: 3.5vw;
-	position:absolute;
-	left: 45vw;
-	}
-	#rltdbtn
-	{
-	width: 35%;
-	height: 25%;
-	font-size: 25px;
-	}
-	#Blockimage
-	{
-	top: 15%;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	#rltdbtn
-	{
-	width: 45%;
-	height: 35%;
-	font-size: 25px;
-	}
-	.output-bot
-	{
-	color:blue;
-	font-size: 3vw;
-	}
-	iframe
-	{
-	position:absolute;
-	margin-top: 6vh;
-	}
-    .mainfoot
-    {
-       max-width: 100vw;
-	   max-height: 90px;	/* The width is 100%, when the viewport is 800px or smaller */
-    }
-    .Footimg1
-	{
-	top: 93vh;
-	position: absolute;
-	}
-	#block
-	{
-	position: absolute;
-	box-sizing: border-box;
-	padding-right: 99vw;
-	margin-left: -18vw;
-	height: 41vh;
-	top: 23.5vh;
-	}
-	button {
-     width: 14vw;
-     height: 17vw;
-	}
-	button .fa {
-    font-size: 13vw;
-    line-height: 2vh;
-    left: 2.7vw;
-	}
-	#YouSaid
-	{
-	position: absolute;
-	top: 15vh;
-	left: 12vw;
-	height: 7.5vh;
-	width: 38vw;  
-	}
-	#EurekaReplied
-	{
-	position: absolute;
-	bottom: 17.5vh;
-	left: 12vw;
-	height: 20vh;
-	width: 69vw;
-	overflow-y: scroll;
-	}
-	.header {
-		height: 17vw;
-	}
-	
-	#You, #Bot
-	{
-	font-size: 3.5vw;
-	color: blueviolet
-	}
-	#InputText
-	{
-	width: 45vw;
-	height: 3.5vw;
-	font-size: 3.1vw;
-	}
-	input[type="submit"]
-	{
-	font-size: 2.3vw;
-	width: 8vw;
-	height: 3.5vw;
-	position:absolute;
-	left: 45vw;
-	}
-	#EurekaLogo
-	{
-	width: 41%;
-	float: left;
-	}
-	.header a {
-  	font-size: 5vw;
-	}
-	@media screen and (max-height: 1100px) {
-	.Footimg1
-	{
-	top: 91vh;
-	}
-	}
-	@media screen and (max-height: 850px) {
-	.Footimg1
-	{
-	top: 89vh;
-	}
-	#block
-	{
-	top: 24.5vh;
-	}
-	}
-
-}
-@media screen and (max-width: 680px) {
-	input[type="submit"]
-	{
-		width: 7.4vw;
-		height: 4vw;
-		font-size: 2.5vw;
-	}
-}
-@media screen and (max-width: 600px) {
-	.output-bot
-	{
-	color:blue;
-	font-size: 3.5vw;
-	}
-	#You,#Bot
-	{
-	font-size: 4.5vw;
-	color: blueviolet
-	}
-	.header {
-		height: 19vw;
-	}
-	@media screen and (max-height: 760px) {
-		.Footimg1
-		{
-		top: 85vh;
-		}
-	}
-}
-@media screen and (max-width: 550px) {
-	#rltdbtn
-	{
-	width: 55%;
-	font-size: 23px;
-	}
-	input[type="submit"]
-	{
-		font-size: 2.7vw;
-	}
-	#YouSaid
-	{
-	position: absolute;
-	top: 13vh; 
-	}
-	#block
-	{
-	top: 23vh;
-	}
-	#EurekaReplied
-	{
-	bottom: 17vh;
-	}
-	@media screen and (max-height: 850px) {
-	#block
-	{
-	top: 24.5vh;
-	}
-	}
-
-}
-@media screen and (max-width: 500px) {
-	.output-bot
-	{
-	color:blue;
-	font-size: 4.3vw;
-	}
-	input[type="submit"]
-	{
-		height: 4.8vw;
-		font-size: 3vw;
-		width: 9vw;
-	}
-	#InputText
-	{
-	width: 45vw;
-	height: 4.5vw;
-	font-size: 3.1vw;
-	}
-	button {
-     width: 14vw;
-     height: 19vw;
-	}
-	button .fa {
-    font-size: 13vw;
-    line-height: 2vh;
-    left: 3vw;
-	}
-	
-	#You,#Bot
-	{
-	font-size: 5.5vw;
-	color: blueviolet
-	}
-	@media screen and (max-height: 800px) {
-		button {
-     left: 43vw;
-	}
-	}
-
-}
-@media screen and (max-width: 450px) {
-	.header {
-		height: 23vw;
-	}
-	#InputText
-	{
-	height: 5.5vw;
-	font-size: 4.2vw;
-	}
-	input[type="submit"]
-	{
-		width: 11.4vw;
-		height: 6vw;
-		font-size: 3.5vw;
-	}
-	#block
-	{
-	top: 23.5vh;
-	}
-	#EurekaReplied
-	{
-	width: 75vw;
-	}
-	@media screen and (max-height: 700px) {
-	.header {
-		height: 21vw;
-	}
-	#block
-	{
-	top: 24.5vh;
-	}
-	}
-}
-@media screen and (max-width: 400px) {
-	.output-bot
-	{
-	color:blue;
-	font-size: 4.5vw;
-	}
-	#rltdbtn
-	{
-	font-size: 18px;
-	}
-
-}
-@media screen and (max-width: 360px) {
-	button {
-     width: 14vw;
-     height: 21vw;
-     bottom: 1vh;
-	}
-	#InputText
-	{
-	height: 6.5vw;
-	font-size: 5.2vw;
-	}
-	input[type="submit"]
-	{
-		width: 11.4vw;
-		height: 6.8vw;
-		font-size: 3.9vw;
-	}
-	#block
-	{
-		top: 24vh;
-	}
-	.header {
-		height: 24vw;
-	}
-	@media screen and (max-height: 580px) {
-		iframe
-		{
-		position:absolute;
-		margin-top: 3vh;
-		}
-		.Footimg1
-		{
-		top: 83vh;
-		}
-		#block
-		{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 75vw;
-		margin-left: -12vw;
-		height: 35vh;
-		top: 25vh;
-		}
-		#EurekaReplied
-		{
-		position: absolute;
-		bottom: 23vh;
-		}
-	}
-}
-@media screen and (max-width: 320px) {
-	input[type="submit"]
-	{
-		width: 9vw;
-		height: 6vw;
-		font-size: 3.5vw;
-	}
-	.header {
-		height: 22vw;
-	}
-	#rltdbtn
-	{
-	font-size: 14px;
-	}
-	
-	
-}
-@media screen and (max-width: 260px) {
-	
-}
-#EurekaReplied
-{
-overflow-y: scroll; 
-}
-table {
-  border-collapse: collapse;
-}
-th {
-  background-color: #4CAF50;
-  color: white;
-}
-th, td {
-  border-bottom: 1px solid #ddd;
-   padding-left: 23px;
-  text-align: left;
- padding-top: 5%;
-}
-tr:nth-child(even) {background-color: #f2f2f2;}
-tr:hover {background-color: #f5f5f5;}
-
-
+$(document).ready(function(){
+    document.getElementById('footer').scrollIntoView(false);
+});
