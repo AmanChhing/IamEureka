@@ -300,6 +300,11 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
+	#rltdbtn
+	{
+	margin-top: 135px;
+	margin-bottom: 75px;
+	}
 	iframe
 	{
 	position:absolute;
@@ -364,6 +369,8 @@ input[type="submit"]
 	width: 65%;
 	height: 15%;
 	font-size: 25px;
+	margin-top: 45px;
+	margin-bottom: 25px;
 	}
 	#Blockimage
 	{
@@ -377,6 +384,10 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
+	#rltdbtn
+	{
+	margin-bottom: 45px;
+	}
 	.header {
 		height: 17vw;
 	}
