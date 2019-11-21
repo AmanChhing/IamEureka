@@ -243,6 +243,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		EurekaText = "i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information";
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 		say("i'm sorry, i couldn't find exact answers, Please refer to the Related Questions for more information");
+		document.getElementById("block").innerHTML = createFrame("Dictionary.jpg");
 		related_Questions(data);
 	}
 	else if(data.answer_box)
