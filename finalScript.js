@@ -165,8 +165,7 @@ function removeIFrame() {
 	outputBot.textContent = "...";
 	document.getElementById("block").innerHTML ="";
 	document.getElementById("EurekaOutput").innerHTML ="";
-	rltdquesModal.innerHTML ="";
-	rltdvidModal.innerHTML ="";
+	addrltdques.innerHTML ="";
         //frame.parentNode.removeChild(div);
 	//document.getElementById("block").removeChild(target);
 	//frame.innerHTML = "";
