@@ -483,10 +483,10 @@ function organic_Result(data)
 		document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
 		//say(data.organic_results[0].rich_snippet.top.extensions);
 	}
-	Eurekaoutput.innerHTML +=  "<br> <b>Alternate Result: </b>"
+	Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
 	Eurekaoutput.innerHTML += "<br>"+data.organic_results[1].snippet;
 	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[1].link+" target= '_blank'>"+data.organic_results[1].link+"</a>";
-	say("Please refer to Alternate Result and Related Questions if you are not satisfied with my answer.");
+	
 	related_Questions(data);
 }
 /*function related_Searches(data)
@@ -506,6 +506,7 @@ function related_Questions(data)
 {
 	if(data.related_questions)
 	{
+	say("Please refer to  Related Questions if you are not satisfied with my answer.");
 	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Ques." onclick="openrelatedQues();">';
 	
 	rltdquesModal.innerHTML = "<h4 Related Questions 1: /><br>";
@@ -544,11 +545,13 @@ var btn = document.getElementById("rltdbtn");
 // Get the <span> element that closes the modal
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+function openrelatedQues() {
   rltdquesModal.style.display = "block";
   var element = document.getElementById("Foot");
    element.classList.add("blur");
 }
+
+
 
 // When the user clicks on <span> (x), close the modal
 rltdquesspan.onclick = function() {
