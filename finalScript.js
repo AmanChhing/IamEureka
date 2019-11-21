@@ -534,7 +534,7 @@ catch(e){
 function createFrame(src){
   return "<div>"+
             //"<a href='"+src+"' target='_blank'>"+
-              "<img src='"+src+"' alt='Eureka Couldn't Find the image.'/>"+
+              "<img id='Blockimage' src='"+src+"' alt='Eureka Couldn't Find the image.'/>"+
             //"</a>"+
           "</div>";
 }
