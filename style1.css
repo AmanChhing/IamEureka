@@ -358,6 +358,7 @@ input[type="submit"]
 	{
 	width: 65%;
 	height: 15%;
+	font-size: 25px;
 	}
 	#Blockimage
 	{
@@ -413,6 +414,7 @@ input[type="submit"]
 	{
 	width: 35%;
 	height: 25%;
+	font-size: 25px;
 	}
 	#Blockimage
 	{
@@ -425,6 +427,7 @@ input[type="submit"]
 	{
 	width: 45%;
 	height: 35%;
+	font-size: 25px;
 	}
 	.output-bot
 	{
@@ -651,7 +654,7 @@ input[type="submit"]
 	}
 	#EurekaReplied
 	{
-	width: 71vw;
+	width: 75vw;
 	}
 	@media screen and (max-height: 700px) {
 	.header {
