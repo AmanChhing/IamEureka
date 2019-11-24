@@ -7,6 +7,16 @@
 	padding-top: 1%;
 	font-size: 25px;
 }
+#blocktable
+{
+	width: 70%;
+	height: 20%;
+	overflow-y: scroll;
+	position:absolute;
+	left: 13%;
+	top: 10%;
+
+}
 #blockh3
 {
 	position:absolute;
@@ -830,6 +840,15 @@ input[type="submit"]
 	width: 90%;
 	height: 70%;
 	}
+	#blocktable
+	{
+	width: 95%;
+	height: 5%;
+	overflow-y: scroll;
+	position:absolute;
+	left: 7%;
+	top: 3%;
+	}
 	#blockroad
 	{
 	position:absolute;
@@ -866,20 +885,17 @@ input[type="submit"]
 {
 overflow-y: scroll; 
 }
+
 table {
   border-collapse: collapse;
+
 }
 th {
   background-color: #4CAF50;
   color: white;
 }
-th, td {
-  border-bottom: 1px solid #ddd;
-   padding-left: 23px;
-  text-align: left;
- padding-top: 5%;
-}
+
 tr:nth-child(even) {background-color: #f2f2f2;}
-tr:hover {background-color: #f5f5f5;}
+
 
 
