@@ -180,10 +180,10 @@ function say(m) {
   var msg = new SpeechSynthesisUtterance(m);
   //var voices = window.speechSynthesis.getVoices();
   //msg.voice = voices[10];
-  msg.voiceURI = "native";
-  msg.volume = 0.5;
-  msg.rate = 0.8;
-  msg.pitch = 0.9;
+  //msg.voiceURI = "native";
+  //msg.volume = 0.5;
+  msg.rate = 0.9;
+  //msg.pitch = 0.9;
   msg.lang = 'hi-IN';
   speechSynthesis.speak(msg);
 }
