@@ -10,7 +10,8 @@ var inputarray = [];
 var rltdvidModal = document.getElementById("rltdvidModal");
 var rltdquesModal = document.getElementById("rltdquesModal");
 var addrltdques = document.getElementById("RltdQuesdiv");
-// Get the button that opens the modal
+var addRltdVideosdiv = document.getElementById("RltdVideosdiv");
+// Get the button that opens the modalRltdVideosdiv
 var rltdvidbtn = document.getElementById("rltdvid");
 var rltdquesbtn = document.getElementById("rltdques");
 // Get the <span> element that closes the modal
@@ -166,6 +167,7 @@ function removeIFrame() {
 	document.getElementById("block").innerHTML ="";
 	document.getElementById("EurekaOutput").innerHTML ="";
 	addrltdques.innerHTML ="";
+	addRltdVideosdiv.innerHTML ="";
         //frame.parentNode.removeChild(div);
 	//document.getElementById("block").removeChild(target);
 	//frame.innerHTML = "";
@@ -502,6 +504,10 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 	{
 		organic_Result(data);
 	}
+	if(data.inline_videos)
+	{
+		related_Videos(data);
+	}
 
 });
 function Knowledge_Graph(data)
@@ -596,6 +602,27 @@ function related_Questions(data)
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
+function related_Videos(data)
+{
+	if(data.inline_videos)
+	{
+	say("Please refer to Related Questions for more information.");
+	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Vid." onclick="openrelatedVid();">';
+	
+	addRltdVideosdiv.innerHTML = "<h4 Related Videos 1: /><br>";
+	//alert("Related Questions 1")
+	addRltdVideosdiv.innerHTML += "<b>question: "+data.inline_videos[0].title+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	addRltdVideosdiv.innerHTML += "<p>Answer: "+data.related_questions[0].link+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
+	addRltdVideosdiv.innerHTML += "<h4 Related Videos 2: /><br>";
+	//alert("Related Questions 1")
+	addRltdVideosdiv.innerHTML += "<b>question: "+data.related_questions[1].title+"</b>";
+	//alert("question = "+data.related_questions[0].question)
+	addRltdVideosdiv.innerHTML += "<p>Answer: "+data.related_questions[1].link+"</p>";
+	//alert("Answer = "+data.related_questions[0].answer)
+	}
+}
 
 }
 catch(e){
@@ -630,18 +657,18 @@ element.classList.remove("blur");
 }
 
 
-/*function openrelatedVid()
+function openrelatedVid()
 {
   rltdvidModal.style.display = "block";
   var element = document.getElementById("Foot");
    element.classList.add("blur");
 }
-// When the user clicks on <span> (x), close the modal
-function CloserelatedVid() {
- rltdvidModal.style.display = "none";
+
+rltdvidspan.onclick = function() {
+rltdvidModal.style.display = "none";
 var element = document.getElementById("Foot");
-element.classList.remove("blur");         
-}*/
+element.classList.remove("blur"); 
+}
 
 
 // When the user clicks anywhere outside of the modal, close it
