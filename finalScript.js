@@ -263,7 +263,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				if(data.answer_box.answers[0].type == "calculator")
 				{
 				EurekaText = ""+data.answer_box.answers[0].formula +"  "+data.answer_box.answers[0].answer+".";
-				document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+				document.getElementById("block").innerHTML = createFrame("Calculator.PNG");
 				document.getElementById("block").innerHTML += "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
 				say(EurekaText);
 				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
