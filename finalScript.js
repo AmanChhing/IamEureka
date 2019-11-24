@@ -175,17 +175,17 @@ function removeIFrame() {
     }
 
 function say(m) {
-  var audio = new Audio('http://ivrapi.indiantts.co.in/tts?type=indiantts&text='+m+'&api_key=214b12a0-0ee1-11ea-9418-afccf40e5ac8&user_id=67255&action=play&numeric=hcurrency&lang=en_mohita');
-  audio.play();
-  //var msg = new SpeechSynthesisUtterance(m);
+  //var audio = new Audio('http://ivrapi.indiantts.co.in/tts?type=indiantts&text='+m+'&api_key=214b12a0-0ee1-11ea-9418-afccf40e5ac8&user_id=67255&action=play&numeric=hcurrency&lang=en_mohita');
+  //audio.play();
+  var msg = new SpeechSynthesisUtterance(m);
   //var voices = window.speechSynthesis.getVoices();
   //msg.voice = voices[10];
-  //msg.voiceURI = "native";
-  //msg.volume = 0.6;
-  //msg.rate = 0.7;
-  //msg.pitch = 1.1;
-  //msg.lang = 'hi-IN';
-  //speechSynthesis.speak(msg);
+  msg.voiceURI = "native";
+  msg.volume = 0.5;
+  msg.rate = 0.7;
+  msg.pitch = 1.2;
+  msg.lang = 'hi-IN';
+  speechSynthesis.speak(msg);
 }
 
 function AddToInputList(text)
