@@ -13,6 +13,12 @@
 	top:6vh;
 	left: 15.5vw;
 }
+#blockroad
+{
+	position:absolute;
+	top:16vh;
+	left: 39.5vw;
+}
 
 #RltdQuesdiv
 {
@@ -378,6 +384,14 @@ input[type="submit"]
 	margin-top: 45px;
 	margin-bottom: 25px;
 	}
+	#blockroad
+	{
+	position:absolute;
+	top:16vh;
+	left: 24vw;
+	font-size: 45px;
+	font-weight:bold;
+	}
 	#Blockimage
 	{
 	width: 70%;
@@ -386,6 +400,14 @@ input[type="submit"]
 	left: 19%;
 	top: 1%;
 	}
+	@media screen and (max-height: 850px) {
+	
+	#blockroad
+	{
+	position:absolute;
+	top:24vh;
+	}
+	}
 
 }
 
@@ -393,6 +415,13 @@ input[type="submit"]
 	#rltdbtn
 	{
 	margin-bottom: 45px;
+	}
+	#blockroad
+	{
+	position:absolute;
+	top:13vh;
+	left: 20.5vw;
+	font-size: 36px;
 	}
 	.header {
 		height: 17vw;
@@ -451,6 +480,13 @@ input[type="submit"]
 	width: 45%;
 	height: 35%;
 	font-size: 25px;
+	}
+	#blockroad
+	{
+	position:absolute;
+	top:16vh;
+	left: 36vw;
+	font-size: 45px;
 	}
 	.output-bot
 	{
@@ -549,6 +585,7 @@ input[type="submit"]
 	{
 	top: 89vh;
 	}
+	
 	#block
 	{
 	top: 24.5vh;
@@ -562,6 +599,12 @@ input[type="submit"]
 		width: 7.4vw;
 		height: 4vw;
 		font-size: 2.5vw;
+	}
+	#blockroad
+	{
+	
+	font-size: 23px;
+	font-weight:bold;
 	}
 }
 @media screen and (max-width: 600px) {
@@ -756,6 +799,13 @@ input[type="submit"]
 	{
 	width: 90%;
 	height: 70%;
+	}
+	#blockroad
+	{
+	position:absolute;
+	top:15vh;
+	font-size: 18px;
+	left: 32vw;
 	}
 	#blockh3
 	{
