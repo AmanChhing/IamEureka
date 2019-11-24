@@ -357,7 +357,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			{
 				Eurekaoutput.innerHTML = "<br> Title: "+data.organic_results[0].title+"<br>";
 				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
-				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				window.open(data.organic_results[0].link);
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
 				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
@@ -369,7 +369,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				{
 				Eurekaoutput.innerHTML = "<br Title: "+data.organic_results[0].title+"<br>";
 				Eurekaoutput.innerHTML += "link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
-				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+				window.open(data.organic_results[0].link);
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
 				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
@@ -461,7 +461,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		//outputBot.textContent = ", Link: "+data.local_map.link;
 		
 		say("Here's Something i found, Opening it now.");
-		window.open(data.local_map.link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
+		window.open(data.local_map.link);
 	}
 	else if(data.knowledge_graph)
 	{
