@@ -263,14 +263,15 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				if(data.answer_box.answers[0].type == "calculator")
 				{
 				EurekaText = ""+data.answer_box.answers[0].formula +"  "+data.answer_box.answers[0].answer+".";
-				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+				document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+				document.getElementById("block").innerHTML += "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
 				say(EurekaText);
 				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				}
 				if(data.answer_box.answers[0].type == "translation")
 				{
 				EurekaText = ""+data.answer_box.answers[0].original.text +" is written in "+data.answer_box.answers[0].converted.language +" as "+data.answer_box.answers[0].converted.text+".";
-				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.text + "</h2>";
+				document.getElementById("block").innerHTML ="<h3 id='blockh3'>" + data.answer_box.answers[0].converted.text + "</h3>";
 				say(EurekaText);
 				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 				//have to show the data.answer_box.answers[0].converted.text to div
@@ -334,7 +335,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				{
 					EurekaText = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-					document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].routes[0].distance + "</h2>";
+					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].routes[0].distance + "</h3>";
 					say(EurekaText);
 				}
 			}
@@ -345,7 +346,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
-				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
+				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
 				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
 			}
 			else if (data.answer_box.answers[0].classification)
@@ -357,7 +358,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				window.open(data.organic_results[0].link, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=400,height=400");
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
-				document.getElementById("block").innerHTML = "<h2>" + document.getElementById("InputText").value + "</h2>";
+				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
 				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
 				}					
 				else
@@ -376,7 +377,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 					}
 					else
 					{
-					document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
 					}
 				}
 			}
@@ -392,7 +393,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				}
 				else
 				{
-				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].answer + "</h2>";
+				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
 				}
 				if(data.answer_box.answers[0].source)
 				{
@@ -416,7 +417,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			}
 			else
 			{
-				document.getElementById("block").innerHTML = "<h2>" + data.weather_box.current.temperature[1].value + "</h2>";
+				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.weather_box.current.temperature[1].value + "</h3>";
 			}
 			EurekaText += ", there is a "+data.weather_box.current.precipitation.value +" Percent Chance of Rain today";
 			EurekaText += ", humidity is "+data.weather_box.current.humidity.value +" Percent";
