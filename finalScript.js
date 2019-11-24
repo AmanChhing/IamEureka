@@ -383,23 +383,30 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 			}
 			else
 			{
-				EurekaText = ""+data.answer_box.answers[0].answer+".";
-				say(EurekaText);
-				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-				if(data.answer_box.answers[0].images)
+				if(data.knowledge_graph)
 				{
-				//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
-				document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+					Knowledge_Graph(data);
 				}
 				else
 				{
-				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
-				}
-				if(data.answer_box.answers[0].source)
-				{
-					Eurekaoutput.innerHTML += "<br> Source: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+					EurekaText = ""+data.answer_box.answers[0].answer+".";
+					say(EurekaText);
+					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+					if(data.answer_box.answers[0].images)
+					{
+				//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
+					document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+					}
+					else
+					{
+					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
+					}
+					if(data.answer_box.answers[0].source)
+					{
+						Eurekaoutput.innerHTML += "<br> Source: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
 
 					//outputBot.textContent += ", Source: "+data.answer_box.answers[0].source.link;
+					}
 				}
 			}
 		}
@@ -437,7 +444,17 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 	}
 	else if(data.knowledge_graph)
 	{
-		if(data.knowledge_graph.description)
+		Knowledge_Graph(data);
+	}
+	else
+	{
+		organic_Result(data);
+	}
+
+});
+function Knowledge_Graph(data)
+{
+	if(data.knowledge_graph.description)
 		{
 			EurekaText = ""+data.knowledge_graph.description+".";
 			say(EurekaText);
@@ -464,13 +481,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		//say("Please refer to Related Questions for more information.");
 		related_Questions(data);
 		
-	}
-	else
-	{
-		organic_Result(data);
-	}
-
-});
+}
 function organic_Result(data)
 {
 	EurekaText = ""+data.organic_results[0].snippet+".";
