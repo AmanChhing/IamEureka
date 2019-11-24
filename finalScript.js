@@ -255,7 +255,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 		document.getElementById("block").innerHTML = "<div class='slideshow-container'>"
 		for(var img in data.inline_images)
 		{
-			document.getElementById("block").innerHTML += "<div class='mySlides fade'><img src="+data.inline_images[img].image+"style='width:100%'></div>"
+			document.getElementById("block").innerHTML += "<div class='mySlides fade'><img src="+data.inline_images[img].image+"></div>"
 		}
 		document.getElementById("block").innerHTML += "<a class='prev' onclick='plusSlides(-1)'>&#10094;</a>"+"<a class='next' onclick='plusSlides(1)'>&#10095;</a></div><br>"
 
