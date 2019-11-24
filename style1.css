@@ -7,16 +7,8 @@
 	padding-top: 1%;
 	font-size: 25px;
 }
-#blocktable
-{
-	width: 70%;
-	height: 20%;
-	overflow-y: scroll;
-	position:absolute;
-	left: 13%;
-	top: 10%;
 
-}
+
 #blockh3
 {
 	position:absolute;
@@ -397,6 +389,20 @@ input[type="submit"]
 	margin-top: 45px;
 	margin-bottom: 25px;
 	}
+	#blocktable
+	{
+	width: 80%;
+	height: 80%;
+	font-size: 20px;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	position:absolute;
+	box-sizing:border-box;
+	left: 23%;
+	top: 8%;
+	display: block;
+
+	}
 	#blockh3
 	{
 	position:absolute;
@@ -437,6 +443,13 @@ input[type="submit"]
 	#rltdbtn
 	{
 	margin-bottom: 45px;
+	}
+	#blocktable
+	{
+		left: 1%;
+		width: 120%;
+		height: 110%;
+		font-size: 25px;
 	}
 	#blockroad
 	{
@@ -506,6 +519,20 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	#blocktable
+	{
+	width: 80%;
+	height: 80%;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	position:absolute;
+	box-sizing:border-box;
+	left: 13%;
+	top: 8%;
+	display: block;
+	font-size: 13px;
+
+	}
 	#blockh3
 	{
 	position:absolute;
@@ -843,7 +870,7 @@ input[type="submit"]
 	#blocktable
 	{
 	width: 95%;
-	height: 5%;
+	height: 85%;
 	overflow-y: scroll;
 	position:absolute;
 	left: 7%;
