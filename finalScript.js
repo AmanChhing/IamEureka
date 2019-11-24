@@ -262,6 +262,26 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.value + "</h2>";
 				//have to show the data.answer_box.answers[0].converted.value to div
 			}
+			else if(data.answer_box.answers[0].steps)
+			{
+				EurekaText = "Here's the List i found: ";
+				var listtoadd = "<list id='blocktable'>";
+				for(var x in (data.answer_box.answers[0].steps))
+  				{
+  					var listitem = data.answer_box.answers[0].steps[x];
+					//var iDiv = document.getElementById('block');
+					listtoadd += "<li>" + listitem + "</li>";
+					EurekaText += ", "+listitem;
+  				}
+				say(EurekaText);
+				document.getElementById("block").innerHTML = listtoadd +'</list>';
+				Eurekaoutput.innerHTML = "<b> Here's the List i found: />";
+				if(data.answer_box.answers[0].source)
+				{
+					Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
+					Eurekaoutput.innerHTML += "link: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
+				}	
+			}
 			else if(data.answer_box.answers[0].type)
 			{
 				if(data.answer_box.answers[0].type == "calculator")
