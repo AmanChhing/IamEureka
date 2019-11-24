@@ -363,21 +363,28 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				}					
 				else
 				{
-					if(data.answer_box.answers[0].category)
+					if(data.knowledge_graph)
 					{
-					EurekaText = data.answer_box.answers[0].category + " is ";
-					}
-					EurekaText += " "+data.answer_box.answers[0].answer;
-					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-					say(EurekaText);
-					if(data.answer_box.answers[0].images)
-					{
-					//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
-					document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+						Knowledge_Graph(data);
 					}
 					else
 					{
-					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
+						if(data.answer_box.answers[0].category)
+						{
+						EurekaText = data.answer_box.answers[0].category + " is ";
+						}
+						EurekaText += " "+data.answer_box.answers[0].answer;
+						Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+						say(EurekaText);
+						if(data.answer_box.answers[0].images)
+						{
+						//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
+						document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
+						}
+						else
+						{
+						document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
+						}
 					}
 				}
 			}
