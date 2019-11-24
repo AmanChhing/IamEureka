@@ -606,20 +606,20 @@ function related_Videos(data)
 {
 	if(data.inline_videos)
 	{
-	say("Please refer to Related Questions for more information.");
-	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn" class="w3-border w3-round-large" value="Related Vid." onclick="openrelatedVid();">';
+	say("Also, Please refer to Related Videos for interesting Videos.");
+	Eurekaoutput.innerHTML += '<input type="submit" id="rltdbtn1" class="w3-border w3-round-large" value="Related Vid." onclick="openrelatedVid();">';
 	
 	addRltdVideosdiv.innerHTML = "<h4 Related Videos 1: /><br>";
 	//alert("Related Questions 1")
-	addRltdVideosdiv.innerHTML += "<b>question: "+data.inline_videos[0].title+"</b>";
+	addRltdVideosdiv.innerHTML += "<b>"+data.inline_videos[0].title+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	addRltdVideosdiv.innerHTML += "<p>Answer: "+data.related_questions[0].link+"</p>";
+	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[0].link+">"+data.inline_videos[0].link+"</a></p>";
 	//alert("Answer = "+data.related_questions[0].answer)
 	addRltdVideosdiv.innerHTML += "<h4 Related Videos 2: /><br>";
 	//alert("Related Questions 1")
-	addRltdVideosdiv.innerHTML += "<b>question: "+data.related_questions[1].title+"</b>";
+	addRltdVideosdiv.innerHTML += "<b>"+data.inline_videos[1].title+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	addRltdVideosdiv.innerHTML += "<p>Answer: "+data.related_questions[1].link+"</p>";
+	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[1].link+">"+data.inline_videos[1].link+"</a></p>";
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
