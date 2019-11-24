@@ -335,7 +335,8 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				{
 					EurekaText = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].routes[0].distance + "</h3>";
+					document.getElementById("block").innerHTML = createFrame("KM.jpg");
+					document.getElementById("block").innerHTML += "<h3 id='blockh3'>" + data.answer_box.answers[0].routes[0].distance + "</h3>";
 					say(EurekaText);
 				}
 			}
