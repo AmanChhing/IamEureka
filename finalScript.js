@@ -110,8 +110,8 @@ function playsongornot(data)
 	}
 	else
 	{
-	outputBot.textContent = "I'm sorry, i don't have it's answer right now."
-	say("I'm sorry, i don't have it's answer right now.")
+	outputBot.textContent = "I'm sorry, i don't have it's answer right now. but i'm always learning"
+	say("I'm sorry, i don't have it's answer right now.but i'm always learning")
 		
 	}
 	
@@ -235,6 +235,10 @@ function StartTheSearch(MyQuery,MyLocation)
 //alert(MyLocation)
 	var Eurekaoutput = document.getElementById("EurekaOutput");
 	var EurekaText = ""
+	if(MyQuery.toLowerCase().includes("gold") && (MyQuery.toLowerCase().includes("price") || MyQuery.toLowerCase().includes("value") || MyQuery.toLowerCase().includes("rate") || MyQuery.toLowerCase().includes("gram")))
+	{
+	   MyLocation = "New York,New York,United States";
+	}
 try{
 $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B4DFB32E&q="+MyQuery+"&location="+MyLocation+"&hl=en", function(data)
 {
@@ -311,6 +315,15 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
   					{
 					var trvalue = '<tr>';
 					//outputBot.textContent = (x+1)+":- ";
+					if(data.answer_box.answers[0].columns)
+					{
+						for(var h in data.answer_box.answers[0].columns)
+						{
+						trvalue = trvalue + '<th>'+(data.answer_box.answers[0].columns[h])+'</th>';
+						//outputBot.textContent += data.answer_box.answers[0].rows[x][y] +", ";
+						}
+						trvalue = trvalue+'</tr>'
+					}
 					for(var y in data.answer_box.answers[0].rows[x])
 					{
 						trvalue = trvalue + '<td>'+(data.answer_box.answers[0].rows[x][y])+'</td>';
@@ -492,23 +505,31 @@ function Knowledge_Graph(data)
 }
 function organic_Result(data)
 {
-	EurekaText = ""+data.organic_results[0].snippet+".";
-	say(EurekaText);
-	Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-	//outputBot.textContent += ", Link: " +data.organic_results[0].link;
-	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
-
-	if(data.organic_results[0].rich_snippet)
+	if(data.organic_results[0].domain.toLowerCase().includes("bookmyshow") || data.organic_results[1].domain.toLowerCase().includes("bookmyshow"))
 	{
-		Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
-		document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
-		//say(data.organic_results[0].rich_snippet.top.extensions);
+		window.open(data.organic_results[0].link);
 	}
-	Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
-	Eurekaoutput.innerHTML += "<br>"+data.organic_results[1].snippet;
-	Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[1].link+" target= '_blank'>"+data.organic_results[1].link+"</a>";
+	else
+	{
+	   
+		EurekaText = ""+data.organic_results[0].snippet+".";
+		say(EurekaText);
+		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
+		//outputBot.textContent += ", Link: " +data.organic_results[0].link;
+		Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[0].link+" target= '_blank'>"+data.organic_results[0].link+"</a>";
+
+		if(data.organic_results[0].rich_snippet)
+		{
+			Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
+			document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
+		//say(data.organic_results[0].rich_snippet.top.extensions);
+		}
+		Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
+		Eurekaoutput.innerHTML += "<br>"+data.organic_results[1].snippet;
+		Eurekaoutput.innerHTML += "<br> link: <a href="+data.organic_results[1].link+" target= '_blank'>"+data.organic_results[1].link+"</a>";
 	
-	related_Questions(data);
+		related_Questions(data);
+	}
 }
 /*function related_Searches(data)
 {
