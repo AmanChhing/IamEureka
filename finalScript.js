@@ -285,7 +285,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 					if(data.answer_box.answers[0].rows)
 					{
 						EurekaText = "Here's the List i found: ";
-						var listtoadd = "<list>"
+						var listtoadd = "<list id='blocktable'>";
 						for(var x in (data.answer_box.answers[0].rows))
   						{
   							var listitem = data.answer_box.answers[0].rows[x];
@@ -295,7 +295,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
   						}
 						say(EurekaText);
 						document.getElementById("block").innerHTML = listtoadd +'</list>';
-						Eurekaoutput.innerHTML = "<b> Here's the List i found: />"+"<br>"+listtoadd +"</list>";
+						Eurekaoutput.innerHTML = "<b> Here's the List i found: />";
 						if(data.answer_box.answers[0].source)
 						{
 							Eurekaoutput.innerHTML += "<br> Source: "+data.answer_box.answers[0].source.title+"<br>"
@@ -308,7 +308,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				if(data.answer_box.answers[0].type == "table")
 				{
 			
-					var stable = '<table>';
+					var stable = '<table id="blocktable">';
   					var values = ""
 					EurekaText = "Here's something i found: ";
   					for(var x in (data.answer_box.answers[0].rows))
@@ -334,7 +334,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
   					}
   					stable = stable+values+'</table>'
 					document.getElementById("block").innerHTML = stable;
-					Eurekaoutput.innerHTML = "<b>"+EurekaText+"</b>"+stable;
+					Eurekaoutput.innerHTML = "<b>"+EurekaText+"</b>";
 					say(EurekaText);
 					if(data.answer_box.answers[0].source)
 					{
