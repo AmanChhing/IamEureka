@@ -12,6 +12,9 @@
 	position:absolute;
 	top:6vh;
 	left: 15.5vw;
+	height: 25vh;
+	width: 65vw;
+	overflow-y:scroll;
 }
 #blockroad
 {
@@ -384,6 +387,15 @@ input[type="submit"]
 	margin-top: 45px;
 	margin-bottom: 25px;
 	}
+	#blockh3
+	{
+	position:absolute;
+	top:6vh;
+	left: 14vw;
+	height: 25vh;
+	width: 35vw;
+	overflow-y:scroll;
+	}
 	#blockroad
 	{
 	position:absolute;
@@ -422,6 +434,15 @@ input[type="submit"]
 	top:13vh;
 	left: 20.5vw;
 	font-size: 36px;
+	}
+	#blockh3
+	{
+	position:absolute;
+	top:6vh;
+	left: -1vw;
+	height: 25vh;
+	width: 65vw;
+	overflow-y:scroll;
 	}
 	.header {
 		height: 17vw;
@@ -475,6 +496,15 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	#blockh3
+	{
+	position:absolute;
+	top:6vh;
+	left: 12vw;
+	height: 25vh;
+	width: 70vw;
+	overflow-y:scroll;
+	}
 	#rltdbtn
 	{
 	width: 45%;
@@ -851,6 +881,5 @@ th, td {
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
 tr:hover {background-color: #f5f5f5;}
-
 
 
