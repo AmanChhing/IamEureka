@@ -112,8 +112,9 @@ function playsongornot(data)
 	else
 	{
 	outputBot.textContent = "I'm sorry, i don't have it's answer right now. but i'm always learning"
-	say("I'm sorry, i don't have it's answer right now.but i'm always learning")
-		
+	//say("I'm sorry, i don't have it's answer right now.but i'm always learning")
+	say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
+			
 	}
 	
 }
@@ -174,15 +175,14 @@ function removeIFrame() {
     }
 
 function say(m) {
-  var msg = new SpeechSynthesisUtterance();
-  var voices = window.speechSynthesis.getVoices();
+  var msg = new SpeechSynthesisUtterance(m);
+  //var voices = window.speechSynthesis.getVoices();
   //msg.voice = voices[10];
-  msg.voiceURI = "native";
-  msg.volume = 1;
-  msg.rate = 0.95;
-  msg.pitch = 1;
-  msg.text = m;
-  msg.lang = 'hi-EN';
+  //msg.voiceURI = "native";
+  msg.volume = 0.5;
+  msg.rate = 0.8;
+  msg.pitch = 1.5;
+  msg.lang = 'hi-IN';
   speechSynthesis.speak(msg);
 }
 
