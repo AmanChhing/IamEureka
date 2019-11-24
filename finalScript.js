@@ -111,9 +111,9 @@ function playsongornot(data)
 	}
 	else
 	{
-	outputBot.textContent = "I'm sorry, i don't have it's answer right now. but i'm always learning"
-	//say("I'm sorry, i don't have it's answer right now.but i'm always learning")
-	say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
+	outputBot.textContent = "I'm sorry, i don't have it's answer right now, but i'm always learning"
+	say("I'm sorry, i don't have it's answer right now, but i'm always learning")
+	//say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
 			
 	}
 	
@@ -175,16 +175,17 @@ function removeIFrame() {
     }
 
 function say(m) {
-  //http://ivrapi.indiantts.co.in/tts?type=indiantts&text=&api_key=214b12a0-0ee1-11ea-9418-afccf40e5ac8&user_id=67255&action=play&lang=hi_mohita
-  var msg = new SpeechSynthesisUtterance(m);
+  var audio = new Audio('http://ivrapi.indiantts.co.in/tts?type=indiantts&text='+m+'&api_key=214b12a0-0ee1-11ea-9418-afccf40e5ac8&user_id=67255&action=play&numeric=hcurrency&lang=en_mohita');
+  audio.play();
+  //var msg = new SpeechSynthesisUtterance(m);
   //var voices = window.speechSynthesis.getVoices();
   //msg.voice = voices[10];
   //msg.voiceURI = "native";
-  msg.volume = 0.6;
-  msg.rate = 0.7;
-  msg.pitch = 1.1;
-  msg.lang = 'hi-IN';
-  speechSynthesis.speak(msg);
+  //msg.volume = 0.6;
+  //msg.rate = 0.7;
+  //msg.pitch = 1.1;
+  //msg.lang = 'hi-IN';
+  //speechSynthesis.speak(msg);
 }
 
 function AddToInputList(text)
