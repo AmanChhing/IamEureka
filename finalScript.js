@@ -182,8 +182,8 @@ function say(m) {
   //msg.voice = voices[10];
   msg.voiceURI = "native";
   msg.volume = 0.5;
-  msg.rate = 0.7;
-  msg.pitch = 1.2;
+  msg.rate = 0.8;
+  msg.pitch = 0.9;
   msg.lang = 'hi-IN';
   speechSynthesis.speak(msg);
 }
