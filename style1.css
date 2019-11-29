@@ -283,8 +283,8 @@ button:focus {
 #block 
 { 
 	position: absolute; 
-    padding-bottom: 43.65vw;
-	width: 58vw;
+    padding-bottom: 41.65vw;
+	width: 55vw;
 	top: 26%;
 	left: 25%;  
 }
@@ -332,6 +332,22 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
+	#InputText
+	{
+	width: 24vw;
+	height: 3.5vw;
+	font-size: 2.2vw;
+	left: -10%;
+	}
+	input[type="submit"]
+	{
+	font-size: 2.3vw;
+	width: 8vw;
+	height: 3.5vw;
+	position:absolute;
+	left: 4vw;
+	top: 12vw;
+	}
 	#rltdbtn
 	{
 	margin-top: 135px;
@@ -401,6 +417,22 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1366px) {
+	#InputText
+	{
+	width: 24vw;
+	height: 3.5vw;
+	font-size: 2.2vw;
+	left: -10%;
+	}
+	input[type="submit"]
+	{
+	font-size: 2.3vw;
+	width: 8vw;
+	height: 3.5vw;
+	position:absolute;
+	left: 4vw;
+	top: 9vw;
+	}
 	#rltdbtn
 	{
 	width: 65%;
@@ -408,6 +440,11 @@ input[type="submit"]
 	font-size: 25px;
 	margin-top: 45px;
 	margin-bottom: 25px;
+	}
+	
+	#block 
+	{ 
+	left: 21%;  
 	}
 	#rltdbtn1
 	{
