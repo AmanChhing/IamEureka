@@ -444,7 +444,7 @@ input[type="submit"]
 	
 	#block 
 	{ 
-	left: 21%;  
+	left: 22%;  
 	}
 	#rltdbtn1
 	{
@@ -582,6 +582,11 @@ input[type="submit"]
 	top: 15%;
 	left: 15%;
 	}
+	#block 
+	{ 
+	left: 12%; 
+	top: 40vw; 
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -646,7 +651,7 @@ input[type="submit"]
 	position: absolute;
 	box-sizing: border-box;
 	padding-right: 99vw;
-	margin-left: -18vw;
+	margin-left: -11.5vw;
 	height: 41vh;
 	top: 23.5vh;
 	}
@@ -989,6 +994,11 @@ input[type="submit"]
 	#rltdbtn,#rltdbtn1
 	{
 	font-size: 14px;
+	}
+	#block
+	{
+		top: 49vw;
+		padding-left: 24%;
 	}
 	
 	
