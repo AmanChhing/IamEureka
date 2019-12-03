@@ -872,11 +872,12 @@ input[type="submit"]
      width: 14vw;
      height: 19vw;
      bottom: 0.5vh;
+     left: 42.7vw;
 	}
 	button .fa {
     font-size: 11vw;
     line-height: 2vh;
-    left: 3.7vw;
+    left: 3.6vw;
 	}
 	@media screen and (max-height: 700px) {
 	.header {
@@ -893,6 +894,12 @@ input[type="submit"]
 	{
 	left: 37vw;
 	font-size: 20px;
+	}
+	button {
+     width: 14vw;
+     height: 20vw;
+     bottom: 0.5vh;
+     left: 42.1vw;
 	}
 	.output-bot
 	{
@@ -922,6 +929,11 @@ input[type="submit"]
      width: 14vw;
      height: 21vw;
      bottom: 1vh;
+	}
+	button .fa {
+    font-size: 11vw;
+    line-height: 2vh;
+    left: 3.45vw;
 	}
 	#InputText
 	{
