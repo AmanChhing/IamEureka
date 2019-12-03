@@ -410,7 +410,7 @@ input[type="submit"]
 	button .fa {
     font-size: 5vw;
     line-height: 3vh;
-    left: 1.5vw;
+    left: 1.4vw;
 	}
 
 	}
@@ -505,7 +505,16 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
-	
+	button {
+     width: 14vw;
+     height: 21vw;
+     bottom: 1vh;
+	}
+	button .fa {
+    font-size: 12vw;
+    line-height: 2vh;
+    left: 3.2vw;
+	}
 	#blocktable
 	{
 		left: 1%;
@@ -613,6 +622,16 @@ input[type="submit"]
 	width: 70vw;
 	overflow-y:scroll;
 	}
+	button {
+     width: 14vw;
+     height: 17vw;
+     bottom: 0vh;
+	}
+	button .fa {
+    font-size: 10.5vw;
+    line-height: 2vh;
+    left: 3.7vw;
+	}
 	#rltdbtn,#rltdbtn1
 	{
 	width: 45%;
@@ -655,15 +674,7 @@ input[type="submit"]
 	height: 41vh;
 	top: 23.5vh;
 	}
-	button {
-     width: 14vw;
-     height: 17vw;
-	}
-	button .fa {
-    font-size: 13vw;
-    line-height: 2vh;
-    left: 2.7vw;
-	}
+	
 	#YouSaid
 	{
 	position: absolute;
@@ -857,6 +868,16 @@ input[type="submit"]
 	{
 	width: 75vw;
 	}
+	button {
+     width: 14vw;
+     height: 19vw;
+     bottom: 0.5vh;
+	}
+	button .fa {
+    font-size: 11vw;
+    line-height: 2vh;
+    left: 3.7vw;
+	}
 	@media screen and (max-height: 700px) {
 	.header {
 		height: 21vw;
@@ -943,9 +964,9 @@ input[type="submit"]
 		position: absolute;
 		box-sizing: border-box;
 		padding-right: 75vw;
-		margin-left: -12vw;
+		left: 18%;
 		height: 35vh;
-		top: 25vh;
+		top: 28vh;
 		}
 		#EurekaReplied
 		{
@@ -997,8 +1018,7 @@ input[type="submit"]
 	}
 	#block
 	{
-		top: 49vw;
-		padding-left: 24%;
+		top: 45vw;
 	}
 	
 	
