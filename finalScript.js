@@ -647,6 +647,7 @@ function createFrame(src){
 function createimagescroll(query)
 { 
 	var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
+	alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
 	x.open('GET', searchUrl); 
@@ -662,9 +663,8 @@ function createimagescroll(query)
 		for(var i in response.items)
 		{
 			imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			//var imagelink = response.items[i].link
+			alert(response.items[i].link);
 		}
-		return imagescrolldiv + "</div>";
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
@@ -672,6 +672,7 @@ function createimagescroll(query)
 		//alert(imageUrl); 
 	}
 	x.send();
+	return imagescrolldiv + "</div>";
 }
 
 
