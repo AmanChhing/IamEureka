@@ -667,7 +667,13 @@ function createimagescroll(query)
 			document.getElementById("block").innerHTML += "<img class='mySlides' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
 		}
-		document.getElementById("block").innerHTML += '<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>'+'<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>'+ "</div>";
+		document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
+    		document.getElementById("block").innerHTML += '<div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>';
+    		document.getElementById("block").innerHTML += '<div class="w3-right" onclick="plusDivs(1)">&#10095;</div>';
+    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>';
+    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>';
+    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>';
+  		document.getElementById("block").innerHTML += '</div>'+ '</div>';
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
@@ -744,20 +750,17 @@ $(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
 });
 
-var slideIndex = 1;
-showDivs(slideIndex);
+var slideIndex = 0;
+carousel();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
+function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";  
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 3000); // Change image every 2 seconds
 }
