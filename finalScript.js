@@ -647,7 +647,7 @@ function createFrame(src){
 function createimagescroll(query)
 { 
 	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
-	document.getElementById("block").innerHTML = "<div class='MagicScroll' data-options='width: 65%'>";
+	document.getElementById("block").innerHTML = "<div class='w3-content w3-display-container'>"
 	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
@@ -664,10 +664,10 @@ function createimagescroll(query)
 		for(var i in response.items)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			document.getElementById("block").innerHTML += "<img id='Blockimage' src="+response.items[i].link+" />";
+			document.getElementById("block").innerHTML += "<img class='mySlides' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
 		}
-		document.getElementById("block").innerHTML += "</div>";
+		document.getElementById("block").innerHTML += '<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>'+'<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>'+ "</div>";
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
@@ -744,3 +744,20 @@ $(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
 });
 
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
