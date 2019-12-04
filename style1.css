@@ -346,7 +346,7 @@ input[type="submit"]
 	height: 3.5vw;
 	position:absolute;
 	left: 4vw;
-	top: 12vw;
+	top: 18vh;
 	}
 	#rltdbtn
 	{
@@ -400,7 +400,7 @@ input[type="submit"]
 	font-size: 60px;
 	}
 	
-	@media screen and (max-height: 700px) {
+	@media screen and (max-height: 900px) {
 	button {
      width: 6vw;
      height: 8vw;
