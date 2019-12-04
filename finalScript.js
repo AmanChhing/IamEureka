@@ -647,7 +647,7 @@ function createFrame(src){
 function createimagescroll(query)
 { 
 	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
-	document.getElementById("block").innerHTML = "<div class='w3-content w3-display-container'>"
+	document.getElementById("block").innerHTML = "<div class='w3-content w3-section'>"
 	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
@@ -667,13 +667,13 @@ function createimagescroll(query)
 			document.getElementById("block").innerHTML += "<img class='mySlides' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
 		}
-		document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
-    		document.getElementById("block").innerHTML += '<div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>';
-    		document.getElementById("block").innerHTML += '<div class="w3-right" onclick="plusDivs(1)">&#10095;</div>';
-    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>';
-    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>';
-    		document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>';
-  		document.getElementById("block").innerHTML += '</div>'+ '</div>';
+		//document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
+    		//document.getElementById("block").innerHTML += '<div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>';
+    		//document.getElementById("block").innerHTML += '<div class="w3-right" onclick="plusDivs(1)">&#10095;</div>';
+    		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>';
+    		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>';
+    		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>';
+  		document.getElementById("block").innerHTML += '</div>';
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
