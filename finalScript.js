@@ -652,8 +652,12 @@ function createFrame(src){
 }
 function createimagescroll(query)
 { 
+	var imgscrollerdiv = document.createElement('div');
+	imgscrollerdiv.className  = 'w3-content w3-section';
+	imgscrollerdiv.id = 'imgscroller_container';
+	document.getElementById("block").appendChild(imgscrollerdiv);
 	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
-	var imagescroller = "<div class='w3-content w3-section'>";
+	//var imagescroller = "<div class='w3-content w3-section'>";
 	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
@@ -670,8 +674,9 @@ function createimagescroll(query)
 		for(var i in response.items)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
+			//imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
+			Photo(response.items[i].link);
 		}
 		//document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
     		//document.getElementById("block").innerHTML += '<div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>';
@@ -757,18 +762,27 @@ $(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
 });
 
-/*
-var slideIndex = 0;
+function Photo(src) {
+    this.src = src;
+    var container = document.getElementById('imgscroller_container'); 
+    var img = document.createElement('img');
+    img.src = this.src;
+    img.className = 'mySlides';
+    container.appendChild(img);
+}
+
+
+var myIndex = 0;
+carousel();
 
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+    x[i].style.display = "none";  
   }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 3000); // Change image every 2 seconds
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
 }
-*/
