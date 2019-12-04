@@ -421,7 +421,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 						if(data.answer_box.answers[0].category)
 						{
 						createimagescroll(MyQuery);
-						carousel();
+						//carousel();
 						EurekaText = data.answer_box.answers[0].category + " is ";
 						}
 						EurekaText += " "+data.answer_box.answers[0].answer;
@@ -448,7 +448,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				else
 				{
 					createimagescroll(MyQuery);
-					carousel();
+					//carousel();
 					EurekaText = ""+data.answer_box.answers[0].answer+".";
 					say(EurekaText);
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -475,7 +475,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	else if(data.weather_box)
 	{
 		createimagescroll(MyQuery);
-		carousel();
+		//carousel();
 		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
 		if(data.weather_box.current)
 		{
@@ -498,7 +498,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	else if(data.local_map)
 	{
 		createimagescroll(MyQuery);
-		carousel();
+		//carousel();
 		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
 		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
 		//outputBot.textContent = ", Link: "+data.local_map.link;
@@ -523,7 +523,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 function Knowledge_Graph(data)
 {
 	createimagescroll(MyQuery);
-	carousel();
+	//carousel();
 	if(data.knowledge_graph.description)
 		{
 			EurekaText = ""+data.knowledge_graph.description+".";
@@ -561,7 +561,7 @@ function organic_Result(data)
 	else
 	{
 	   	createimagescroll(MyQuery);
-		carousel();
+		//carousel();
 		EurekaText = ""+data.organic_results[0].snippet+".";
 		say(EurekaText);
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -757,6 +757,7 @@ $(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
 });
 
+/*
 var slideIndex = 0;
 
 function carousel() {
@@ -770,3 +771,4 @@ function carousel() {
   x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 3000); // Change image every 2 seconds
 }
+*/
