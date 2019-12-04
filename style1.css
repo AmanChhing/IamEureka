@@ -387,10 +387,10 @@ input[type="submit"]
 	}
 	#Blockimage
 	{
-	width: 70%;
-	height: 60%;
+	width: 60%;
+	height: 50%;
 	position:absolute;
-	left: 15%;
+	left: 28%;
 	top: 1%;
 	}
 	#rltdbtn,#rltdbtn1
@@ -500,6 +500,7 @@ input[type="submit"]
 	position:absolute;
 	top:24vh;
 	}
+	
 	}
 
 }
@@ -599,6 +600,14 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	#Blockimage
+	{
+	width: 60vw;
+	height: 50%;
+	position:absolute;
+	left: 12%;
+	top: 15%;
+	}
 	#blocktable
 	{
 	width: 80%;
