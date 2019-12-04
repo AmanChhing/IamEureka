@@ -420,12 +420,13 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 					{
 						if(data.answer_box.answers[0].category)
 						{
+						document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 						EurekaText = data.answer_box.answers[0].category + " is ";
 						}
 						EurekaText += " "+data.answer_box.answers[0].answer;
 						Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 						say(EurekaText);
-						if(data.answer_box.answers[0].images)
+						/*if(data.answer_box.answers[0].images)
 						{
 						//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
 						document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
@@ -433,7 +434,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 						else
 						{
 						document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
-						}
+						}*/
 					}
 				}
 			}
@@ -445,10 +446,11 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				}
 				else
 				{
+					document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 					EurekaText = ""+data.answer_box.answers[0].answer+".";
 					say(EurekaText);
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-					if(data.answer_box.answers[0].images)
+					/*if(data.answer_box.answers[0].images)
 					{
 				//alert("Image = "+data.answer_box.answers[0].images[0]) //have to show it to the div
 					document.getElementById("block").innerHTML = createFrame(data.answer_box.answers[0].images[0]);
@@ -456,7 +458,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 					else
 					{
 					document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.answer_box.answers[0].answer + "</h3>";
-					}
+					}*/
 					if(data.answer_box.answers[0].source)
 					{
 						Eurekaoutput.innerHTML += "<br> Source: <a href="+data.answer_box.answers[0].source.link+" target= '_blank'>"+data.answer_box.answers[0].source.link+"</a>"
@@ -470,10 +472,11 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	}
 	else if(data.weather_box)
 	{
+		document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
 		if(data.weather_box.current)
 		{
-			if(data.weather_box.current.image)
+			/*if(data.weather_box.current.image)
 			{
 			//alert("Image ="+data.weather_box.current.image) //have to show it to div
 				document.getElementById("block").innerHTML = createFrame(data.weather_box.current.image);
@@ -481,7 +484,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 			else
 			{
 				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + data.weather_box.current.temperature[1].value + "</h3>";
-			}
+			}*/
 			EurekaText += ", there is a "+data.weather_box.current.precipitation.value +" Percent Chance of Rain today";
 			EurekaText += ", humidity is "+data.weather_box.current.humidity.value +" Percent";
 			EurekaText += " and the temperature is "+data.weather_box.current.temperature[1].value +" degree "+data.weather_box.current.temperature[1].unit +" Right now";
@@ -491,6 +494,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	}
 	else if(data.local_map)
 	{
+		document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
 		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
 		//outputBot.textContent = ", Link: "+data.local_map.link;
@@ -514,17 +518,18 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 });
 function Knowledge_Graph(data)
 {
+	document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 	if(data.knowledge_graph.description)
 		{
 			EurekaText = ""+data.knowledge_graph.description+".";
 			say(EurekaText);
 			Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
 		}
-		if(data.knowledge_graph.images)
+		/*if(data.knowledge_graph.images)
 		{
 			//alert("Image = "+data.knowledge_graph.images[0]) //need to show it to div
 			document.getElementById("block").innerHTML = createFrame(data.knowledge_graph.images[0]);
-		}
+		}*/
 		if(data.knowledge_graph.source)
 		{
 			//outputBot.textContent += "Source: "+data.knowledge_graph.source.name;
@@ -550,7 +555,7 @@ function organic_Result(data)
 	}
 	else
 	{
-	   
+	   	document.getElementById("block").innerHTML = createimagescroll(MyQuery);
 		EurekaText = ""+data.organic_results[0].snippet+".";
 		say(EurekaText);
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -560,7 +565,7 @@ function organic_Result(data)
 		if(data.organic_results[0].rich_snippet)
 		{
 			Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
-			document.getElementById("block").innerHTML = "<h2 id='blockh3'>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
+			Eurekaoutput.innerHTML += "<br>" + data.organic_results[0].rich_snippet.top.extensions;
 		//say(data.organic_results[0].rich_snippet.top.extensions);
 		}
 		Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
@@ -639,6 +644,36 @@ function createFrame(src){
             //"</a>"+
           "</div>";
 }
+function createimagescroll(query)
+{ 
+	var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
+	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
+	var x = new XMLHttpRequest();
+	x.open('GET', searchUrl); 
+	// The Google image search API responds with JSON, so let Chrome parse it. 
+	x.responseType = 'json'; 
+	//alert("came");
+	
+	x.onload = function() 
+	{ 
+		// Parse and process the response from Google Image Search. 
+		var response = x.response; 
+		//var firstResult = response.items[0];
+		for(var i in response.items)
+		{
+			imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
+			//var imagelink = response.items[i].link
+		}
+		return imagescrolldiv + "</div>";
+		//console.log(response.items); 
+		// Take the thumbnail instead of the full image to get an approximately 
+		// consistent image size. 
+		//var imageUrl = firstResult.link;
+		//alert(imageUrl); 
+	}
+	x.send();
+}
+
 
 
 
