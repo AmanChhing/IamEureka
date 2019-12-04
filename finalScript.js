@@ -420,7 +420,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 					{
 						if(data.answer_box.answers[0].category)
 						{
-						document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+						createimagescroll(MyQuery);
 						EurekaText = data.answer_box.answers[0].category + " is ";
 						}
 						EurekaText += " "+data.answer_box.answers[0].answer;
@@ -446,7 +446,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				}
 				else
 				{
-					document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+					createimagescroll(MyQuery);
 					EurekaText = ""+data.answer_box.answers[0].answer+".";
 					say(EurekaText);
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -472,7 +472,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	}
 	else if(data.weather_box)
 	{
-		document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+		createimagescroll(MyQuery);
 		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
 		if(data.weather_box.current)
 		{
@@ -494,7 +494,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	}
 	else if(data.local_map)
 	{
-		document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+		createimagescroll(MyQuery);
 		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
 		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
 		//outputBot.textContent = ", Link: "+data.local_map.link;
@@ -518,7 +518,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 });
 function Knowledge_Graph(data)
 {
-	document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+	createimagescroll(MyQuery);
 	if(data.knowledge_graph.description)
 		{
 			EurekaText = ""+data.knowledge_graph.description+".";
@@ -555,7 +555,7 @@ function organic_Result(data)
 	}
 	else
 	{
-	   	document.getElementById("block").innerHTML = createimagescroll(MyQuery);
+	   	createimagescroll(MyQuery);
 		EurekaText = ""+data.organic_results[0].snippet+".";
 		say(EurekaText);
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -646,8 +646,9 @@ function createFrame(src){
 }
 function createimagescroll(query)
 { 
-	var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
-	alert(query);
+	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
+	document.getElementById("block").innerHTML = "<div class='MagicScroll' data-options='width: 65%'>";
+	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
 	x.open('GET', searchUrl); 
@@ -662,9 +663,11 @@ function createimagescroll(query)
 		//var firstResult = response.items[0];
 		for(var i in response.items)
 		{
-			imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			alert(response.items[i].link);
+			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
+			document.getElementById("block").innerHTML += "<img src="+response.items[i].link+" />";
+			//alert(response.items[i].link);
 		}
+		document.getElementById("block").innerHTML += "</div>";
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
@@ -672,7 +675,7 @@ function createimagescroll(query)
 		//alert(imageUrl); 
 	}
 	x.send();
-	return imagescrolldiv + "</div>";
+	
 }
 
 
