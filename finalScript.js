@@ -664,7 +664,7 @@ function createimagescroll(query)
 		for(var i in response.items)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			document.getElementById("block").innerHTML += "<img src="+response.items[i].link+" />";
+			document.getElementById("block").innerHTML += "<img id='Blockimage' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
 		}
 		document.getElementById("block").innerHTML += "</div>";
