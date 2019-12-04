@@ -684,8 +684,8 @@ function createimagescroll(query)
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>';
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>';
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>';
-  		imagescroller += '</div>';
-		document.getElementById("block").innerHTML = imagescroller
+  		//imagescroller += '</div>';
+		//document.getElementById("block").innerHTML = imagescroller
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
