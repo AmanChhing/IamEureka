@@ -1067,5 +1067,11 @@ th {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 
-
+.mySlides 
+{
+	width: 75vw;
+	height: 35vh;
+	margin-left: 12vw;
+	margin-top: 4vh;
+}
 
