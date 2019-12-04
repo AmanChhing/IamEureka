@@ -274,7 +274,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=ED9FF3B028DB4F02A7CEB801B
 				EurekaText = ""+data.answer_box.answers[0].original.value +" "+data.answer_box.answers[0].original.unit +"is equal to "+data.answer_box.answers[0].converted.value+" "+data.answer_box.answers[0].converted.unit+".";
 				say(EurekaText);
 				Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-				document.getElementById("block").innerHTML = "<h2>" + data.answer_box.answers[0].converted.value + "</h2>";
+				document.getElementById("block").innerHTML = "<h2 id='blockh3'>" + data.answer_box.answers[0].converted.value + "</h2>";
 				//have to show the data.answer_box.answers[0].converted.value to div
 			}
 			else if(data.answer_box.answers[0].steps)
@@ -560,7 +560,7 @@ function organic_Result(data)
 		if(data.organic_results[0].rich_snippet)
 		{
 			Eurekaoutput.innerHTML += "<br>"+data.organic_results[0].rich_snippet.top.extensions;
-			document.getElementById("block").innerHTML = "<h2>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
+			document.getElementById("block").innerHTML = "<h2 id='blockh3'>" + data.organic_results[0].rich_snippet.top.extensions + "</h2>";
 		//say(data.organic_results[0].rich_snippet.top.extensions);
 		}
 		Eurekaoutput.innerHTML +=  "<br>"+"<b>Alternate Result: </b>"
