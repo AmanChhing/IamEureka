@@ -421,6 +421,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 						if(data.answer_box.answers[0].category)
 						{
 						createimagescroll(MyQuery);
+						carousel();
 						EurekaText = data.answer_box.answers[0].category + " is ";
 						}
 						EurekaText += " "+data.answer_box.answers[0].answer;
@@ -447,6 +448,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				else
 				{
 					createimagescroll(MyQuery);
+					carousel();
 					EurekaText = ""+data.answer_box.answers[0].answer+".";
 					say(EurekaText);
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -473,6 +475,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	else if(data.weather_box)
 	{
 		createimagescroll(MyQuery);
+		carousel();
 		EurekaText = "The weather in "+data.weather_box.location+" is "+data.weather_box.summary;
 		if(data.weather_box.current)
 		{
@@ -495,6 +498,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	else if(data.local_map)
 	{
 		createimagescroll(MyQuery);
+		carousel();
 		Eurekaoutput.innerHTML = "<p> Here's Something i found, Opening it now. />"
 		Eurekaoutput.innerHTML += "<br> Link: <a href="+data.local_map.link+" target= '_blank'>"+data.local_map.link+"</a>"
 		//outputBot.textContent = ", Link: "+data.local_map.link;
@@ -519,6 +523,7 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 function Knowledge_Graph(data)
 {
 	createimagescroll(MyQuery);
+	carousel();
 	if(data.knowledge_graph.description)
 		{
 			EurekaText = ""+data.knowledge_graph.description+".";
@@ -556,6 +561,7 @@ function organic_Result(data)
 	else
 	{
 	   	createimagescroll(MyQuery);
+		carousel();
 		EurekaText = ""+data.organic_results[0].snippet+".";
 		say(EurekaText);
 		Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
@@ -647,7 +653,7 @@ function createFrame(src){
 function createimagescroll(query)
 { 
 	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
-	document.getElementById("block").innerHTML = "<div class='w3-content w3-section'>"
+	var imagescroller = "<div class='w3-content w3-section'>";
 	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
 	var x = new XMLHttpRequest();
@@ -664,7 +670,7 @@ function createimagescroll(query)
 		for(var i in response.items)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			document.getElementById("block").innerHTML += "<img class='mySlides' src="+response.items[i].link+" />";
+			imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
 			//alert(response.items[i].link);
 		}
 		//document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
@@ -673,7 +679,8 @@ function createimagescroll(query)
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>';
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>';
     		//document.getElementById("block").innerHTML += '<span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>';
-  		document.getElementById("block").innerHTML += '</div>';
+  		imagescroller += '</div>';
+		document.getElementById("block").innerHTML = imagescroller
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
@@ -751,7 +758,6 @@ $(document).ready(function(){
 });
 
 var slideIndex = 0;
-carousel();
 
 function carousel() {
   var i;
