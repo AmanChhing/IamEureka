@@ -14,29 +14,6 @@
 }
 
 
-
-
-#rltdbtn
-{
-	width: 50%;
-	height: 20%;
-	position:absolute;
-	left: 1%;
-	padding-top: 1%;
-	font-size: 25px;
-}
-#rltdbtn1
-{
-	width: 55%;
-	height: 35%;
-	position:absolute;
-	left: 1%;
-	padding-top: 1%;
-	margin-top: 39%;
-	margin-bottom: 10%;
-	font-size: 25px;
-}
-
 #blockh3
 {
 	position:absolute;
@@ -348,30 +325,28 @@ input[type="submit"]
 	#block span
 	{
 	position:absolute;
-	top: 20vh;
+	top: 25vh;
 	box-sizing:border-box;
-	margin-left: 15vw;
+	margin-left: 5vw;
 	}
 	.mySlides 
 	{
-	width: 35vw;
-	height: 30vh;
-	margin-left: 12vw;
-	margin-top: 4vh;
+	width: 45vw;
+	height: 49vh;
+	margin-left: -5vw;
+	margin-top: 1vh;
 	}
 	#ScrollArrowleft
 	{
-	margin-top: 6vh;
-	margin-bottom: 10vh;
-	font-size: 6vw;
-	margin-left: 15vw;
+	margin-bottom: 17vh;
+	font-size: 5vw;
+	margin-left: -5vw;
 	
 	}
 	#ScrollArrowright
 	{
-	margin-top: 6vh;
-	font-size: 6vw;
-	margin-right: -65vw;
+	font-size: 5vw;
+	margin-right: -14vw;
 	}
 	#InputText
 	{
@@ -389,16 +364,7 @@ input[type="submit"]
 	left: 4vw;
 	top: 18vh;
 	}
-	#rltdbtn
-	{
-	margin-top: 135px;
-	margin-bottom: 75px;
-	}
-	#rltdbtn1
-	{
-	margin-top: 360px;
-	margin-bottom: 75px;
-	}
+	
 	iframe
 	{
 	position:absolute;
@@ -434,13 +400,18 @@ input[type="submit"]
 	left: 28%;
 	top: 1%;
 	}
-	#rltdbtn,#rltdbtn1
-	{
-	width: 60%;
-	height: 15%;
-	font-size: 60px;
-	}
 	
+	button {
+     width: 10vw;
+     height: 12vw;
+     left: 47vw;
+     bottom: 1vh;
+	}
+	button .fa {
+    font-size: 7.5vw;
+    line-height: 3vh;
+    left: 2.6vw;
+	}
 	@media screen and (max-height: 900px) {
 	button {
      width: 6vw;
@@ -508,7 +479,7 @@ input[type="submit"]
 	#block span
 	{
 	position:absolute;
-	top: 30vh;
+	top: 33vh;
 	box-sizing:border-box;
 	margin-left: 1vw;
 	}
@@ -547,27 +518,13 @@ input[type="submit"]
 	left: 4vw;
 	top: 9vw;
 	}
-	#rltdbtn
-	{
-	width: 65%;
-	height: 15%;
-	font-size: 25px;
-	margin-top: 45px;
-	margin-bottom: 25px;
-	}
+	
 	
 	#block 
 	{ 
 	left: 22%;  
 	}
-	#rltdbtn1
-	{
-	width: 65%;
-	height: 15%;
-	font-size: 25px;
-	margin-top: 145px;
-	margin-bottom: 25px;
-	}
+
 	#blocktable
 	{
 	width: 80%;
@@ -720,13 +677,7 @@ input[type="submit"]
 	position:absolute;
 	left: 45vw;
 	}
-	#rltdbtn,#rltdbtn1
-	{
-	width: 35%;
-	height: 25%;
-	font-size: 25px;
-	margin-bottom: 65px;
-	}
+
 	#Blockimage
 	{
 	top: 15%;
@@ -809,12 +760,7 @@ input[type="submit"]
     line-height: 2vh;
     left: 3.7vw;
 	}
-	#rltdbtn,#rltdbtn1
-	{
-	width: 45%;
-	height: 35%;
-	font-size: 25px;
-	}
+
 	#blockroad
 	{
 	position:absolute;
@@ -962,11 +908,6 @@ input[type="submit"]
 }
 @media screen and (max-width: 550px) {
 	
-	#rltdbtn,#rltdbtn1
-	{
-	width: 55%;
-	font-size: 23px;
-	}
 	
 	
 	#YouSaid
@@ -1117,10 +1058,6 @@ input[type="submit"]
 	{
 	color:blue;
 	font-size: 4.5vw;
-	}
-	#rltdbtn,#rltdbtn1
-	{
-	font-size: 18px;
 	}
 	input[type="submit"]
 	{
@@ -1288,10 +1225,7 @@ input[type="submit"]
 	.header {
 		height: 22vw;
 	}
-	#rltdbtn,#rltdbtn1
-	{
-	font-size: 14px;
-	}
+
 	#block
 	{
 		top: 45vw;
@@ -1322,6 +1256,34 @@ th {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 
+	#EurekaOutput
+	{
+	position: relative;
+	}
+	#rltdbtn
+	{
+	position: absolute;
+	top: 100%;
+	left: 1%;
+	margin-top: 30px;
+	margin-bottom: 40vh;
+	overflow-y:scroll;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 12vw;
+	margin-bottom: 1vh;
+	overflow-y:scroll;
+	}
+	#rltdbtn,#rltdbtn1
+	{
+	width: 30vw;
+	height: 7vh;
+	font-size: 4vw;
+	}
 
 
 
