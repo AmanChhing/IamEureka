@@ -678,7 +678,7 @@ function createimagescroll(query)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
 			imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
-			spanscroller +=  '<span id=Scrollbullet'+i+' class="w3-badge demo w3-border w3-transparent w3-hover-white" style="position:absolute; left: '+(30+((i*5)))+'vw; top: -2vh; font-size: 6vw;" onclick="currentDiv("+(i+1)+")"></span>';
+			spanscroller +=  '<span id=Scrollbullet'+i+' class="w3-badge demo w3-border w3-transparent w3-hover-white" style="position:absolute; left: '+(30+((i*5)))+'vw; top: -2vh; font-size: 6vw;" onclick="currentDiv('+i+')"></span>';
 			//alert(response.items[i].link);
 			//Photo(response.items[i].link);
 		}
