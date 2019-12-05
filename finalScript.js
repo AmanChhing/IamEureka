@@ -771,14 +771,14 @@ $(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
 });
 
-function Photo(src) {
+/*function Photo(src) {
     this.src = src;
     var container = document.getElementById('imgscroller_container'); 
     var img = document.createElement('img');
     img.src = this.src;
     img.className = 'mySlides';
     container.appendChild(img);
-}
+}*/
 
 
 var slideIndex = 1;
