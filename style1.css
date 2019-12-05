@@ -703,7 +703,7 @@ input[type="submit"]
 	position:absolute;
 	top: 20vh;
 	box-sizing:border-box;
-	margin-left: 15vw;
+	margin-left: 18vw;
 	}
 	.mySlides 
 	{
@@ -1004,7 +1004,7 @@ input[type="submit"]
 	#block span
 	{
 	position:absolute;
-	top: 20vh;
+	top: 19vh;
 	box-sizing:border-box;
 	margin-left: 3vw;
 	}
@@ -1058,7 +1058,7 @@ input[type="submit"]
 	position:absolute;
 	top: 19vh;
 	box-sizing:border-box;
-	margin-left: 1vw;
+	margin-left: 0vw;
 	}
 	#blockroad
 	{
