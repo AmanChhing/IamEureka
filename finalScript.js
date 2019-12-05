@@ -658,6 +658,7 @@ function createimagescroll(query)
 	//document.getElementById("block").appendChild(imgscrollerdiv);
 	//var imagescrolldiv = "<div class='MagicScroll' data-options='width: 65%'>";
 	var imagescroller = "<div class='w3-content w3-display-container'>";
+	var spanscroller = "";
 	//"<div class='w3-content w3-section'>";
 	//alert(query);
 	var searchUrl = 'https://www.googleapis.com/customsearch/v1' +'?key=' + 'AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4' + '&cx=' + '012729109891803392179:eyp6gi9w6xy'+'&q='+query+'&searchType='+'image'+'&imgSize=xxlarge';
@@ -670,21 +671,21 @@ function createimagescroll(query)
 	x.onload = function() 
 	{ 
 		// Parse and process the response from Google Image Search. 
-		var response = x.response; 
+		var response = x.response;
+		
 		//var firstResult = response.items[0];
 		for(var i in response.items)
 		{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
 			imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
+			spanscroller +=  '<span id=Scrollbullet'+i+' class="w3-badge demo w3-border w3-transparent w3-hover-white" style="position:absolute; left: '+(30+((i*5)))'+vw; top: -2vh; font-size: 6vw;" onclick="currentDiv("+(i+1)+")"></span>';
 			//alert(response.items[i].link);
 			//Photo(response.items[i].link);
 		}
 		imagescroller += '<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">';
-    		imagescroller +=  '<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>';
-    		imagescroller += '<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>';
-    		imagescroller += '<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>';
-    		imagescroller += '<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>';
-    		imagescroller += '<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>';
+    		imagescroller +=  '<div id="ScrollArrowleft" class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>';
+    		imagescroller += '<div id="ScrollArrowright" class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>';
+    		imagescroller +=  spanscroller
   		imagescroller += '</div>';
 		imagescroller += '</div>';
 		//document.getElementById("block").innerHTML += '<div class="w3-center w3-display-bottommiddle" style="width:100%">';
