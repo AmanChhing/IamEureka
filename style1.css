@@ -5,6 +5,13 @@
 	margin-left: 10vw;
 	margin-top: 2vh;
 }
+#block span
+{
+	position:absolute;
+	top: 19vh;
+	box-sizing:border-box;
+
+}
 
 
 
@@ -338,23 +345,33 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: 15vw;
+	}
 	.mySlides 
 	{
 	width: 35vw;
-	height: 35vh;
-	margin-left: -1vw;
-	margin-top: 2vh;
+	height: 30vh;
+	margin-left: 12vw;
+	margin-top: 4vh;
 	}
 	#ScrollArrowleft
 	{
 	margin-top: 6vh;
-	font-size: 4vw;
+	margin-bottom: 10vh;
+	font-size: 6vw;
+	margin-left: 15vw;
+	
 	}
 	#ScrollArrowright
 	{
 	margin-top: 6vh;
-	font-size: 4vw;
-	margin-right: -7vw;
+	font-size: 6vw;
+	margin-right: -65vw;
 	}
 	#InputText
 	{
@@ -681,9 +698,16 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: 15vw;
+	}
 	.mySlides 
 	{
-	width: 70vw;
+	width: 75vw;
 	height: 30vh;
 	margin-left: 12vw;
 	margin-top: 4vh;
@@ -691,14 +715,16 @@ input[type="submit"]
 	#ScrollArrowleft
 	{
 	margin-top: 6vh;
+	margin-bottom: 10vh;
 	font-size: 6vw;
 	margin-left: 15vw;
+	
 	}
 	#ScrollArrowright
 	{
 	margin-top: 6vh;
 	font-size: 6vw;
-	margin-right: -60vw;
+	margin-right: -65vw;
 	}
 	#Blockimage
 	{
@@ -878,6 +904,13 @@ input[type="submit"]
 	.header {
 		height: 19vw;
 	}
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: 12vw;
+	}
 	@media screen and (max-height: 760px) {
 		.Footimg1
 		{
@@ -886,11 +919,13 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 550px) {
+	
 	#rltdbtn,#rltdbtn1
 	{
 	width: 55%;
 	font-size: 23px;
 	}
+	
 	
 	#YouSaid
 	{
@@ -918,6 +953,10 @@ input[type="submit"]
 	{
 	color:blue;
 	font-size: 4.3vw;
+	}
+	#block span
+	{
+	margin-left: 7vw;
 	}
 	input[type="submit"]
 	{
@@ -954,6 +993,21 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 450px) {
+	#ScrollArrowleft
+	{
+	margin-top: 6vh;
+	margin-bottom: 10vh;
+	font-size: 6vw;
+	margin-left: 15vw;
+	
+	}
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: 3vw;
+	}
 	.header {
 		height: 23vw;
 	}
@@ -999,7 +1053,13 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 400px) {
-	.
+	#block span
+	{
+	position:absolute;
+	top: 19vh;
+	box-sizing:border-box;
+	margin-left: 1vw;
+	}
 	#blockroad
 	{
 	left: 37vw;
@@ -1030,6 +1090,13 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 360px) {
+	#block span
+	{
+	position:absolute;
+	top: 19vh;
+	box-sizing:border-box;
+	margin-left: -1vw;
+	}
 	#blockroad
 	{
 	left: 37vw;
@@ -1064,7 +1131,29 @@ input[type="submit"]
 	.header {
 		height: 24vw;
 	}
-	@media screen and (max-height: 580px) {
+	@media screen and (max-height: 600px) {
+	#ScrollArrowleft
+	{
+	margin-top: 6vh;
+	margin-bottom: 10vh;
+	font-size: 6vw;
+	margin-left: 8vw;
+	
+	}
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: -1vw;
+	}
+	.mySlides 
+	{
+	width: 75vw;
+	height: 30vh;
+	margin-left: 6vw;
+	margin-top: -1vh;
+	}
 	#blockroad
 	{
 	position:absolute;
@@ -1098,24 +1187,28 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 320px) {
+	#block span
+	{
+	margin-left: -3vw;
+	}
 	.mySlides 
 	{
-	width: 70vw;
+	width: 80vw;
 	height: 30vh;
-	margin-left: 6vw;
-	margin-top: 2vh;
+	margin-left: 4vw;
+	margin-top: -1vh;
 	}
 	#ScrollArrowleft
 	{
 	margin-top: 6vh;
 	font-size: 6vw;
-	margin-left: 9vw;
+	margin-left: 7vw;
 	}
 	#ScrollArrowright
 	{
 	margin-top: 6vh;
 	font-size: 6vw;
-	margin-right: -60vw;
+	margin-right: -70vw;
 	}
 	#Blockimage
 	{
