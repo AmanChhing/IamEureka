@@ -475,26 +475,61 @@ input[type="submit"]
 
 	}
 }
-
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1600px) {
+	#block span
+	{
+	position:absolute;
+	top: 33vh;
+	box-sizing:border-box;
+	margin-left: 1vw;
+	}
 	.mySlides 
 	{
-	width: 35vw;
-	height: 35vh;
+	width: 40vw;
+	height: 60vh;
 	margin-left: 10vw;
-	margin-top: 2vh;
+	margin-top: 3vh;
 	}
 	#ScrollArrowleft
 	{
-	margin-top: 6vh;
+	margin-bottom: 28vh;
 	font-size: 4vw;
 	margin-left: 10vw;
+	
 	}
 	#ScrollArrowright
 	{
-	margin-top: 6vh;
 	font-size: 4vw;
-	margin-right: 10vw;
+	margin-right: 6vw;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	#block span
+	{
+	position:absolute;
+	top: 30vh;
+	box-sizing:border-box;
+	margin-left: 1vw;
+	}
+	.mySlides 
+	{
+	width: 40vw;
+	height: 60vh;
+	margin-left: 7vw;
+	margin-top: 3vh;
+	}
+	#ScrollArrowleft
+	{
+	margin-bottom: 28vh;
+	font-size: 4vw;
+	margin-left: 7vw;
+	
+	}
+	#ScrollArrowright
+	{
+	font-size: 4vw;
+	margin-right: 8vw;
 	}
 	#InputText
 	{
@@ -592,9 +627,16 @@ input[type="submit"]
 	margin-left: 5vw;
 	margin-top: -4vh;
 	}
+	#block span
+	{
+	position:absolute;
+	top: 20vh;
+	box-sizing:border-box;
+	margin-left: 8vw;
+	}
 	#ScrollArrowleft
 	{
-	margin-top: 6vh;
+	margin-bottom: 10vh;
 	font-size: 5vw;
 	margin-left: 5vw;
 	}
@@ -709,7 +751,7 @@ input[type="submit"]
 	{
 	width: 75vw;
 	height: 30vh;
-	margin-left: 12vw;
+	margin-left: 11.5vw;
 	margin-top: 4vh;
 	}
 	#ScrollArrowleft
@@ -807,7 +849,7 @@ input[type="submit"]
 	padding-right: 99vw;
 	margin-left: -11.5vw;
 	height: 41vh;
-	top: 23.5vh;
+	top: 22.5vh;
 	}
 	
 	#YouSaid
@@ -934,7 +976,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 23vh;
+	top: 22vh;
 	}
 	#EurekaReplied
 	{
@@ -977,7 +1019,7 @@ input[type="submit"]
 	button .fa {
     font-size: 13vw;
     line-height: 2vh;
-    left: 3vw;
+    left: 2.9vw;
 	}
 	
 	#You,#Bot
@@ -1025,7 +1067,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 23vh;
+	top: 22vh;
 	}
 	#EurekaReplied
 	{
@@ -1040,7 +1082,7 @@ input[type="submit"]
 	button .fa {
     font-size: 11vw;
     line-height: 2vh;
-    left: 3.6vw;
+    left: 3.5vw;
 	}
 	@media screen and (max-height: 700px) {
 	.header {
@@ -1177,7 +1219,7 @@ input[type="submit"]
 		padding-right: 75vw;
 		left: 18%;
 		height: 35vh;
-		top: 28vh;
+		top: 27.5vh;
 		}
 		#EurekaReplied
 		{
