@@ -676,9 +676,16 @@ function createimagescroll(query)
 		//var firstResult = response.items[0];
 		for(var i in response.items)
 		{
+			if(i==0)
+			{
+			imagescroller += "<img class='mySlides' src="+response.items[i].link+" style='display: block;'/>";
+			}
+			else
+			{
 			//imagescrolldiv = imagescrolldiv + "<img src="+response.items[i].link+" />";
-			imagescroller += "<img class='mySlides' src="+response.items[i].link+" />";
-			spanscroller +=  '<span id=Scrollbullet'+i+' class="w3-badge demo w3-border w3-transparent w3-hover-white" style="position:absolute; left: '+(30+((i*5)))+'vw; top: -2vh; font-size: 6vw;" onclick="currentDiv('+(i+1)+')"></span>';
+			imagescroller += "<img class='mySlides' src="+response.items[i].link+" style='display: none;'/>";
+			}
+			spanscroller +=  '<span id=Scrollbullet'+i+' class="w3-badge demo w3-border w3-transparent w3-hover-white" style="position: absolute; left: '+(30+((i*5)))+'vw; top: -2vh; font-size: 6vw;" onclick="currentDiv('+(Number(i)+Number(1))+')"></span>';
 			//alert(response.items[i].link);
 			//Photo(response.items[i].link);
 		}
@@ -697,7 +704,7 @@ function createimagescroll(query)
   		//imagescroller += '</div>';
 		document.getElementById("block").innerHTML = imagescroller;
 		//var slideIndex = 1;
-		showDivs(1);
+		//showDivs(1);
 		//console.log(response.items); 
 		// Take the thumbnail instead of the full image to get an approximately 
 		// consistent image size. 
