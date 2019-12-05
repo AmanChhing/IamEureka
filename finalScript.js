@@ -514,10 +514,6 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 	{
 		organic_Result(data);
 	}
-	if(data.inline_videos)
-	{
-		related_Videos(data);
-	}
 
 });
 function Knowledge_Graph(data)
@@ -613,6 +609,10 @@ function related_Questions(data)
 	//alert("question = "+data.related_questions[0].question)
 	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
 	//alert("Answer = "+data.related_questions[0].answer)
+	}
+	if(data.inline_videos)
+	{
+		related_Videos(data);
 	}
 }
 function related_Videos(data)
