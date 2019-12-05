@@ -1074,4 +1074,18 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	margin-left: 12vw;
 	margin-top: 4vh;
 }
+#ScrollArrowleft
+{
+	position:absolute;
+	left: 17vw;
+	bottom: 13vh;
+	font-size: 6vw;
+}
+#ScrollArrowright
+{
+	position:absolute;
+	left: 86vw;
+	bottom: 13vh;
+	font-size: 6vw;
+}
 
