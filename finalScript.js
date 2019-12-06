@@ -383,8 +383,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				{
 					EurekaText = "it's "+data.answer_box.answers[0].routes[0].distance + " and will take "+data.answer_box.answers[0].routes[0].time + " "+data.answer_box.answers[0].routes[0].name;
 					Eurekaoutput.innerHTML = "<p>"+EurekaText+"</p>";
-					document.getElementById("block").innerHTML = createFrame("KM.jpg");
-					document.getElementById("block").innerHTML += "<h3 id='blockroad'>" + data.answer_box.answers[0].routes[0].distance + "</h3>";
+					//document.getElementById("block").innerHTML = createFrame("KM.jpg");
+					createimagescroll(MyQuery);
+					//document.getElementById("block").innerHTML += "<h3 id='blockroad'>" + data.answer_box.answers[0].routes[0].distance + "</h3>";
 					say(EurekaText);
 				}
 			}
@@ -395,8 +396,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				window.open(data.organic_results[0].link);
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
-				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
-				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
+				//document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
+				createimagescroll(MyQuery);
+				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, Opening it in 3,  2,  1");
 			}
 			else if (data.answer_box.answers[0].classification)
 			{
@@ -407,8 +409,9 @@ $.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E74
 				window.open(data.organic_results[0].link);
 				//outputBot.textContent = "Title: "+data.organic_results[0].title;
 				//outputBot.textContent += ", Link: "+data.organic_results[0].link;
-				document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
-				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, let me open it");
+				//document.getElementById("block").innerHTML = "<h3 id='blockh3'>" + document.getElementById("InputText").value + "</h3>";
+				createimagescroll(MyQuery);
+				say("Do you want me to play the song "+document.getElementById("InputText").value+" i have found one link for the same, Opening it in 3,  2,  1");
 				}					
 				else
 				{
