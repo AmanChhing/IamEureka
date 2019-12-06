@@ -339,7 +339,7 @@ input[type="submit"]
 	position: absolute;
 	top: 110%;
 	left: 1%;
-	margin-top: 5vw;
+	margin-top: 8vw;
 	margin-bottom: 1vh;
 	}
 	#rltdbtn,#rltdbtn1
@@ -413,7 +413,8 @@ input[type="submit"]
 	}
 	#EurekaReplied
 	{
-		left: 76.3vw;
+		left: 75vw;
+		width: 23vw;
 	}
 	.header {
 		height: 11.5vw;
@@ -512,6 +513,10 @@ input[type="submit"]
 
 
 @media screen and (max-width: 1366px) {
+	button {
+     left: 44.8vw;
+     bottom: 1vh;
+
 	#rltdbtn1
 	{
 	margin-top: 11vw;
@@ -605,8 +610,15 @@ input[type="submit"]
 	left: 19%;
 	top: 1%;
 	}
-	@media screen and (max-height: 850px) {
 	
+	@media screen and (max-height: 850px) {
+	#block span
+	{
+	position:absolute;
+	top: 32vh;
+	box-sizing:border-box;
+	margin-left: 1vw;
+	}
 	#blockroad
 	{
 	position:absolute;
@@ -674,6 +686,7 @@ input[type="submit"]
      width: 14vw;
      height: 21vw;
      bottom: 1vh;
+     left: 42.5vw;
 	}
 	button .fa {
     font-size: 12vw;
@@ -831,6 +844,7 @@ input[type="submit"]
      width: 14vw;
      height: 17vw;
      bottom: 0vh;
+     left: 43vw;
 	}
 	button .fa {
     font-size: 10.5vw;
@@ -951,6 +965,10 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 600px) {
+	#rltdbtn
+	{
+	margin-bottom: 50vh;
+	}
 	input[type="submit"]
 	{
 		height: 4.3vw;
@@ -1051,6 +1069,11 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 450px) {
+	#rltdbtn1
+	{
+	margin-top: 75px;
+	margin-bottom: 1vh;
+	}
 	#ScrollArrowleft
 	{
 	margin-top: 6vh;
@@ -1168,7 +1191,7 @@ input[type="submit"]
 	position:absolute;
 	top: 19vh;
 	box-sizing:border-box;
-	margin-left: -1vw;
+	margin-left: -2.5vw;
 	}
 	#blockroad
 	{
