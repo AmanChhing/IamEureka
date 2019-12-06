@@ -473,6 +473,15 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 1600px) {
+	#rltdbtn
+	{
+	margin-bottom: 86vh;
+	}
+	#rltdbtn1
+	{
+	margin-top: 7vw;
+	margin-bottom: 1vh;
+	}
 	#block span
 	{
 	position:absolute;
@@ -503,11 +512,15 @@ input[type="submit"]
 
 
 @media screen and (max-width: 1366px) {
-
+	#rltdbtn1
+	{
+	margin-top: 11vw;
+	margin-bottom: 1vh;
+	}
 	#block span
 	{
 	position:absolute;
-	top: 33vh;
+	top: 25vh;
 	box-sizing:border-box;
 	margin-left: 1vw;
 	}
@@ -605,6 +618,7 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
+	
 	#EurekaOutput
 	{
 	position: relative;
@@ -641,7 +655,7 @@ input[type="submit"]
 	#block span
 	{
 	position:absolute;
-	top: 20vh;
+	top: 14vh;
 	box-sizing:border-box;
 	margin-left: 8vw;
 	}
@@ -653,7 +667,6 @@ input[type="submit"]
 	}
 	#ScrollArrowright
 	{
-	margin-top: 6vh;
 	font-size: 5vw;
 	margin-right: -15vw;
 	}
@@ -749,6 +762,11 @@ input[type="submit"]
 	#rltdbtn
 	{
 	margin-bottom: 40vh;
+	}
+	#rltdbtn1
+	{
+	margin-top: 15vw;
+	margin-bottom: 1vh;
 	}
 	#block span
 	{
@@ -1093,6 +1111,25 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 400px) {
+	#rltdbtn
+	{
+	margin-top: 30px;
+	margin-bottom: 50vh;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 18vw;
+	margin-bottom: 1vh;
+	}
+	#rltdbtn,#rltdbtn1
+	{
+	width: 30vw;
+	height: 7vh;
+	font-size: 4vw;
+	}
 	#block span
 	{
 	position:absolute;
