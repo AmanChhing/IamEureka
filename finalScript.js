@@ -846,10 +846,9 @@ function fetchmsg(InputText){
 
 }
 
-if(document.getElementById('rltdbtn'))
-{
-}	
-else
+var element =  document.getElementById('rltdbtn');
+alert(element);
+if(typeof(element) == 'undefined' || element == null)
 {
 	alert('yes');
 	document.getElementById('rltdbtn1').style.marginTop = "0px";
