@@ -845,3 +845,13 @@ function fetchmsg(InputText){
 		 .catch(error => console.error('Error h:', error));
 
 }
+
+if(document.getElementById('rltdbtn'))
+{
+}	
+else
+{
+	alert('yes');
+	document.getElementById('rltdbtn1').style.marginTop = "0px";
+	document.getElementById('rltdbtn1').style.marginBottom = "30vh";
+}
