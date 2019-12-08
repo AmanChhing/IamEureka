@@ -767,6 +767,15 @@ function createimagescroll(query)
 	
 }
 
+$(document).ready(function() {
+    if ($.cookie('noShowWelcome'))
+    else {
+        ShowNews();
+	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="popover"]').popover()
+        $.cookie('noShowWelcome', true);    
+    }
+});
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
