@@ -720,7 +720,12 @@ function createimagescroll(query)
 	
 }
 
-
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 
 
 // When the user clicks on the button, open the modal
