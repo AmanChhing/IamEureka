@@ -107,14 +107,15 @@ function playsongornot(data)
 	}
 	else if(window.topscoringintent.toLowerCase() === "googlesearch")
 	{
-		StartSearch(data.query)
+		StartSearch(data.query);
 	}
 	else
 	{
-	outputBot.textContent = "I'm sorry, i don't have it's answer right now, but i'm always learning"
-	say("I'm sorry, i don't have it's answer right now, but i'm always learning")
+	//outputBot.textContent = "I'm sorry, i don't have it's answer right now, but i'm always learning"
+	//say("I'm sorry, i don't have it's answer right now, but i'm always learning")
 	//say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
-			
+	createimagescroll(document.getElementById("InputText").value);
+	fetchmsg(document.getElementById("InputText").value);
 	}
 	
 }
@@ -819,4 +820,27 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
+}
+
+
+function fetchmsg(InputText){
+
+	var url = 'https://eurekaapi.herokuapp.com/send-msg';
+
+	   fetch(url, {
+		 method: 'POST',
+		 headers: {
+			'Content-Type': 'application/json'
+		},
+		 body: JSON.stringify({
+			query: InputText
+		})
+	   }).then(res => res.json())
+		.then(response => {
+		 console.log(response.reply.fulfillmentText);
+		 outputBot.textContent = response.reply.fulfillmentText;
+		say(response.reply.fulfillmentText);
+		})
+		 .catch(error => console.error('Error h:', error));
+
 }
