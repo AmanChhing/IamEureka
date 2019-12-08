@@ -655,7 +655,8 @@ function ShowNews()
 	var req = new Request(url);
 	fetch(req)
     	.then(function(response) {
-        console.log(response.json());
+        console.log(response);
+		console.log(response.articles);
 		var ShowNewsDiv = '<div class="container-fluid">';
 		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:250px;margin:auto;">';
 		ShowNewsDiv += '<div class="carousel-inner">';
