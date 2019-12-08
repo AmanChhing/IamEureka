@@ -722,10 +722,10 @@ function createimagescroll(query)
 
 window.addEventListener("load",function() {
     setTimeout(function(){
-	    alert('yes');
+	//alert('yes');
         // This hides the address bar:
+	document.getElementById("footer").scrollIntoView(false);
         window.scrollTo(0, 1);
-	document.getElementById("footer").scrollIntoView();
     }, 0);
 });
 
@@ -789,9 +789,9 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     document.getElementById('footer').scrollIntoView(false);
-});
+});*/
 
 /*function Photo(src) {
     this.src = src;
@@ -854,7 +854,7 @@ function fetchmsg(InputText){
 
 }
 
-function increasevidbuttonmargin()
+/*function increasevidbuttonmargin()
 {
 var element =  document.getElementById('rltdbtn');
 alert(element);
@@ -865,4 +865,4 @@ if(typeof(element) == 'undefined' || element == null)
 	document.getElementById('rltdbtn1').style.marginTop = "-1vh";
 	document.getElementById('rltdbtn1').style.marginBottom = "45vh";
 }
-}
+}*/
