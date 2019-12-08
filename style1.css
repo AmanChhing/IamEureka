@@ -516,7 +516,7 @@ input[type="submit"]
 
 @media screen and (max-width: 1366px) {
 	button {
-     left: 47vw;
+     left: 45vw;
      bottom: 1vh;
 	}
 	#rltdbtn1
@@ -633,7 +633,16 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
-	
+	.mainfoot
+	{
+	width: 100vw;
+	height: 12vh;
+	}
+	.Footimg1
+	{
+	top: 88vh;
+	position: absolute;
+	}
 	#rltdbtn,#rltdbtn1
 	{
 	width: 30vw;
@@ -667,14 +676,14 @@ input[type="submit"]
 	}
 	button {
      width: 14vw;
-     height: 21vw;
+     height: 17vw;
      bottom: 1vh;
      left: 42.5vw;
 	}
 	button .fa {
-    font-size: 12vw;
+    font-size: 10.5vw;
     line-height: 2vh;
-    left: 3.2vw;
+    left: 3.6vw;
 	}
 	#blocktable
 	{
@@ -848,15 +857,15 @@ input[type="submit"]
 	overflow-y:scroll;
 	}
 	button {
-     width: 14vw;
-     height: 17vw;
+     width: 13vw;
+     height: 16vw;
      bottom: 0vh;
      left: 43vw;
 	}
 	button .fa {
-    font-size: 10.5vw;
+    font-size: 10vw;
     line-height: 2vh;
-    left: 3.7vw;
+    left: 3.2vw;
 	}
 
 	#blockroad
@@ -1010,7 +1019,7 @@ input[type="submit"]
 	#YouSaid
 	{
 	position: absolute;
-	top: 13vh; 
+	top: 14vh; 
 	}
 	#block
 	{
@@ -1020,11 +1029,29 @@ input[type="submit"]
 	{
 	bottom: 17vh;
 	}
-	@media screen and (max-height: 850px) {
-	#block
-	{
-	top: 24.5vh;
+	@media screen and (max-height: 900px) {
+		.Footimg1
+		{
+		top: 90vh;
+		}
 	}
+	@media screen and (max-height: 800px) {
+		.Footimg1
+		{
+		top: 88vh;
+		}
+		#YouSaid
+		{
+		position: absolute;
+		top: 15.5vh; 
+		}
+		#block
+		{
+		top: 23vh;
+		}
+
+	}
+	
 	}
 
 }
@@ -1106,7 +1133,7 @@ input[type="submit"]
 		width: 11.6vw;
 		height: 6.4vw;
 		font-size: 3.8vw;
-		top: 7.8vw;
+		top: 6vw;
 	}
 	#block
 	{
@@ -1135,6 +1162,17 @@ input[type="submit"]
 	{
 	top: 20vh;
 	}
+	}
+	@media screen and (max-height: 500px) {
+	#YouSaid
+		{
+		position: absolute;
+		top: 18.5vh; 
+		}
+		#block
+		{
+		top: 25vh;
+		}
 	}
 }
 @media screen and (max-width: 400px) {
@@ -1189,7 +1227,7 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.5vw;
 		font-size: 3.5vw;
-		top: 8vw;
+		top: 6vw;
 	}
 
 }
@@ -1231,14 +1269,14 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.8vw;
 		font-size: 3.9vw;
-		top: 8vw;
+		top: 6vw;
 	}
 	#block
 	{
-		top: 23vh;
+		top: 21vh;
 	}
 	.header {
-		height: 24vw;
+		height: 22vw;
 	}
 	@media screen and (max-height: 600px) {
 	#ScrollArrowleft
@@ -1280,17 +1318,23 @@ input[type="submit"]
 		}
 		#block
 		{
-		position: absolute;
-		box-sizing: border-box;
-		padding-right: 80vw;
-		left: 26%;
-		height: 43vh;
-		top: 28vh;
+		top: 25vh;
 		}
 		#EurekaReplied
 		{
 		position: absolute;
 		bottom: 16vh;
+		}
+	}
+	@media screen and (max-height: 500px) {
+	#block
+		{
+		top: 28vh;
+		}
+		#EurekaReplied
+		{
+		position: absolute;
+		bottom: 14vh;
 		}
 	}
 }
@@ -1353,11 +1397,6 @@ input[type="submit"]
 	}
 	.header {
 		height: 22vw;
-	}
-
-	#block
-	{
-		top: 50vw;
 	}
 	
 	
