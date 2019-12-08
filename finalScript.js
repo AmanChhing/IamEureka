@@ -769,7 +769,7 @@ function createimagescroll(query)
 	
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     if ($.cookie('noShowWelcome')) ;
     else {
 	$('#EurekaReplied').hide();
@@ -778,7 +778,7 @@ $(document).ready(function() {
 	$('[data-toggle="popover"]').popover()
         $.cookie('noShowWelcome', true);    
     }
-});
+});*/
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
