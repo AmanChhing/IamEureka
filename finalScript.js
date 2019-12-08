@@ -663,7 +663,7 @@ function ShowNews()
 		ShowNewsDiv += '<div class="carousel-inner">';
 		for(var i in response.articles)
 		{
-			alert(i);
+			//alert(i);
 			if(i==0)
 			{
 				ShowNewsDiv += '<div class="item active">';
@@ -772,6 +772,7 @@ function createimagescroll(query)
 $(document).ready(function() {
     if ($.cookie('noShowWelcome')) ;
     else {
+	$('#EurekaReplied').hide();
         ShowNews();
 	$('[data-toggle="tooltip"]').tooltip()
 	$('[data-toggle="popover"]').popover()
