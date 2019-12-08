@@ -114,7 +114,7 @@ function playsongornot(data)
 	//outputBot.textContent = "I'm sorry, i don't have it's answer right now, but i'm always learning"
 	//say("I'm sorry, i don't have it's answer right now, but i'm always learning")
 	//say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
-	//createimagescroll(document.getElementById("InputText").value);
+	createimagescroll(document.getElementById("InputText").value);
 	fetchmsg(document.getElementById("InputText").value);
 	}
 	
@@ -840,7 +840,7 @@ function fetchmsg(InputText){
 		 console.log(response.reply.fulfillmentText);
 		 outputBot.textContent = response.reply.fulfillmentText;
 		 say(response.reply.fulfillmentText);
-		 createimagescroll(response.reply.fulfillmentText);
+		 //createimagescroll(response.reply.fulfillmentText);
 		})
 		 .catch(error => console.error('Error h:', error));
 
