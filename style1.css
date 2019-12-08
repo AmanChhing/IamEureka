@@ -323,26 +323,7 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
-	#EurekaOutput
-	{
-	position: relative;
-	}
-	#rltdbtn
-	{
-	position: absolute;
-	top: 100%;
-	left: 1%;
-	margin-top: 3vw;
-	margin-bottom: 80vh;
-	}
-	#rltdbtn1
-	{
-	position: absolute;
-	top: 110%;
-	left: 1%;
-	margin-top: 8vw;
-	margin-bottom: 1vh;
-	}
+	
 	#rltdbtn,#rltdbtn1
 	{
 	width: 20vw;
@@ -389,7 +370,7 @@ input[type="submit"]
 	height: 3.5vw;
 	position:absolute;
 	left: 4vw;
-	top: 18vh;
+	top: 15vh;
 	}
 	
 	iframe
@@ -439,6 +420,26 @@ input[type="submit"]
     font-size: 7.5vw;
     line-height: 3vh;
     left: 2.6vw;
+	}
+	#EurekaOutput
+	{
+	position: relative;
+	}
+	#rltdbtn
+	{
+	position: absolute;
+	top: 100%;
+	left: 1%;
+	margin-top: 3vw;
+	margin-bottom: 80vh;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 8vw;
+	margin-bottom: 1vh;
 	}
 	@media screen and (max-height: 900px) {
 	button {
@@ -563,7 +564,7 @@ input[type="submit"]
 	height: 3.5vw;
 	position:absolute;
 	left: 4vw;
-	top: 9vw;
+	top: 8vw;
 	}
 	
 	
@@ -632,26 +633,7 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
-	#EurekaOutput
-	{
-	position: relative;
-	}
-	#rltdbtn
-	{
-	position: absolute;
-	top: 100%;
-	left: 1%;
-	margin-top: 30px;
-	margin-bottom: 25vh;
-	}
-	#rltdbtn1
-	{
-	position: absolute;
-	top: 110%;
-	left: 1%;
-	margin-top: 14vw;
-	margin-bottom: 1vh;
-	}
+	
 	#rltdbtn,#rltdbtn1
 	{
 	width: 30vw;
@@ -723,7 +705,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 	font-size: 1.4vw;
-	top: 5.3vw;
+	top: 3.5vw;
 	}
 	#YouSaid
 	{
@@ -772,6 +754,26 @@ input[type="submit"]
 	margin-left: -17vw;
 	height: 52vh;
 	top: 24.5vh;
+	}
+	#EurekaOutput
+	{
+	position: relative;
+	}
+	#rltdbtn
+	{
+	position: absolute;
+	top: 100%;
+	left: 1%;
+	margin-top: 30px;
+	margin-bottom: 25vh;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 14vw;
+	margin-bottom: 1vh;
 	}
 }
 
@@ -928,7 +930,7 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-	top: 7vw;
+	top: 5vw;
 	}
 	#EurekaLogo
 	{
@@ -958,10 +960,7 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 680px) {
-	input[type="submit"]
-	{
-		height: 4.3vw;
-	}
+	
 	#blockroad
 	{
 	
@@ -977,7 +976,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		height: 4.3vw;
-		top: 9vw;
+		top: 6.5vw;
 	}
 	.output-bot
 	{
@@ -1043,7 +1042,7 @@ input[type="submit"]
 	{
 		height: 5.5vw;
 		font-size: 3vw;
-		top: 11vw;
+		top: 7.8vw;
 	}
 	#InputText
 	{
@@ -1104,10 +1103,10 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-		width: 11.4vw;
-		height: 6vw;
-		font-size: 3.5vw;
-		top: 11.5vw;
+		width: 11.6vw;
+		height: 6.4vw;
+		font-size: 3.8vw;
+		top: 7.8vw;
 	}
 	#block
 	{
@@ -1190,7 +1189,7 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.5vw;
 		font-size: 3.5vw;
-		top: 11.5vw;
+		top: 8vw;
 	}
 
 }
@@ -1232,7 +1231,7 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.8vw;
 		font-size: 3.9vw;
-		top: 12vw;
+		top: 8vw;
 	}
 	#block
 	{
@@ -1366,7 +1365,7 @@ input[type="submit"]
 @media screen and (max-width: 260px) {
 	input[type="submit"]
 	{
-		top: 13.5vw;
+		top: 7.5vw;
 		height: 8.3vw;
 	}
 	
