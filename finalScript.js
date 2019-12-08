@@ -156,8 +156,8 @@ function playsong()
 		$("<style>").text("#target { position: absolute; top: 0px; left: 0px; width: 80%; height: 60%; }").appendTo("head");
 		iDiv.appendChild(ifrm);
 		//sheet.insertRule("@media only screen and (max-width : 768px) { #target { position: absolute; width: 90%; height: 60%; } }");
-		var divFirst = document.getElementById("target")
-		divFirst.scrollIntoView(false)
+		//var divFirst = document.getElementById("target")
+		//divFirst.scrollIntoView(false)
 		
   		});
 
@@ -725,6 +725,7 @@ window.addEventListener("load",function() {
 	    alert('yes');
         // This hides the address bar:
         window.scrollTo(0, 1);
+	document.getElementById("footer").scrollIntoView();
     }, 0);
 });
 
