@@ -613,11 +613,12 @@ function related_Questions(data)
 	//alert("question = "+data.related_questions[0].question)
 	addrltdques.innerHTML += "<p>Answer: "+data.related_questions[1].answer+"</p>";
 	//alert("Answer = "+data.related_questions[0].answer)
-	}
 	if(data.inline_videos)
 	{
 		related_Videos(data);
 	}
+	}
+	
 }
 function related_Videos(data)
 {
@@ -640,7 +641,7 @@ function related_Videos(data)
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
-increasevidbuttonmargin();
+//increasevidbuttonmargin();
 }
 catch(e){
 
