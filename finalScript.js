@@ -648,7 +648,54 @@ catch(e){
 }
 }
 
-function createFrame(src){
+
+function ShowNews()
+{
+	var url = 'https://newsapi.org/v2/top-headlines?' +'country=in&' +'apiKey=3b6d1c20b47b4a6fa80c34fcde3e5afc';
+	var req = new Request(url);
+	fetch(req)
+    	.then(function(response) {
+        console.log(response.json());
+		var ShowNewsDiv = '<div class="container-fluid">';
+		var ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:250px;margin:auto;">';
+		var ShowNewsDiv += '<div class="carousel-inner">';
+		for(var i in response.articles)
+		{
+			alert(i);
+			if(i==0)
+			{
+				var ShowNewsDiv += '<div class="item active">';
+				var ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
+				var ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				var ShowNewsDiv += '</div>';
+			}
+			else
+			{
+				var ShowNewsDiv += '<div class="item">';
+				var ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
+				var ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				var ShowNewsDiv += '</div>';
+			}
+		}
+		var ShowNewsDiv += '</div>';
+		var ShowNewsDiv += '<a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a>';
+		var ShowNewsDiv += '<a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+		var ShowNewsDiv += '</div>';
+		var ShowNewsDiv += '</div>';
+		document.getElementById("block").innerHTML = ShowNewsDiv;
+    	})
+	
+}
+
+
+
+
+
+
+
+
+function createFrame(src)
+{
   return "<div>"+
             //"<a href='"+src+"' target='_blank'>"+
               "<img id='Blockimage' src='"+src+"' alt='Eureka Couldn't Find the image.'/>"+
@@ -720,17 +767,6 @@ function createimagescroll(query)
 	
 }
 
-/*window.addEventListener("load",function() {
-    setTimeout(function(){
-	//alert('yes');
-        // This hides the address bar:
-	//document.getElementById("footer").scrollIntoView(false);
-        window.scrollTo(0, 60);
-	 //window.scrollTo(0, 1);
-	 //window.scrollTo(0, 1);
-    }, 0);
-});*/
-
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
@@ -791,22 +827,9 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
-/*$(document).ready(function(){
-    document.getElementById('footer').scrollIntoView();
-});*/
 
-/*function Photo(src) {
-    this.src = src;
-    var container = document.getElementById('imgscroller_container'); 
-    var img = document.createElement('img');
-    img.src = this.src;
-    img.className = 'mySlides';
-    container.appendChild(img);
-}*/
-
-
-var slideIndex = 1;
-showDivs(slideIndex);
+//var slideIndex = 1;
+//showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
