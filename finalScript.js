@@ -657,31 +657,31 @@ function ShowNews()
     	.then(function(response) {
         console.log(response.json());
 		var ShowNewsDiv = '<div class="container-fluid">';
-		var ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:250px;margin:auto;">';
-		var ShowNewsDiv += '<div class="carousel-inner">';
+		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:250px;margin:auto;">';
+		ShowNewsDiv += '<div class="carousel-inner">';
 		for(var i in response.articles)
 		{
 			alert(i);
 			if(i==0)
 			{
-				var ShowNewsDiv += '<div class="item active">';
-				var ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				var ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
-				var ShowNewsDiv += '</div>';
+				ShowNewsDiv += '<div class="item active">';
+				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
+				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				ShowNewsDiv += '</div>';
 			}
 			else
 			{
-				var ShowNewsDiv += '<div class="item">';
-				var ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				var ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
-				var ShowNewsDiv += '</div>';
+				ShowNewsDiv += '<div class="item">';
+				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
+				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				ShowNewsDiv += '</div>';
 			}
 		}
-		var ShowNewsDiv += '</div>';
-		var ShowNewsDiv += '<a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a>';
-		var ShowNewsDiv += '<a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
-		var ShowNewsDiv += '</div>';
-		var ShowNewsDiv += '</div>';
+		ShowNewsDiv += '</div>';
+		ShowNewsDiv += '<a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a>';
+		ShowNewsDiv += '<a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+		ShowNewsDiv += '</div>';
+		ShowNewsDiv += '</div>';
 		document.getElementById("block").innerHTML = ShowNewsDiv;
     	})
 	
