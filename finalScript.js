@@ -770,9 +770,13 @@ function createimagescroll(query)
 }
 
 $(document).ready(function() {
-    if ($.cookie('noShowWelcome')) ;
+    if ($.cookie('noShowWelcome'))
+    {
+	   document.getElementById("EurekaReplied").style.visibility='visible';
+    }
     else {
-	$("#EurekaReplied").hide();
+	//$("#EurekaReplied").hide();
+	document.getElementById("EurekaReplied").style.visibility='hidden';
         ShowNews();
 	$('[data-toggle="tooltip"]').tooltip()
 	$('[data-toggle="popover"]').popover()
