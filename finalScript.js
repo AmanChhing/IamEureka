@@ -853,7 +853,8 @@ alert(element);
 if(typeof(element) == 'undefined' || element == null)
 {
 	alert('yes');
-	document.getElementById('rltdbtn1').style.marginTop = "0px";
-	document.getElementById('rltdbtn1').style.marginBottom = "30vh";
+	alert(document.getElementById('rltdbtn1'));
+	document.getElementById('rltdbtn1').style.marginTop = "-1vh";
+	document.getElementById('rltdbtn1').style.marginBottom = "45vh";
 }
 }
