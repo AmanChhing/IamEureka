@@ -1254,7 +1254,7 @@ input[type="submit"]
 	position:absolute;
 	top: 20vh;
 	box-sizing:border-box;
-	margin-left: 1vw;
+	margin-left: 1.5vw;
 	}
 	.mySlides 
 	{
@@ -1298,7 +1298,7 @@ input[type="submit"]
 @media screen and (max-width: 320px) {
 	#block span
 	{
-	margin-left: 0vw;
+	margin-left: 2vw;
 	}
 	.mySlides 
 	{
