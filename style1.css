@@ -891,7 +891,7 @@ input[type="submit"]
 	padding-right: 98vw;
 	margin-left: -21vw;
 	height: 50vh;
-	top: 20.5vh;
+	top: 22.5vh;
 	}
 	
 	#YouSaid
@@ -1015,7 +1015,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 20vh;
+	top: 22vh;
 	}
 	#EurekaReplied
 	{
@@ -1111,7 +1111,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 19.5vh;
+	top: 21.5vh;
 	}
 	#EurekaReplied
 	{
@@ -1134,7 +1134,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 20vh;
+	top: 21.5vh;
 	}
 	}
 }
@@ -1227,7 +1227,7 @@ input[type="submit"]
 	}
 	#block
 	{
-		top: 21vh;
+		top: 23vh;
 	}
 	.header {
 		height: 24vw;
@@ -1278,7 +1278,7 @@ input[type="submit"]
 		padding-right: 88vw;
 		left: 26%;
 		height: 45vh;
-		top: 23vh;
+		top: 25vh;
 		}
 		#EurekaReplied
 		{
@@ -1350,7 +1350,7 @@ input[type="submit"]
 
 	#block
 	{
-		top: 42vw;
+		top: 45vw;
 	}
 	
 	
@@ -1379,4 +1379,3 @@ th {
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 	
-
