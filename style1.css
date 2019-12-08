@@ -990,7 +990,7 @@ input[type="submit"]
 	.output-bot
 	{
 	color:blue;
-	font-size: 3.5vw;
+	font-size: 3.8vw;
 	}
 	#You,#Bot
 	{
@@ -1027,7 +1027,7 @@ input[type="submit"]
 	}
 	#EurekaReplied
 	{
-	bottom: 17vh;
+	bottom: 15vh;
 	}
 	@media screen and (max-height: 900px) {
 		.Footimg1
@@ -1059,7 +1059,7 @@ input[type="submit"]
 	.output-bot
 	{
 	color:blue;
-	font-size: 4.3vw;
+	font-size: 5vw;
 	}
 	#block span
 	{
