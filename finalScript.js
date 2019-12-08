@@ -768,7 +768,7 @@ function createimagescroll(query)
 }
 
 $(document).ready(function() {
-    if ($.cookie('noShowWelcome'))
+    if ($.cookie('noShowEducation')) ;
     else {
         ShowNews();
 	$('[data-toggle="tooltip"]').tooltip()
