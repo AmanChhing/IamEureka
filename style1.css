@@ -516,7 +516,7 @@ input[type="submit"]
 
 @media screen and (max-width: 1366px) {
 	button {
-     left: 45vw;
+     left: 47vw;
      bottom: 1vh;
 	}
 	#rltdbtn1
@@ -1038,7 +1038,7 @@ input[type="submit"]
 	@media screen and (max-height: 800px) {
 		.Footimg1
 		{
-		top: 88vh;
+		top: 89vh;
 		}
 		#YouSaid
 		{
