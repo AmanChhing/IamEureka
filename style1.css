@@ -1,4 +1,3 @@
-
 .mySlides 
 {
 	width: 82vw;
@@ -323,7 +322,26 @@ input[type="submit"]
 	color: blueviolet
 	}
 @media screen and (max-width: 3840px) {
-	
+	#EurekaOutput
+	{
+	position: relative;
+	}
+	#rltdbtn
+	{
+	position: absolute;
+	top: 100%;
+	left: 1%;
+	margin-top: 3vw;
+	margin-bottom: 80vh;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 8vw;
+	margin-bottom: 1vh;
+	}
 	#rltdbtn,#rltdbtn1
 	{
 	width: 20vw;
@@ -370,7 +388,7 @@ input[type="submit"]
 	height: 3.5vw;
 	position:absolute;
 	left: 4vw;
-	top: 15vh;
+	top: 18vh;
 	}
 	
 	iframe
@@ -420,26 +438,6 @@ input[type="submit"]
     font-size: 7.5vw;
     line-height: 3vh;
     left: 2.6vw;
-	}
-	#EurekaOutput
-	{
-	position: relative;
-	}
-	#rltdbtn
-	{
-	position: absolute;
-	top: 100%;
-	left: 1%;
-	margin-top: 3vw;
-	margin-bottom: 80vh;
-	}
-	#rltdbtn1
-	{
-	position: absolute;
-	top: 110%;
-	left: 1%;
-	margin-top: 8vw;
-	margin-bottom: 1vh;
 	}
 	@media screen and (max-height: 900px) {
 	button {
@@ -516,7 +514,7 @@ input[type="submit"]
 
 @media screen and (max-width: 1366px) {
 	button {
-     left: 45vw;
+     left: 47vw;
      bottom: 1vh;
 	}
 	#rltdbtn1
@@ -564,7 +562,7 @@ input[type="submit"]
 	height: 3.5vw;
 	position:absolute;
 	left: 4vw;
-	top: 8vw;
+	top: 9vw;
 	}
 	
 	
@@ -633,15 +631,26 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
-	.mainfoot
+	
+	#EurekaOutput
 	{
-	width: 100vw;
-	height: 12vh;
+	position: relative;
 	}
-	.Footimg1
+	#rltdbtn
 	{
-	top: 88vh;
 	position: absolute;
+	top: 100%;
+	left: 1%;
+	margin-top: 30px;
+	margin-bottom: 25vh;
+	}
+	#rltdbtn1
+	{
+	position: absolute;
+	top: 110%;
+	left: 1%;
+	margin-top: 14vw;
+	margin-bottom: 1vh;
 	}
 	#rltdbtn,#rltdbtn1
 	{
@@ -676,14 +685,14 @@ input[type="submit"]
 	}
 	button {
      width: 14vw;
-     height: 17vw;
+     height: 21vw;
      bottom: 1vh;
      left: 42.5vw;
 	}
 	button .fa {
-    font-size: 10.5vw;
+    font-size: 12vw;
     line-height: 2vh;
-    left: 3.6vw;
+    left: 3.2vw;
 	}
 	#blocktable
 	{
@@ -714,7 +723,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 	font-size: 1.4vw;
-	top: 3.5vw;
+	top: 5.3vw;
 	}
 	#YouSaid
 	{
@@ -762,27 +771,7 @@ input[type="submit"]
 	padding-right: 90vw;
 	margin-left: -17vw;
 	height: 52vh;
-	top: 24.5vh;
-	}
-	#EurekaOutput
-	{
-	position: relative;
-	}
-	#rltdbtn
-	{
-	position: absolute;
-	top: 100%;
-	left: 1%;
-	margin-top: 30px;
-	margin-bottom: 25vh;
-	}
-	#rltdbtn1
-	{
-	position: absolute;
-	top: 110%;
-	left: 1%;
-	margin-top: 14vw;
-	margin-bottom: 1vh;
+	top: 26.5vh;
 	}
 }
 
@@ -857,15 +846,15 @@ input[type="submit"]
 	overflow-y:scroll;
 	}
 	button {
-     width: 13vw;
-     height: 16vw;
+     width: 14vw;
+     height: 17vw;
      bottom: 0vh;
      left: 43vw;
 	}
 	button .fa {
-    font-size: 10vw;
+    font-size: 10.5vw;
     line-height: 2vh;
-    left: 3.2vw;
+    left: 3.7vw;
 	}
 
 	#blockroad
@@ -939,7 +928,7 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-	top: 5vw;
+	top: 7vw;
 	}
 	#EurekaLogo
 	{
@@ -969,7 +958,10 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 680px) {
-	
+	input[type="submit"]
+	{
+		height: 4.3vw;
+	}
 	#blockroad
 	{
 	
@@ -985,7 +977,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		height: 4.3vw;
-		top: 6.5vw;
+		top: 9vw;
 	}
 	.output-bot
 	{
@@ -1019,7 +1011,7 @@ input[type="submit"]
 	#YouSaid
 	{
 	position: absolute;
-	top: 14vh; 
+	top: 13vh; 
 	}
 	#block
 	{
@@ -1029,29 +1021,11 @@ input[type="submit"]
 	{
 	bottom: 17vh;
 	}
-	@media screen and (max-height: 900px) {
-		.Footimg1
-		{
-		top: 90vh;
-		}
+	@media screen and (max-height: 850px) {
+	#block
+	{
+	top: 24.5vh;
 	}
-	@media screen and (max-height: 800px) {
-		.Footimg1
-		{
-		top: 88vh;
-		}
-		#YouSaid
-		{
-		position: absolute;
-		top: 15.5vh; 
-		}
-		#block
-		{
-		top: 23vh;
-		}
-
-	}
-	
 	}
 
 }
@@ -1069,7 +1043,7 @@ input[type="submit"]
 	{
 		height: 5.5vw;
 		font-size: 3vw;
-		top: 7.8vw;
+		top: 11vw;
 	}
 	#InputText
 	{
@@ -1118,7 +1092,7 @@ input[type="submit"]
 	position:absolute;
 	top: 19vh;
 	box-sizing:border-box;
-	margin-left: 4vw;
+	margin-left: 3vw;
 	}
 	.header {
 		height: 23vw;
@@ -1130,10 +1104,10 @@ input[type="submit"]
 	}
 	input[type="submit"]
 	{
-		width: 11.6vw;
-		height: 6.4vw;
-		font-size: 3.8vw;
-		top: 6vw;
+		width: 11.4vw;
+		height: 6vw;
+		font-size: 3.5vw;
+		top: 11.5vw;
 	}
 	#block
 	{
@@ -1163,23 +1137,8 @@ input[type="submit"]
 	top: 20vh;
 	}
 	}
-	@media screen and (max-height: 500px) {
-	#YouSaid
-		{
-		position: absolute;
-		top: 18.5vh; 
-		}
-		#block
-		{
-		top: 25vh;
-		}
-	}
 }
 @media screen and (max-width: 400px) {
-	#EurekaReplied
-	{
-	bottom: 15vh;
-	}
 	#rltdbtn
 	{
 	margin-top: 30px;
@@ -1227,16 +1186,11 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.5vw;
 		font-size: 3.5vw;
-		top: 6vw;
+		top: 11.5vw;
 	}
 
 }
 @media screen and (max-width: 360px) {
-	.mainfoot
-	{
-	width: 100vw;
-	height: 13vh;
-	}
 	#block span
 	{
 	position:absolute;
@@ -1251,7 +1205,7 @@ input[type="submit"]
 	}
 	button {
      width: 14vw;
-     height: 19vw;
+     height: 21vw;
      bottom: 1vh;
 	}
 	button .fa {
@@ -1269,21 +1223,22 @@ input[type="submit"]
 		width: 11.4vw;
 		height: 6.8vw;
 		font-size: 3.9vw;
-		top: 6vw;
+		top: 12vw;
 	}
 	#block
 	{
 		top: 21vh;
 	}
 	.header {
-		height: 22vw;
+		height: 24vw;
 	}
 	@media screen and (max-height: 600px) {
 	#ScrollArrowleft
 	{
+	margin-top: 6vh;
 	margin-bottom: 10vh;
 	font-size: 6vw;
-	margin-left: 7.5vw;
+	margin-left: 8vw;
 	
 	}
 	#block span
@@ -1291,13 +1246,13 @@ input[type="submit"]
 	position:absolute;
 	top: 20vh;
 	box-sizing:border-box;
-	margin-left: 1.5vw;
+	margin-left: -1vw;
 	}
 	.mySlides 
 	{
-	width: 70vw;
-	height: 28vh;
-	margin-left: 7vw;
+	width: 75vw;
+	height: 30vh;
+	margin-left: 6vw;
 	margin-top: -1vh;
 	}
 	#blockroad
@@ -1314,38 +1269,32 @@ input[type="submit"]
 		}
 		.Footimg1
 		{
-		top: 87vh;
+		top: 83vh;
 		}
 		#block
 		{
-		top: 25vh;
+		position: absolute;
+		box-sizing: border-box;
+		padding-right: 88vw;
+		left: 26%;
+		height: 45vh;
+		top: 23vh;
 		}
 		#EurekaReplied
 		{
 		position: absolute;
-		bottom: 16vh;
-		}
-	}
-	@media screen and (max-height: 500px) {
-	#block
-		{
-		top: 28vh;
-		}
-		#EurekaReplied
-		{
-		position: absolute;
-		bottom: 14vh;
+		bottom: 23vh;
 		}
 	}
 }
 @media screen and (max-width: 320px) {
 	#block span
 	{
-	margin-left: 2vw;
+	margin-left: -3vw;
 	}
 	.mySlides 
 	{
-	width: 78vw;
+	width: 80vw;
 	height: 30vh;
 	margin-left: 4vw;
 	margin-top: -1vh;
@@ -1354,7 +1303,7 @@ input[type="submit"]
 	{
 	margin-top: 6vh;
 	font-size: 6vw;
-	margin-left: 6vw;
+	margin-left: 7vw;
 	}
 	#ScrollArrowright
 	{
@@ -1398,23 +1347,19 @@ input[type="submit"]
 	.header {
 		height: 22vw;
 	}
+
+	#block
+	{
+		top: 42vw;
+	}
 	
 	
 }
 @media screen and (max-width: 260px) {
 	input[type="submit"]
 	{
-		top: 7.5vw;
+		top: 13.5vw;
 		height: 8.3vw;
-	}
-	
-	.header
-	{
-		height: 14vh;
-	}
-	#block
-	{
-		top: 44vw;
 	}
 }
 #EurekaReplied
@@ -1434,6 +1379,4 @@ th {
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 	
-
-
 
