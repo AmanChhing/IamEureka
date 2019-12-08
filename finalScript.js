@@ -666,14 +666,14 @@ function ShowNews()
 			{
 				ShowNewsDiv += '<div class="item active">';
 				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>';
 				ShowNewsDiv += '</div>';
 			}
 			else
 			{
 				ShowNewsDiv += '<div class="item">';
 				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>;
+				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>';
 				ShowNewsDiv += '</div>';
 			}
 		}
