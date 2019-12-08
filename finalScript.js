@@ -724,8 +724,10 @@ window.addEventListener("load",function() {
     setTimeout(function(){
 	//alert('yes');
         // This hides the address bar:
-	document.getElementById("footer").scrollIntoView(false);
+	//document.getElementById("footer").scrollIntoView(false);
         window.scrollTo(0, 1);
+	 window.scrollTo(0, 1);
+	 window.scrollTo(0, 1);
     }, 0);
 });
 
