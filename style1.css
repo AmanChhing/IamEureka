@@ -1236,7 +1236,7 @@ input[type="submit"]
 	}
 	#block
 	{
-		top: 21vh;
+		top: 23vh;
 	}
 	.header {
 		height: 24vw;
@@ -1244,10 +1244,9 @@ input[type="submit"]
 	@media screen and (max-height: 600px) {
 	#ScrollArrowleft
 	{
-	margin-top: 6vh;
 	margin-bottom: 10vh;
 	font-size: 6vw;
-	margin-left: 8vw;
+	margin-left: 7.5vw;
 	
 	}
 	#block span
@@ -1255,13 +1254,13 @@ input[type="submit"]
 	position:absolute;
 	top: 20vh;
 	box-sizing:border-box;
-	margin-left: -1vw;
+	margin-left: -1.5vw;
 	}
 	.mySlides 
 	{
-	width: 75vw;
-	height: 30vh;
-	margin-left: 6vw;
+	width: 70vw;
+	height: 28vh;
+	margin-left: 7vw;
 	margin-top: -1vh;
 	}
 	#blockroad
@@ -1287,23 +1286,23 @@ input[type="submit"]
 		padding-right: 80vw;
 		left: 26%;
 		height: 43vh;
-		top: 25vh;
+		top: 28vh;
 		}
 		#EurekaReplied
 		{
 		position: absolute;
-		bottom: 20vh;
+		bottom: 16vh;
 		}
 	}
 }
 @media screen and (max-width: 320px) {
 	#block span
 	{
-	margin-left: -3vw;
+	margin-left: -2vw;
 	}
 	.mySlides 
 	{
-	width: 80vw;
+	width: 78vw;
 	height: 30vh;
 	margin-left: 4vw;
 	margin-top: -1vh;
@@ -1312,7 +1311,7 @@ input[type="submit"]
 	{
 	margin-top: 6vh;
 	font-size: 6vw;
-	margin-left: 7vw;
+	margin-left: 6vw;
 	}
 	#ScrollArrowright
 	{
@@ -1359,7 +1358,7 @@ input[type="submit"]
 
 	#block
 	{
-		top: 43vw;
+		top: 50vw;
 	}
 	
 	
