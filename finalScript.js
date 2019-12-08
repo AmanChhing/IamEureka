@@ -722,6 +722,7 @@ function createimagescroll(query)
 
 window.addEventListener("load",function() {
     setTimeout(function(){
+	    alert('yes');
         // This hides the address bar:
         window.scrollTo(0, 1);
     }, 0);
