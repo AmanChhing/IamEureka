@@ -720,7 +720,7 @@ function createimagescroll(query)
 	
 }
 
-window.addEventListener("load",function() {
+/*window.addEventListener("load",function() {
     setTimeout(function(){
 	//alert('yes');
         // This hides the address bar:
@@ -729,7 +729,7 @@ window.addEventListener("load",function() {
 	 //window.scrollTo(0, 1);
 	 //window.scrollTo(0, 1);
     }, 0);
-});
+});*/
 
 
 // When the user clicks on the button, open the modal
@@ -791,9 +791,9 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
-/*$(document).ready(function(){
-    document.getElementById('footer').scrollIntoView(false);
-});*/
+$(document).ready(function(){
+    document.getElementById('footer').scrollIntoView();
+});
 
 /*function Photo(src) {
     this.src = src;
