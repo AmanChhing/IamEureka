@@ -640,7 +640,7 @@ function related_Videos(data)
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
-
+increasevidbuttonmargin();
 }
 catch(e){
 
@@ -846,6 +846,8 @@ function fetchmsg(InputText){
 
 }
 
+function increasevidbuttonmargin()
+{
 var element =  document.getElementById('rltdbtn');
 alert(element);
 if(typeof(element) == 'undefined' || element == null)
@@ -853,4 +855,5 @@ if(typeof(element) == 'undefined' || element == null)
 	alert('yes');
 	document.getElementById('rltdbtn1').style.marginTop = "0px";
 	document.getElementById('rltdbtn1').style.marginBottom = "30vh";
+}
 }
