@@ -514,9 +514,9 @@ input[type="submit"]
 
 @media screen and (max-width: 1366px) {
 	button {
-     left: 44.8vw;
+     left: 47vw;
      bottom: 1vh;
-
+	}
 	#rltdbtn1
 	{
 	margin-top: 11vw;
@@ -568,6 +568,7 @@ input[type="submit"]
 	
 	#block 
 	{ 
+	position:absolute;
 	left: 22%;  
 	}
 
@@ -763,10 +764,14 @@ input[type="submit"]
 	top: 15%;
 	left: 15%;
 	}
-	#block 
-	{ 
-	left: 12%; 
-	top: 40vw; 
+	#block
+	{
+	position: absolute;
+	box-sizing: border-box;
+	padding-right: 90vw;
+	margin-left: -17vw;
+	height: 52vh;
+	top: 26.5vh;
 	}
 }
 
@@ -883,9 +888,9 @@ input[type="submit"]
 	{
 	position: absolute;
 	box-sizing: border-box;
-	padding-right: 99vw;
-	margin-left: -11.5vw;
-	height: 41vh;
+	padding-right: 98vw;
+	margin-left: -21vw;
+	height: 50vh;
 	top: 22.5vh;
 	}
 	
@@ -1106,7 +1111,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 22vh;
+	top: 21.5vh;
 	}
 	#EurekaReplied
 	{
@@ -1129,7 +1134,7 @@ input[type="submit"]
 	}
 	#block
 	{
-	top: 24.5vh;
+	top: 21.5vh;
 	}
 	}
 }
@@ -1222,7 +1227,7 @@ input[type="submit"]
 	}
 	#block
 	{
-		top: 24vh;
+		top: 23vh;
 	}
 	.header {
 		height: 24vw;
@@ -1270,10 +1275,10 @@ input[type="submit"]
 		{
 		position: absolute;
 		box-sizing: border-box;
-		padding-right: 75vw;
-		left: 18%;
-		height: 35vh;
-		top: 27.5vh;
+		padding-right: 88vw;
+		left: 26%;
+		height: 45vh;
+		top: 25vh;
 		}
 		#EurekaReplied
 		{
