@@ -791,9 +791,9 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     document.getElementById('footer').scrollIntoView();
-});
+});*/
 
 /*function Photo(src) {
     this.src = src;
