@@ -661,7 +661,7 @@ function ShowNews()
 		console.log(response.articles);
 		var ShowNewsDiv = '<div class="container-fluid">';
 		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >';
-		ShowNewsDiv += '<div class="carousel-inner">';
+		ShowNewsDiv += '<div id="crouselimage" class="carousel-inner">';
 		for(var i in response.articles)
 		{
 			//alert(i);
