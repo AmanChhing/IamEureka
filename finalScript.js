@@ -660,7 +660,7 @@ function ShowNews()
         console.log(response);
 		console.log(response.articles);
 		var ShowNewsDiv = '<div class="container-fluid">';
-		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:45vh;margin:auto;">';
+		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >';
 		ShowNewsDiv += '<div class="carousel-inner">';
 		for(var i in response.articles)
 		{
@@ -770,7 +770,7 @@ function createimagescroll(query)
 	
 }
 
-/*$(document).ready(function() {
+$(document).ready(function() {
     if ($.cookie('noShowWelcome'))
     {
 	   document.getElementById("EurekaReplied").style.visibility='visible';
@@ -784,9 +784,9 @@ function createimagescroll(query)
         $.cookie('noShowWelcome', true);    
     }
 });
-*/
 
-$(window).on('load', function() {
+
+/*$(window).on('load', function() {
     if ($.cookie('noShowWelcome'))
     {
 	   document.getElementById("EurekaReplied").style.visibility='visible';
@@ -799,7 +799,7 @@ $(window).on('load', function() {
 	$('[data-toggle="popover"]').popover()
         $.cookie('noShowWelcome', true);    
     }
-});
+});*/
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
