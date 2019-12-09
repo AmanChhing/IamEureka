@@ -637,6 +637,16 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 1024px) {
+	#You, #Bot
+	{
+	font-size: 3.5vw;
+	color: blueviolet
+	}
+	.output-bot
+	{
+	color:blue;
+	font-size: 3.5vw;
+	}
 	#carouselExampleIndicators
 	{
 	width:48vh;
@@ -662,26 +672,26 @@ input[type="submit"]
 	{
 	width: 65vw;
 	height: 30vh;
-	margin-left: 5vw;
-	margin-top: -4vh;
+	margin-left: 10vw;
+	margin-top: -1vh;
 	}
 	#block span
 	{
 	position:absolute;
 	top: 14vh;
 	box-sizing:border-box;
-	margin-left: 8vw;
+	margin-left: 17vw;
 	}
 	#ScrollArrowleft
 	{
 	margin-bottom: 10vh;
 	font-size: 5vw;
-	margin-left: 5vw;
+	margin-left: 11vw;
 	}
 	#ScrollArrowright
 	{
 	font-size: 5vw;
-	margin-right: -15vw;
+	margin-right: -60vw;
 	}
 	button {
      width: 14vw;
@@ -723,7 +733,7 @@ input[type="submit"]
 	input[type="submit"]
 	{
 	font-size: 1.4vw;
-	top: 3.5vw;
+	top: 5vw;
 	}
 	#YouSaid
 	{
