@@ -1201,7 +1201,7 @@ input[type="submit"]
 	position:absolute;
 	top: 19vh;
 	box-sizing:border-box;
-	margin-left: 0vw;
+	margin-left: 2vw;
 	}
 	#blockroad
 	{
@@ -1229,6 +1229,10 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 360px) {
+	#EurekaReplied
+	{
+	bottom: 11.5vh;
+	}
 	.mainfoot
 	{
 	width: 100vw;
