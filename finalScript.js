@@ -660,7 +660,7 @@ function ShowNews()
         console.log(response);
 		console.log(response.articles);
 		var ShowNewsDiv = '<div class="container-fluid">';
-		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:65vw;margin:auto;">';
+		ShowNewsDiv += '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:45vh;margin:auto;">';
 		ShowNewsDiv += '<div class="carousel-inner">';
 		for(var i in response.articles)
 		{
