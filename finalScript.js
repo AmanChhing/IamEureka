@@ -114,8 +114,8 @@ function playsongornot(data)
 	//outputBot.textContent = "I'm sorry, i don't have it's answer right now, but i'm always learning"
 	//say("I'm sorry, i don't have it's answer right now, but i'm always learning")
 	//say("Maaf kijiye, iska jawab mai abhi nahin de sakti, lekin mai humesa sikhte rahti hun, kyunki sikhna band to jitna band");
-	createimagescroll(document.getElementById("InputText").value);
 	fetchmsg(document.getElementById("InputText").value);
+	createimagescroll(document.getElementById("InputText").value);
 	}
 	
 }
