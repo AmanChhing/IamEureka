@@ -480,6 +480,16 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 1600px) {
+	#crouselimage img
+	{
+		width: 750px;
+		height: 350px;
+	}
+	#carouselExampleIndicators
+	{
+	margin-top:10px;
+	margin-left: 95px;
+	}
 	#rltdbtn
 	{
 	margin-bottom: 86vh;
@@ -514,6 +524,31 @@ input[type="submit"]
 	{
 	font-size: 4vw;
 	margin-right: 6vw;
+	}
+	@media screen and (max-height: 850px) {
+	#block span
+	{
+	position:absolute;
+	top: 32vh;
+	box-sizing:border-box;
+	margin-left: 1vw;
+	}
+	#blockroad
+	{
+	position:absolute;
+	top:24vh;
+	}
+	#crouselimage img
+	{
+		width: 750px;
+		height: 230px;
+	}
+	#carouselExampleIndicators
+	{
+	margin-top:10px;
+	margin-left: 155px;
+	}
+	
 	}
 }
 
@@ -617,22 +652,6 @@ input[type="submit"]
 	left: 19%;
 	top: 1%;
 	}
-	
-	@media screen and (max-height: 850px) {
-	#block span
-	{
-	position:absolute;
-	top: 32vh;
-	box-sizing:border-box;
-	margin-left: 1vw;
-	}
-	#blockroad
-	{
-	position:absolute;
-	top:24vh;
-	}
-	
-	}
 
 }
 
@@ -650,7 +669,6 @@ input[type="submit"]
 	#carouselExampleIndicators
 	{
 	width:48vh;
-	margin-top:2vh;
 	}
 	.mainfoot
 	{
@@ -806,7 +824,17 @@ input[type="submit"]
 }
 
 @media screen and (max-width: 768px) {
-
+	#crouselimage img
+	{
+		width: 550px;
+		height: 200px;
+	}
+	#carouselExampleIndicators
+	{
+	width:48vh;
+	margin-top: 40px;
+	margin-left: 70px;
+	}
 	#rltdbtn
 	{
 	margin-bottom: 40vh;
@@ -988,7 +1016,12 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 680px) {
-	
+	#carouselExampleIndicators
+	{
+	width:47vh;
+	margin-top: 4vw;
+	margin-left: 9vw;
+	}
 	#blockroad
 	{
 	
@@ -1075,6 +1108,7 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 500px) {
+
 	.output-bot
 	{
 	color:blue;
@@ -1121,8 +1155,10 @@ input[type="submit"]
 @media screen and (max-width: 450px) {
 	#carouselExampleIndicators
 	{
-	width:42vh;
-	margin-top:2vh;
+	width:40vh;
+	height: 50vh;
+	margin-top: 8vw;
+	margin-left: 8vw;
 	}
 	#rltdbtn1
 	{
@@ -1200,7 +1236,13 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 400px) {
-	
+	#carouselExampleIndicators
+	{
+	width: 38vh;
+	height: 54vh;
+	margin-top: 8vw;
+	margin-left: 6vw;
+	}
 	#rltdbtn
 	{
 	margin-top: 30px;
@@ -1253,6 +1295,13 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 360px) {
+	#carouselExampleIndicators
+	{
+	width:42vh;
+	height: 50vh;
+	margin-top: 8vw;
+	margin-left: 7vw;
+	}
 	#EurekaReplied
 	{
 	bottom: 11.5vh;
@@ -1345,6 +1394,13 @@ input[type="submit"]
 		{
 		top: 25vh;
 		}
+		#carouselExampleIndicators
+		{
+		width:47vh;
+		height: 59vh;
+		margin-top: 2vw;
+		margin-left: 7vw;
+		}
 		
 	}
 	@media screen and (max-height: 500px) {
@@ -1358,6 +1414,18 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 320px) {
+		#carouselExampleIndicators
+		{
+		width:43vh;
+		height: 53vh;
+		margin-top: 5vw;
+		margin-left: 7vw;
+		}
+		#crouselimage img
+		{
+		width: 550px;
+		height: 150px;
+		}
 	#block span
 	{
 	margin-left: 2vw;
@@ -1421,6 +1489,13 @@ input[type="submit"]
 	
 }
 @media screen and (max-width: 260px) {
+	#carouselExampleIndicators
+		{
+		width:40vh;
+		height: 53vh;
+		margin-top: 10vw;
+		margin-left: 5vw;
+		}
 	input[type="submit"]
 	{
 		top: 7.5vw;
@@ -1455,7 +1530,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	.carousel-inner p
 	{
 		font-size: 2.5vh;
-		height: 11vh;
+		height: 23vh;
 		overflow-y:scroll;
 	}
 
