@@ -769,7 +769,23 @@ function createimagescroll(query)
 	
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
+    if ($.cookie('noShowWelcome'))
+    {
+	   document.getElementById("EurekaReplied").style.visibility='visible';
+    }
+    else {
+	//$("#EurekaReplied").hide();
+	document.getElementById("EurekaReplied").style.visibility='hidden';
+        ShowNews();
+	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="popover"]').popover()
+        $.cookie('noShowWelcome', true);    
+    }
+});
+*/
+
+$(window).on('load', function() {
     if ($.cookie('noShowWelcome'))
     {
 	   document.getElementById("EurekaReplied").style.visibility='visible';
