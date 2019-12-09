@@ -1445,6 +1445,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	.carousel-inner p
 	{
 		font-size: 2.5vh;
+		height: 11vh;
+		overflow-y:scroll;
 	}
 
 
