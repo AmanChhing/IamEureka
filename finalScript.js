@@ -73,6 +73,7 @@ function getjsonfile()
 	}
 	else
 	{
+		document.getElementById("EurekaReplied").style.visibility='visible';
 		AddToInputList(document.getElementById("InputText").value);
 		$.getJSON(url+document.getElementById("InputText").value, function(data) {
     		window.topscoringintent = data.topScoringIntent.intent.toString();
