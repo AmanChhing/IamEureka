@@ -482,6 +482,17 @@ input[type="submit"]
 	}
 }
 @media screen and (max-width: 1600px) {
+	button {
+     width: 6vw;
+     height: 7vw;
+     left: 47vw;
+     bottom: 1vh;
+	}
+	button .fa {
+    font-size: 4.5vw;
+    line-height: 3vh;
+    left: 1.5vw;
+	}
 	#crouselimage img
 	{
 		width: 750px;
@@ -549,6 +560,18 @@ input[type="submit"]
 	{
 	margin-top:10px;
 	margin-left: 155px;
+	}
+	.header {
+		height: 10vw;
+	}
+	#EurekaLogo
+	{
+		margin-top: -24px;
+	}
+	.mainfoot
+	{
+	width: 100vw;
+	height: 18vh;
 	}
 	
 	}
