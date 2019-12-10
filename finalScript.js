@@ -770,7 +770,7 @@ function createimagescroll(query)
 	
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     if ($.cookie('noShowWelcome'))
     {
 	   document.getElementById("EurekaReplied").style.visibility='visible';
@@ -784,22 +784,41 @@ $(document).ready(function() {
         $.cookie('noShowWelcome', true);    
     }
 });
+*/
 
-
-/*$(window).on('load', function() {
-    if ($.cookie('noShowWelcome'))
-    {
-	   document.getElementById("EurekaReplied").style.visibility='visible';
-    }
-    else {
+$(window).on('load', function() {
+    //if ($.cookie('noShowWelcome'))
+    //{
+	//   document.getElementById("EurekaReplied").style.visibility='visible';
+    //}
+    //else {
 	//$("#EurekaReplied").hide();
 	document.getElementById("EurekaReplied").style.visibility='hidden';
         ShowNews();
 	$('[data-toggle="tooltip"]').tooltip()
 	$('[data-toggle="popover"]').popover()
-        $.cookie('noShowWelcome', true);    
-    }
-});*/
+       // $.cookie('noShowWelcome', true);  
+    //}
+});
+
+$(".carousel").on("touchstart", function(event){
+        var xClick = event.originalEvent.touches[0].pageX;
+    $(this).one("touchmove", function(event){
+        var xMove = event.originalEvent.touches[0].pageX;
+        if( Math.floor(xClick - xMove) > 5 ){
+            $(this).carousel('next');
+        }
+        else if( Math.floor(xClick - xMove) < -5 ){
+            $(this).carousel('prev');
+        }
+    });
+    $(".carousel").on("touchend", function(){
+            $(this).off("touchmove");
+    });
+});
+
+
+
 
 // When the user clicks on the button, open the modal
 function openrelatedQues() {
