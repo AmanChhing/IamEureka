@@ -652,7 +652,7 @@ catch(e){
 
 function ShowNews()
 {
-	var url = 'https://newsapi.org/v2/top-headlines?' +'country=in&' +'apiKey=3b6d1c20b47b4a6fa80c34fcde3e5afc';
+	var url = 'https://newsapi.org/v2/top-headlines?country=in&sortBy=time&apiKey=3b6d1c20b47b4a6fa80c34fcde3e5afc';
 	$.get(url, function(response) {
 	//var req = new Request(url);
 	//fetch(req)
