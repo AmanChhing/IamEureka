@@ -980,13 +980,15 @@ input[type="submit"]
 	}
 	#InputText
 	{
-	width: 45vw;
-	height: 3.5vw;
+	width: 56vw;
+	height: 3.8vw;
 	font-size: 3.1vw;
 	}
 	input[type="submit"]
 	{
-	top: 5vw;
+	top: 4.9vw;
+	left: 55vw;
+	height: 4.8vw;
 	}
 	#EurekaLogo
 	{
@@ -1059,6 +1061,14 @@ input[type="submit"]
 	box-sizing:border-box;
 	margin-left: 12vw;
 	}
+	@media screen and (min-height: 900px) {
+	#carouselExampleIndicators
+	{
+	width:40vh;
+	margin-top: 4vw;
+	margin-left: 9vw;
+	}
+	}
 	@media screen and (max-height: 760px) {
 		.Footimg1
 		{
@@ -1071,7 +1081,8 @@ input[type="submit"]
 	#YouSaid
 	{
 	position: absolute;
-	top: 14vh; 
+	top: 14vh;
+	left: 13vw; 
 	}
 	#block
 	{
@@ -1142,7 +1153,7 @@ input[type="submit"]
 	
 	#You,#Bot
 	{
-	font-size: 5.5vw;
+	font-size: 5vw;
 	color: blueviolet
 	}
 	@media screen and (max-height: 800px) {
@@ -1153,12 +1164,17 @@ input[type="submit"]
 
 }
 @media screen and (max-width: 450px) {
+	.output-bot
+	{
+	color:blue;
+	font-size: 4.3vw;
+	}
 	#carouselExampleIndicators
 	{
 	width:40vh;
 	height: 50vh;
 	margin-top: 8vw;
-	margin-left: 8vw;
+	margin-left: 5vw;
 	}
 	#rltdbtn1
 	{
@@ -1191,9 +1207,9 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		width: 11.6vw;
-		height: 6.4vw;
+		height: 6.6vw;
 		font-size: 3.8vw;
-		top: 6vw;
+		top: 6.2vw;
 	}
 	#block
 	{
@@ -1241,7 +1257,7 @@ input[type="submit"]
 	width: 38vh;
 	height: 54vh;
 	margin-top: 8vw;
-	margin-left: 6vw;
+	margin-left: 4vw;
 	}
 	#rltdbtn
 	{
@@ -1288,9 +1304,9 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		width: 11.4vw;
-		height: 6.5vw;
+		height: 6.8vw;
 		font-size: 3.5vw;
-		top: 6vw;
+		top: 6.1vw;
 	}
 
 }
@@ -1300,7 +1316,7 @@ input[type="submit"]
 	width:42vh;
 	height: 50vh;
 	margin-top: 8vw;
-	margin-left: 7vw;
+	margin-left: 5vw;
 	}
 	#EurekaReplied
 	{
@@ -1341,9 +1357,9 @@ input[type="submit"]
 	input[type="submit"]
 	{
 		width: 11.4vw;
-		height: 6.8vw;
+		height: 7.4vw;
 		font-size: 3.9vw;
-		top: 6vw;
+		top: 6.2vw;
 	}
 	#block
 	{
@@ -1357,7 +1373,7 @@ input[type="submit"]
 	{
 	margin-bottom: 10vh;
 	font-size: 6vw;
-	margin-left: 7.5vw;
+	margin-left: 11.5vw;
 	
 	}
 	#block span
@@ -1365,7 +1381,7 @@ input[type="submit"]
 	position:absolute;
 	top: 20vh;
 	box-sizing:border-box;
-	margin-left: 2.5vw;
+	margin-left: 0vw;
 	}
 	.mySlides 
 	{
@@ -1399,7 +1415,7 @@ input[type="submit"]
 		width:47vh;
 		height: 59vh;
 		margin-top: 2vw;
-		margin-left: 7vw;
+		margin-left: 5vw;
 		}
 		
 	}
@@ -1416,10 +1432,10 @@ input[type="submit"]
 @media screen and (max-width: 320px) {
 		#carouselExampleIndicators
 		{
-		width:43vh;
+		width:45vh;
 		height: 53vh;
-		margin-top: 5vw;
-		margin-left: 7vw;
+		margin-top: 6vw;
+		margin-left: 5vw;
 		}
 		#crouselimage img
 		{
