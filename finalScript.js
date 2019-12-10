@@ -632,13 +632,13 @@ function related_Videos(data)
 	//alert("Related Questions 1")
 	addRltdVideosdiv.innerHTML += "<b>"+data.inline_videos[0].title+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[0].link+">"+data.inline_videos[0].link+"</a></p>";
+	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[0].link+" target='_blank' >"+data.inline_videos[0].link+"</a></p>";
 	//alert("Answer = "+data.related_questions[0].answer)
 	addRltdVideosdiv.innerHTML += "<h4 Related Videos 2: /><br>";
 	//alert("Related Questions 1")
 	addRltdVideosdiv.innerHTML += "<b>"+data.inline_videos[1].title+"</b>";
 	//alert("question = "+data.related_questions[0].question)
-	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[1].link+">"+data.inline_videos[1].link+"</a></p>";
+	addRltdVideosdiv.innerHTML += "<p>"+"<a href="+data.inline_videos[1].link+" target='_blank' >"+data.inline_videos[1].link+"</a></p>";
 	//alert("Answer = "+data.related_questions[0].answer)
 	}
 }
@@ -669,14 +669,14 @@ function ShowNews()
 			{
 				ShowNewsDiv += '<div class="item active">';
 				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>';
+				ShowNewsDiv += '<a href='+response.articles[i].url+' target="_blank" ><p>'+response.articles[i].description+'</p></a>';
 				ShowNewsDiv += '</div>';
 			}
 			else
 			{
 				ShowNewsDiv += '<div class="item">';
 				ShowNewsDiv += '<img src='+response.articles[i].urlToImage+' alt='+response.articles[i].title+' >';
-				ShowNewsDiv += '<a href='+response.articles[i].url+'><p>'+response.articles[i].description+'</p></a>';
+				ShowNewsDiv += '<a href='+response.articles[i].url+' target="_blank"><p>'+response.articles[i].description+'</p></a>';
 				ShowNewsDiv += '</div>';
 			}
 		}
