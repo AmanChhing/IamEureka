@@ -127,7 +127,8 @@ function playsong()
 {
 	//gapi.load('466240921973-3ig72n53f5p11fluka1ev4f5el3qm4ca.apps.googleusercontent.com', search)
 	var searchTerm = window.songpicked
- 	var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
+ 	//var apiKey = "AIzaSyAymbD4C8RpXxAYNuUMvIl47nQY5hahEg4"
+	var apiKey = "AIzaSyBZyyICbf-nGjsgwubri0MSxfMeGqoESIQ"
   	gapi.client.init
 	({
     		'apiKey': apiKey, 
