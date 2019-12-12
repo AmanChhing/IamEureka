@@ -793,7 +793,9 @@ $(window).on('load', function() {
     //}
     //else {
 	//$("#EurekaReplied").hide();
+	
 	document.getElementById("EurekaReplied").style.visibility='hidden';
+	fetchmsg("Hello");
         ShowNews();
 	$('[data-toggle="tooltip"]').tooltip()
 	$('[data-toggle="popover"]').popover()
@@ -801,7 +803,7 @@ $(window).on('load', function() {
     //}
 });
 
-$(".carousel").on("touchstart", function(event){
+/*$(".carousel").on("touchstart", function(event){
         var xClick = event.originalEvent.touches[0].pageX;
     $(this).one("touchmove", function(event){
         var xMove = event.originalEvent.touches[0].pageX;
@@ -815,7 +817,7 @@ $(".carousel").on("touchstart", function(event){
     $(".carousel").on("touchend", function(){
             $(this).off("touchmove");
     });
-});
+});*/
 
 
 
