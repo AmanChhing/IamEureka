@@ -247,7 +247,7 @@ function StartTheSearch(MyQuery,MyLocation)
 	   MyLocation = "New York,New York,United States";
 	}
 try{
-$.getJSON("https://api.serpwow.com/live/search?api_key=9D371261CDE24616950139E7462653B5&q="+MyQuery+"&location="+MyLocation+"&hl=en", function(data)
+$.getJSON("https://api.serpwow.com/live/search?api_key=E6E0452AFF9D4343BCD5C0495D93D2D7&q="+MyQuery+"&location="+MyLocation+"&hl=en", function(data)
 {
 	if((data.search_parameters.q.toString()).toLowerCase().includes("synonym") || (data.search_parameters.q.toString()).toLowerCase().includes("antonym"))
 	{
