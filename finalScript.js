@@ -649,15 +649,22 @@ catch(e){
 
 }
 }
-
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
 
 function ShowNews()
 {
 	var url = 'https://newsapi.org/v2/top-headlines?country=in&sortBy=time&apiKey=3b6d1c20b47b4a6fa80c34fcde3e5afc';
-	$.get(url, function(response) {
+	//$.get(url, function(response) {
 	//var req = new Request(url);
 	//fetch(req)
     	//.then(function(response) {
+		response = httpGet(url)
         console.log(response);
 		console.log(response.articles);
 		var ShowNewsDiv = '<div class="container-fluid">';
@@ -687,9 +694,7 @@ function ShowNews()
 		ShowNewsDiv += '</div>';
 		ShowNewsDiv += '</div>';
 		document.getElementById("block").innerHTML = ShowNewsDiv;
-    	})
-	
-}
+    	}
 
 
 
